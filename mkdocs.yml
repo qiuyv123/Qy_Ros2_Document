@@ -1,0 +1,111 @@
+site_name: ROS 2 中文文档
+site_url: https://your-ros2-site.com
+site_author: qiuyv
+site_description: ROS 2 机器人操作系统中文学习笔记与文档
+copyright: Copyright &copy; 2024 qiuyv
+
+# 仓库链接（显示在右上角，方便别人提 Issue 或 Star）
+repo_name: qiuyv/ros2_doc
+repo_url: https://github.com/qiuyv/ros2_doc
+
+theme:
+  name: material
+  language: zh # 界面语言强制中文
+  
+  # 图标设置
+  icon:
+    logo: material/robot # 左上角 Logo，用了一个机器人的图标
+    repo: fontawesome/brands/github
+
+  # 颜色模式切换（日间/夜间）
+  palette:
+    # 默认深色模式 (Slate) - 开发者通常喜欢深色
+    - scheme: slate
+      primary: teal
+      accent: blue
+      toggle:
+        icon: material/weather-night
+        name: 切换到亮色模式
+
+    # 浅色模式 (Default)
+    - scheme: default
+      primary: indigo
+      accent: deep purple
+      toggle:
+        icon: material/weather-sunny
+        name: 切换到深色模式
+
+  # 功能特性 (修正了缩进，添加了更多实用功能)
+  features:
+    - navigation.instant       # 单页应用体验，加载极快
+    - navigation.tracking      # 滚动时 URL 自动变化
+    - navigation.tabs          # 顶部一级导航栏（适合大型文档）
+    - navigation.top           # 返回顶部按钮
+    - navigation.indexes       # 允许点击目录本身跳转
+    - navigation.footer        # 显示上一页/下一页
+    - toc.integrate            # 目录集成在左侧（适合宽屏阅读）
+    - content.code.copy        # 代码块一键复制按钮
+    - content.action.edit      # 允许编辑当前页
+
+# 插件配置
+plugins:
+  - search:
+      lang: zh  # 支持中文搜索分词
+
+# 扩展功能 (ROS 2 文档的核心)
+markdown_extensions:
+  # 1. 基础扩展
+  - abbr
+  - admonition # 提示块 (Note, Warning)
+  - attr_list
+  - def_list
+  - footnotes
+  - meta
+  - md_in_html
+
+  # 2. 代码高亮与格式化
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.superfences:   # 支持 Mermaid 流程图
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+
+  # 3. 选项卡 (ROS 2 必备：用于切换 C++ / Python 代码)
+  - pymdownx.tabbed:
+      alternate_style: true 
+
+  # 4. 细节折叠
+  - pymdownx.details
+
+  # 5. 键盘按键显示 (例如显示 Ctrl+C)
+  - pymdownx.keys
+
+  # 6. 数学公式 (机器人学必备)
+  - pymdownx.arithmatex:
+      generic: true
+
+  # 7. Emoji 支持
+  - pymdownx.emoji:
+      emoji_index: !!python/name:materialx.emoji.twemoji
+      emoji_generator: !!python/name:materialx.emoji.to_svg
+
+# 数学公式加载脚本
+extra_javascript:
+  - javascripts/mathjax.js
+  - https://polyfill.io/v3/polyfill.min.js?features=es6
+  - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
+
+nav:
+  - Home: index.md
+  - User Guide:
+    - Writing your docs: writing-your-docs.md
+    - Styling your docs: styling-your-docs.md
+  - About:
+    - License: license.md
+    - Release Notes: release-notes.md

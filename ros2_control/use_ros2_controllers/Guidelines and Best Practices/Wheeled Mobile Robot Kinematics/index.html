@@ -9,13 +9,9 @@
         <meta name="author" content="qiuyv">
       
       
-        <link rel="canonical" href="https://qiuyv.site/ros2/Concepts/basic/Nodes/">
+        <link rel="canonical" href="https://qiuyv.site/ros2_control/use_ros2_controllers/Guidelines%20and%20Best%20Practices/Wheeled%20Mobile%20Robot%20Kinematics/">
       
       
-        <link rel="prev" href="../basic/">
-      
-      
-        <link rel="next" href="../Discovery/">
       
       
         
@@ -26,7 +22,7 @@
     
     
       
-        <title>1.1 &nbsp; 节点 - ROS 2 中文指南</title>
+        <title>轮式移动机器人运动学（Wheeled Mobile Robot Kinematics） - ROS 2 中文指南</title>
       
     
     
@@ -87,7 +83,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#nodes" class="md-skip">
+        <a href="#wheeled-mobile-robot-kinematics" class="md-skip">
           跳转至
         </a>
       
@@ -123,7 +119,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              1.1 &nbsp; 节点
+              轮式移动机器人运动学（Wheeled Mobile Robot Kinematics）
             
           </span>
         </div>
@@ -249,8 +245,6 @@
   
   
   
-    
-  
   
     
     
@@ -258,13 +252,11 @@
   
   
   
-    
-  
   
     
     
-      <li class="md-tabs__item md-tabs__item--active">
-        <a href="../../../intro/" class="md-tabs__link">
+      <li class="md-tabs__item">
+        <a href="../../../../ros2/intro/" class="md-tabs__link">
           
   
   
@@ -289,7 +281,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../../../ros2_control/intro/" class="md-tabs__link">
+        <a href="../../../intro/" class="md-tabs__link">
           
   
   
@@ -387,10 +379,8 @@
       
   
   
-    
   
   
-  
     
     
       
@@ -402,22 +392,19 @@
     
     
       
-        
-        
-      
       
         
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2">
         
           
-          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
             
   
   
@@ -435,7 +422,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_2">
             <span class="md-nav__icon md-icon"></span>
             
@@ -450,10 +437,8 @@
                 
   
   
-    
   
   
-  
     
     
       
@@ -467,20 +452,17 @@
       
       
         
-          
-          
-        
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1">
         
           
-          <label class="md-nav__link" for="__nav_2_1" id="__nav_2_1_label" tabindex="">
+          <label class="md-nav__link" for="__nav_2_1" id="__nav_2_1_label" tabindex="0">
             
   
   
@@ -498,7 +480,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_1_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_1_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_2_1">
             <span class="md-nav__icon md-icon"></span>
             
@@ -516,7 +498,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../intro/" class="md-nav__link">
+      <a href="../../../../ros2/intro/" class="md-nav__link">
         
   
   
@@ -541,10 +523,8 @@
                 
   
   
-    
   
   
-  
     
     
       
@@ -563,11 +543,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1_2" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1_2">
         
           
           <label class="md-nav__link" for="__nav_2_1_2" id="__nav_2_1_2_label" tabindex="0">
@@ -588,7 +568,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_1_2_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_1_2_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_2_1_2">
             <span class="md-nav__icon md-icon"></span>
             
@@ -603,10 +583,8 @@
                 
   
   
-    
   
   
-  
     
     
       
@@ -639,11 +617,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1_2_1" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1_2_1">
         
           
           <label class="md-nav__link" for="__nav_2_1_2_1" id="__nav_2_1_2_1_label" tabindex="0">
@@ -664,7 +642,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_2_1_2_1_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_2_1_2_1_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_2_1_2_1">
             <span class="md-nav__icon md-icon"></span>
             
@@ -682,7 +660,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../basic/" class="md-nav__link">
+      <a href="../../../../ros2/Concepts/basic/basic/" class="md-nav__link">
         
   
   
@@ -707,19 +685,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../../../ros2/Concepts/basic/Nodes/" class="md-nav__link">
         
   
   
@@ -735,7 +704,6 @@
   
 
       </a>
-      
     </li>
   
 
@@ -748,7 +716,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Discovery/" class="md-nav__link">
+      <a href="../../../../ros2/Concepts/basic/Discovery/" class="md-nav__link">
         
   
   
@@ -776,7 +744,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Interfaces/" class="md-nav__link">
+      <a href="../../../../ros2/Concepts/basic/Interfaces/" class="md-nav__link">
         
   
   
@@ -804,7 +772,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Topics/" class="md-nav__link">
+      <a href="../../../../ros2/Concepts/basic/Topics/" class="md-nav__link">
         
   
   
@@ -832,7 +800,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Services/" class="md-nav__link">
+      <a href="../../../../ros2/Concepts/basic/Services/" class="md-nav__link">
         
   
   
@@ -860,7 +828,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Actions/" class="md-nav__link">
+      <a href="../../../../ros2/Concepts/basic/Actions/" class="md-nav__link">
         
   
   
@@ -888,7 +856,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Parameters/" class="md-nav__link">
+      <a href="../../../../ros2/Concepts/basic/Parameters/" class="md-nav__link">
         
   
   
@@ -916,7 +884,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Introspection%20with%20command%20line%20tools/" class="md-nav__link">
+      <a href="../../../../ros2/Concepts/basic/Introspection%20with%20command%20line%20tools/" class="md-nav__link">
         
   
   
@@ -944,7 +912,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Launch/" class="md-nav__link">
+      <a href="../../../../ros2/Concepts/basic/Launch/" class="md-nav__link">
         
   
   
@@ -980,7 +948,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../intermediate.md" class="md-nav__link">
+      <a href="../../../../ros2/Concepts/intermediate.md" class="md-nav__link">
         
   
   
@@ -1008,7 +976,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../advanced.md" class="md-nav__link">
+      <a href="../../../../ros2/Concepts/advanced.md" class="md-nav__link">
         
   
   
@@ -1070,20 +1038,17 @@
       
       
         
-          
-          
-        
       
     
     
-    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
         <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2">
         
           
-          <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="">
+          <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
             
   
   
@@ -1119,7 +1084,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Rviz/index.md" class="md-nav__link">
+      <a href="../../../../ros2/Rviz/index.md" class="md-nav__link">
         
   
   
@@ -1147,7 +1112,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Rviz/user_guide.md" class="md-nav__link">
+      <a href="../../../../ros2/Rviz/user_guide.md" class="md-nav__link">
         
   
   
@@ -1175,7 +1140,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Rviz/custom_display.md" class="md-nav__link">
+      <a href="../../../../ros2/Rviz/custom_display.md" class="md-nav__link">
         
   
   
@@ -1203,7 +1168,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Rviz/custom_panel.md" class="md-nav__link">
+      <a href="../../../../ros2/Rviz/custom_panel.md" class="md-nav__link">
         
   
   
@@ -1231,7 +1196,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Rviz/markers.md" class="md-nav__link">
+      <a href="../../../../ros2/Rviz/markers.md" class="md-nav__link">
         
   
   
@@ -1336,7 +1301,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../ros2_control/intro/" class="md-nav__link">
+      <a href="../../../intro/" class="md-nav__link">
         
   
   
@@ -1430,7 +1395,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../ros2_control/Concepts/index.md" class="md-nav__link">
+      <a href="../../../Concepts/index.md" class="md-nav__link">
         
   
   
@@ -1458,7 +1423,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../ros2_control/Concepts/%E6%8E%A7%E5%88%B6%E5%99%A8%E7%AE%A1%E7%90%86%E5%99%A8/" class="md-nav__link">
+      <a href="../../../Concepts/%E6%8E%A7%E5%88%B6%E5%99%A8%E7%AE%A1%E7%90%86%E5%99%A8/" class="md-nav__link">
         
   
   
@@ -1486,7 +1451,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../ros2_control/Concepts/%E6%8E%A7%E5%88%B6%E5%99%A8%E9%93%BE%E6%8E%A5%28%E7%BA%A7%E8%81%94%E6%8E%A7%E5%88%B6%29/" class="md-nav__link">
+      <a href="../../../Concepts/%E6%8E%A7%E5%88%B6%E5%99%A8%E9%93%BE%E6%8E%A5%28%E7%BA%A7%E8%81%94%E6%8E%A7%E5%88%B6%29/" class="md-nav__link">
         
   
   
@@ -1514,7 +1479,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../ros2_control/Concepts/%E5%85%B3%E8%8A%82%E8%BF%90%E5%8A%A8%E5%AD%A6/" class="md-nav__link">
+      <a href="../../../Concepts/%E5%85%B3%E8%8A%82%E8%BF%90%E5%8A%A8%E5%AD%A6/" class="md-nav__link">
         
   
   
@@ -1542,7 +1507,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../ros2_control/Concepts/%E7%A1%AC%E4%BB%B6%E7%BB%84%E4%BB%B6/" class="md-nav__link">
+      <a href="../../../Concepts/%E7%A1%AC%E4%BB%B6%E7%BB%84%E4%BB%B6/" class="md-nav__link">
         
   
   
@@ -1570,7 +1535,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../ros2_control/Concepts/%E6%A8%A1%E6%8B%9F%E7%BB%84%E4%BB%B6/" class="md-nav__link">
+      <a href="../../../Concepts/%E6%A8%A1%E6%8B%9F%E7%BB%84%E4%BB%B6/" class="md-nav__link">
         
   
   
@@ -1724,7 +1689,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../ros2_control/Guidelines the Controller Manager and Plugins/Debugging the Controller Manager and Plugins.md" class="md-nav__link">
+      <a href="../../../Guidelines the Controller Manager and Plugins/Debugging the Controller Manager and Plugins.md" class="md-nav__link">
         
   
   
@@ -1752,7 +1717,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../ros2_control/Guidelines the Controller Manager and Plugins/ROS2 and GDB.md" class="md-nav__link">
+      <a href="../../../Guidelines the Controller Manager and Plugins/ROS2 and GDB.md" class="md-nav__link">
         
   
   
@@ -1780,7 +1745,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../ros2_control/Guidelines the Controller Manager and Plugins/Using GDB to debug a plugin.md" class="md-nav__link">
+      <a href="../../../Guidelines the Controller Manager and Plugins/Using GDB to debug a plugin.md" class="md-nav__link">
         
   
   
@@ -1808,7 +1773,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../ros2_control/Guidelines the Controller Manager and Plugins/GDB CLI Tutorial.md" class="md-nav__link">
+      <a href="../../../Guidelines the Controller Manager and Plugins/GDB CLI Tutorial.md" class="md-nav__link">
         
   
   
@@ -1972,7 +1937,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../ros2_control/use_ros2_controllers/Guidelines and Best Practices/Wheeled Mobile Robot Kinematics.md" class="md-nav__link">
+      <a href="../../Guidelines and Best Practices/Wheeled Mobile Robot Kinematics.md" class="md-nav__link">
         
   
   
@@ -2000,7 +1965,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../ros2_control/use_ros2_controllers/Guidelines and Best Practices/Writing a new controller.md" class="md-nav__link">
+      <a href="../../Guidelines and Best Practices/Writing a new controller.md" class="md-nav__link">
         
   
   
@@ -2098,7 +2063,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../ros2_control/use_ros2_controllers/Controllers for Wheeled Mobile Robots/Differential Drive Controller.md" class="md-nav__link">
+      <a href="../../Controllers for Wheeled Mobile Robots/Differential Drive Controller.md" class="md-nav__link">
         
   
   
@@ -2126,7 +2091,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../ros2_control/use_ros2_controllers/Controllers for Wheeled Mobile Robots/Mecanum Drive Controllers.md" class="md-nav__link">
+      <a href="../../Controllers for Wheeled Mobile Robots/Mecanum Drive Controllers.md" class="md-nav__link">
         
   
   
@@ -2154,7 +2119,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../ros2_control/use_ros2_controllers/Controllers for Wheeled Mobile Robots/Steering Controllers Library.md" class="md-nav__link">
+      <a href="../../Controllers for Wheeled Mobile Robots/Steering Controllers Library.md" class="md-nav__link">
         
   
   
@@ -2182,7 +2147,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../ros2_control/use_ros2_controllers/Controllers for Wheeled Mobile Robots/Tricycle Controller.md" class="md-nav__link">
+      <a href="../../Controllers for Wheeled Mobile Robots/Tricycle Controller.md" class="md-nav__link">
         
   
   
@@ -2302,6 +2267,415 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#omnidirectional-wheeled-mobile-robots" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        全向轮式移动机器人（Omnidirectional Wheeled Mobile Robots）
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="全向轮式移动机器人（Omnidirectional Wheeled Mobile Robots）">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#omnidirectional-drive-robots-using-omni-wheels" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        使用全向轮的全向驱动机器人（Omnidirectional Drive Robots using Omni Wheels）
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="使用全向轮的全向驱动机器人（Omnidirectional Drive Robots using Omni Wheels）">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        符号说明
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#inverse-kinematics" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        逆运动学（Inverse Kinematics）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#forward-kinematics" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        正运动学（Forward Kinematics）
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#swerve-drive-robots" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        舵轮驱动机器人（Swerve Drive Robots）
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="舵轮驱动机器人（Swerve Drive Robots）">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        符号说明
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        逆运动学
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        里程计
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#nonholonomic-wheeled-mobile-robots" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        非完整约束轮式移动机器人（Nonholonomic Wheeled Mobile Robots）
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="非完整约束轮式移动机器人（Nonholonomic Wheeled Mobile Robots）">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#unicycle-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        单轮车模型（Unicycle Model）
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="单轮车模型（Unicycle Model）">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        符号说明
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        正运动学
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#differential-drive-robot" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        差速驱动机器人（Differential Drive Robot）
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="差速驱动机器人（Differential Drive Robot）">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        正运动学
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        逆运动学
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        里程计
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#car-like-bicycle-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        类车模型（自行车模型）（Car-Like / Bicycle Model）
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="类车模型（自行车模型）（Car-Like / Bicycle Model）">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        符号说明
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        正运动学
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        逆运动学
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        里程计
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#double-traction-axle" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        双驱动后轴（Double-Traction Axle）
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="双驱动后轴（Double-Traction Axle）">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_14" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        逆运动学
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_15" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        里程计
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ackermann-steering" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        阿克曼转向（Ackermann Steering）
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="阿克曼转向（Ackermann Steering）">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_16" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        逆运动学
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_17" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        里程计
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ackermann-steering-with-traction" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        带驱动的阿克曼转向（Ackermann Steering with Traction）
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="带驱动的阿克曼转向（Ackermann Steering with Traction）">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_18" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        逆运动学
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_19" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        里程计
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -2320,11 +2694,317 @@
   
 
 
-<h1 id="nodes">节点（Nodes）<a class="headerlink" href="#nodes" title="Permanent link">¶</a></h1>
-<p>节点是 ROS 2 计算图中的参与者，它使用客户端库与其他节点通信。节点可以与同一进程内、不同进程或不同机器上的其他节点进行通信。节点通常是 ROS 计算图中的计算单元；每个节点应完成一项逻辑任务。</p>
-<p>节点可以向命名话题发布数据以传递给其他节点，也可以订阅命名话题以从其他节点获取数据。它们还可以作为服务客户端，请求其他节点代为执行计算，或作为服务服务器，向其他节点提供功能。对于长时间运行的计算，节点可以作为动作客户端，请求其他节点执行该计算，或作为动作服务器，向其他节点提供此类功能。节点可在运行时提供可配置的参数以改变其行为。</p>
-<p>节点通常同时是发布者、订阅者、服务服务器、服务客户端、动作服务器和动作客户端的复杂组合。</p>
-<p>节点之间的连接通过分布式发现过程建立。</p>
+<h1 id="wheeled-mobile-robot-kinematics">轮式移动机器人运动学（Wheeled Mobile Robot Kinematics）<a class="headerlink" href="#wheeled-mobile-robot-kinematics" title="Permanent link">¶</a></h1>
+<blockquote>
+<p><strong>注意</strong>：您正在阅读的是 ROS 2 一个较旧但仍受支持版本的文档。<br>
+有关最新版本的信息，请参阅 <a href="../../../../kilted/doc/ros2_controllers/doc/mobile_robot_kinematics.html">Kilted 版本</a>。</p>
+</blockquote>
+<p>本文介绍了不同类型轮式移动机器人的运动学模型。更多参考资料请参阅：
+- <a href="https://link.springer.com/book/10.1007/978-1-84628-642-1"><em>Robotics: Modelling, Planning and Control</em> – Siciliano 等</a>
+- <a href="http://modernrobotics.org/"><em>Modern Robotics: Mechanics, Planning, and Control</em> – Kevin M. Lynch &amp; Frank C. Park</a></p>
+<p>轮式移动机器人可分为两大类：</p>
+<ul>
+<li><strong>全向机器人</strong>（Omnidirectional robots）：可在平面内<strong>瞬时向任意方向移动</strong>。</li>
+<li><strong>非完整约束机器人</strong>（Nonholonomic robots）：<strong>不能</strong>在平面内瞬时向任意方向移动。</li>
+</ul>
+<p>使用轮子执行器编码器对运动学模型进行前向积分，称为 <strong>里程计定位</strong>（odometric localization）、<strong>被动定位</strong>（passive localization）或 <strong>航位推算</strong>（dead reckoning）。本文简称为 <strong>里程计</strong>（odometry）。</p>
+<hr>
+<h2 id="omnidirectional-wheeled-mobile-robots">全向轮式移动机器人（Omnidirectional Wheeled Mobile Robots）<a class="headerlink" href="#omnidirectional-wheeled-mobile-robots" title="Permanent link">¶</a></h2>
+<h3 id="omnidirectional-drive-robots-using-omni-wheels">使用全向轮的全向驱动机器人（Omnidirectional Drive Robots using Omni Wheels）<a class="headerlink" href="#omnidirectional-drive-robots-using-omni-wheels" title="Permanent link">¶</a></h3>
+<p>下文描述了使用 <strong>3 个或更多全向轮</strong> 的全向驱动机器人的运动学。<br>
+坐标系遵循 <a href="https://www.ros.org/reps/rep-0103.html">ROS REP 103</a> 中定义的约定。</p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../omni_wheel_omnidirectional_drive.svg" data-desc-position="bottom"><img alt="alt text" src="../omni_wheel_omnidirectional_drive.svg"></a></p>
+<h4 id="_1">符号说明<a class="headerlink" href="#_1" title="Permanent link">¶</a></h4>
+<ul>
+<li><span class="arithmatex">\(x_b, y_b\)</span>：机器人本体坐标系，位于轮子与地面的接触点。</li>
+<li><span class="arithmatex">\(x_w, y_w\)</span>：世界坐标系。</li>
+<li><span class="arithmatex">\(v_{b,x}\)</span>：机器人在 x 轴方向的线速度。</li>
+<li><span class="arithmatex">\(v_{b,y}\)</span>：机器人在 y 轴方向的线速度。</li>
+<li><span class="arithmatex">\(\omega_{b,z}\)</span>：机器人绕 z 轴的角速度。</li>
+<li><span class="arithmatex">\(R\)</span>：机器人半径（即机器人中心到轮子的距离）。</li>
+<li>红色箭头：表示第 <span class="arithmatex">\(i\)</span> 个轮子旋转方向 <span class="arithmatex">\(\omega_i\)</span> 为正。</li>
+<li><span class="arithmatex">\(\gamma\)</span>：第一个轮子相对于 <span class="arithmatex">\(x_b\)</span> 轴的角度偏移。</li>
+<li><span class="arithmatex">\(\theta\)</span>：相邻轮子间的夹角，其中 <span class="arithmatex">\(n\)</span> 为轮子数量：
+  [
+  \theta = \frac{2\pi}{n}
+  ]</li>
+</ul>
+<h4 id="inverse-kinematics">逆运动学（Inverse Kinematics）<a class="headerlink" href="#inverse-kinematics" title="Permanent link">¶</a></h4>
+<p>为实现期望的本体速度（body twist），各轮所需角速度可通过以下矩阵计算：</p>
+<div class="arithmatex">\[
+A =
+\begin{bmatrix}
+  \sin(\gamma) &amp; -\cos(\gamma) &amp; -R  \\
+  \sin(\theta + \gamma) &amp; -\cos(\theta + \gamma) &amp; -R\\
+  \sin(2\theta + \gamma) &amp; -\cos(2\theta + \gamma) &amp; -R\\
+  \vdots &amp; \vdots &amp; \vdots\\
+  \sin((n-1)\theta + \gamma) &amp; -\cos((n-1)\theta + \gamma) &amp; -R\\
+\end{bmatrix}
+\]</div>
+<div class="arithmatex">\[
+\begin{bmatrix}
+  \omega_1\\
+  \omega_2\\
+  \omega_3\\
+  \vdots\\
+  \omega_n
+\end{bmatrix} =
+\frac{1}{r}
+A
+\begin{bmatrix}
+  v_{b,x}\\
+  v_{b,y}\\
+  \omega_{b,z}\\
+\end{bmatrix}
+\]</div>
+<p>其中：
+- <span class="arithmatex">\(\omega_i\)</span>：第 <span class="arithmatex">\(i\)</span> 个轮子的角速度
+- <span class="arithmatex">\(r\)</span>：轮子半径</p>
+<p>任一轮子 <span class="arithmatex">\(i\)</span> 的代数形式为：
+[
+\omega_i = \frac{\sin((i-1)\theta + \gamma) v_{b,x} - \cos((i-1)\theta + \gamma) v_{b,y} - R \omega_{b,z}}{r}
+]</p>
+<h4 id="forward-kinematics">正运动学（Forward Kinematics）<a class="headerlink" href="#forward-kinematics" title="Permanent link">¶</a></h4>
+<p>由轮速反推本体速度，需使用矩阵 <span class="arithmatex">\(A\)</span> 的伪逆：
+[
+\begin{bmatrix}
+  v_{b,x}\
+  v_{b,y}\
+  \omega_{b,z}\
+\end{bmatrix} =
+rA^\dagger
+\begin{bmatrix}
+  \omega_1\
+  \omega_2\
+  \omega_3\
+  \vdots\
+  \omega_n
+\end{bmatrix}
+]</p>
+<hr>
+<h3 id="swerve-drive-robots">舵轮驱动机器人（Swerve Drive Robots）<a class="headerlink" href="#swerve-drive-robots" title="Permanent link">¶</a></h3>
+<p>下文描述了使用 <strong>四个独立舵轮模块</strong>（每个模块含独立转向与驱动电机）的全向机器人。<br>
+坐标系遵循 <a href="https://www.ros.org/reps/rep-0103.html">REP-103</a>。</p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../swerve_drive.svg" data-desc-position="bottom"><img alt="alt text" src="../swerve_drive.svg"></a></p>
+<h4 id="_2">符号说明<a class="headerlink" href="#_2" title="Permanent link">¶</a></h4>
+<ul>
+<li><span class="arithmatex">\(x_b, y_b\)</span>：机器人本体坐标系，位于机器人几何中心。</li>
+<li><span class="arithmatex">\(v_{b,x}, v_{b,y}\)</span>：本体线速度分量。</li>
+<li><span class="arithmatex">\(\omega_{b,z}\)</span>：本体角速度。</li>
+<li><span class="arithmatex">\(l\)</span>：轴距（前后轮距离）</li>
+<li><span class="arithmatex">\(w\)</span>：轮距（左右轮距离）</li>
+<li>红色箭头：表示第 <span class="arithmatex">\(i\)</span> 个轮子的速度方向 <span class="arithmatex">\(v_i\)</span></li>
+</ul>
+<p>四个模块（通常为前左、前右、后左、后右）相对于中心的位置为：
+- 前左：<span class="arithmatex">\((l/2, w/2)\)</span>
+- 前右：<span class="arithmatex">\((l/2, -w/2)\)</span>
+- 后左：<span class="arithmatex">\((-l/2, w/2)\)</span>
+- 后右：<span class="arithmatex">\((-l/2, -w/2)\)</span></p>
+<h4 id="_3">逆运动学<a class="headerlink" href="#_3" title="Permanent link">¶</a></h4>
+<p>对位于 <span class="arithmatex">\((l_{i,x}, l_{i,y})\)</span> 的模块 <span class="arithmatex">\(i\)</span>，其速度向量为：
+[
+\begin{bmatrix}
+v_{i,x} \
+v_{i,y}
+\end{bmatrix}
+=
+\begin{bmatrix}
+v_{b,x} - \omega_{b,z} l_{i,y} \
+v_{b,y} + \omega_{b,z} l_{i,x}
+\end{bmatrix}
+]</p>
+<p>轮速 <span class="arithmatex">\(v_i\)</span> 与转向角 <span class="arithmatex">\(\phi_i\)</span> 为：
+[
+v_i = \sqrt{v_{i,x}^2 + v_{i,y}^2}, \quad
+\phi_i = \arctan2(v_{i,y}, v_{i,x})
+]</p>
+<h4 id="_4">里程计<a class="headerlink" href="#_4" title="Permanent link">¶</a></h4>
+<p>由轮速 <span class="arithmatex">\(v_i\)</span> 和转向角 <span class="arithmatex">\(\phi_i\)</span> 计算本体速度：
+[
+v_{i,x} = v_i \cos(\phi_i), \quad v_{i,y} = v_i \sin(\phi_i)
+]</p>
+<p>底盘速度为：
+[
+v_{b,x} = \frac{1}{4} \sum_{i=0}^{3} v_{i,x}, \quad
+v_{b,y} = \frac{1}{4} \sum_{i=0}^{3} v_{i,y}
+]
+[
+\omega_{b,z} = \frac{\sum_{i=0}^{3} (v_{i,y} l_{i,x} - v_{i,x} l_{i,y})}{\sum_{i=0}^{3} (l_{i,x}^2 + l_{i,y}^2)}
+]</p>
+<p>全局速度用于更新位姿 <span class="arithmatex">\((x, y, \theta)\)</span>：
+[
+v_{x,\text{global}} = v_{b,x} \cos(\theta) - v_{b,y} \sin(\theta)
+]
+[
+v_{y,\text{global}} = v_{b,x} \sin(\theta) + v_{b,y} \cos(\theta)
+]</p>
+<hr>
+<h2 id="nonholonomic-wheeled-mobile-robots">非完整约束轮式移动机器人（Nonholonomic Wheeled Mobile Robots）<a class="headerlink" href="#nonholonomic-wheeled-mobile-robots" title="Permanent link">¶</a></h2>
+<h3 id="unicycle-model">单轮车模型（Unicycle Model）<a class="headerlink" href="#unicycle-model" title="Permanent link">¶</a></h3>
+<p>遵循 <a href="https://www.ros.org/reps/rep-0103.html#id19">ROS 坐标系约定</a>（右手定则）：</p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../unicycle.svg" data-desc-position="bottom"><img alt="alt text" src="../unicycle.svg"></a></p>
+<h4 id="_5">符号说明<a class="headerlink" href="#_5" title="Permanent link">¶</a></h4>
+<ul>
+<li><span class="arithmatex">\(x_b, y_b\)</span>：本体坐标系（位于轮地接触点）</li>
+<li><span class="arithmatex">\(x, y\)</span>：世界坐标系中的机器人位置</li>
+<li><span class="arithmatex">\(\theta\)</span>：机器人航向角（本体 <span class="arithmatex">\(x_b\)</span> 轴与世界 <span class="arithmatex">\(x_w\)</span> 轴夹角）</li>
+</ul>
+<p>期望的本体速度为：
+[
+\vec{\nu}<em b="b">b = 
+\begin{bmatrix}
+\vec{\omega}</em> \
+\vec{v}_{b}
+\end{bmatrix}
+]
+其中：
+- <span class="arithmatex">\(v_{b,x}\)</span>：沿 <span class="arithmatex">\(x_b\)</span> 轴的线速度
+- <span class="arithmatex">\(\omega_{b,z}\)</span>：绕 <span class="arithmatex">\(z\)</span> 轴的角速度</p>
+<h4 id="_6">正运动学<a class="headerlink" href="#_6" title="Permanent link">¶</a></h4>
+<div class="arithmatex">\[
+\dot{x} = v_{b,x} \cos(\theta), \quad
+\dot{y} = v_{b,x} \sin(\theta), \quad
+\dot{\theta} = \omega_{b,z}
+\]</div>
+<hr>
+<h3 id="differential-drive-robot">差速驱动机器人（Differential Drive Robot）<a class="headerlink" href="#differential-drive-robot" title="Permanent link">¶</a></h3>
+<blockquote>
+<p>引自 Siciliano 等：<br>
+“严格意义上的单轮车（即单轮车辆）在静态条件下存在严重平衡问题。然而，存在一些在运动学上等效于单轮车但机械更稳定的车辆。”</p>
+</blockquote>
+<p>差速驱动机器人有两个<strong>独立驱动</strong>的轮子。</p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../diff_drive.svg" data-desc-position="bottom"><img alt="alt text" src="../diff_drive.svg"></a></p>
+<ul>
+<li><span class="arithmatex">\(w\)</span>：轮距（两轮间距）</li>
+</ul>
+<h4 id="_7">正运动学<a class="headerlink" href="#_7" title="Permanent link">¶</a></h4>
+<div class="arithmatex">\[
+v_{b,x} = \frac{v_{\text{right}} + v_{\text{left}}}{2}, \quad
+\omega_{b,z} = \frac{v_{\text{right}} - v_{\text{left}}}{w}
+\]</div>
+<h4 id="_8">逆运动学<a class="headerlink" href="#_8" title="Permanent link">¶</a></h4>
+<div class="arithmatex">\[
+v_{\text{left}} = v_{b,x} - \omega_{b,z} \frac{w}{2}, \quad
+v_{\text{right}} = v_{b,x} + \omega_{b,z} \frac{w}{2}
+\]</div>
+<h4 id="_9">里程计<a class="headerlink" href="#_9" title="Permanent link">¶</a></h4>
+<p>直接使用正运动学方程，由编码器读数计算位姿。</p>
+<hr>
+<h3 id="car-like-bicycle-model">类车模型（自行车模型）（Car-Like / Bicycle Model）<a class="headerlink" href="#car-like-bicycle-model" title="Permanent link">¶</a></h3>
+<p>前轮可转向的两轮机器人（又称自行车模型）：</p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../car_like_robot.svg" data-desc-position="bottom"><img alt="alt text" src="../car_like_robot.svg"></a></p>
+<h4 id="_10">符号说明<a class="headerlink" href="#_10" title="Permanent link">¶</a></h4>
+<ul>
+<li><span class="arithmatex">\(\phi\)</span>：前轮转向角（绕 <span class="arithmatex">\(z\)</span> 轴为正）</li>
+<li><span class="arithmatex">\(v_{\text{rear}}, v_{\text{front}}\)</span>：后轮与前轮速度</li>
+<li><span class="arithmatex">\(l\)</span>：轴距</li>
+</ul>
+<p>假设<strong>无滑移</strong>，则两轮速度满足：
+[
+v_{\text{rear}} = v_{\text{front}} \cos(\phi)
+]</p>
+<h4 id="_11">正运动学<a class="headerlink" href="#_11" title="Permanent link">¶</a></h4>
+<div class="arithmatex">\[
+\dot{x} = v_{b,x} \cos(\theta), \quad
+\dot{y} = v_{b,x} \sin(\theta), \quad
+\dot{\theta} = \frac{v_{b,x}}{l} \tan(\phi)
+\]</div>
+<h4 id="_12">逆运动学<a class="headerlink" href="#_12" title="Permanent link">¶</a></h4>
+<ul>
+<li>转向角：<span class="arithmatex">\(\phi = \arctan\left(\frac{l \omega_{b,z}}{v_{b,x}} \right)\)</span></li>
+<li>后轮驱动：<span class="arithmatex">\(v_{\text{rear}} = v_{b,x}\)</span></li>
+<li>前轮驱动：<span class="arithmatex">\(v_{\text{front}} = \frac{v_{b,x}}{\cos(\phi)}\)</span></li>
+</ul>
+<h4 id="_13">里程计<a class="headerlink" href="#_13" title="Permanent link">¶</a></h4>
+<ul>
+<li><strong>后轮编码器</strong>：
+  [
+  \dot{x} = v_{\text{rear}} \cos(\theta),\ 
+  \dot{y} = v_{\text{rear}} \sin(\theta),\ 
+  \dot{\theta} = \frac{v_{\text{rear}}}{l} \tan(\phi)
+  ]</li>
+<li><strong>前轮编码器</strong>：
+  [
+  \dot{x} = v_{\text{front}} \cos(\theta) \cos(\phi),\ 
+  \dot{y} = v_{\text{front}} \sin(\theta) \cos(\phi),\ 
+  \dot{\theta} = \frac{v_{\text{front}}}{l} \sin(\phi)
+  ]</li>
+</ul>
+<hr>
+<h3 id="double-traction-axle">双驱动后轴（Double-Traction Axle）<a class="headerlink" href="#double-traction-axle" title="Permanent link">¶</a></h3>
+<p>三轮类车机器人，后轴有两个独立驱动轮：</p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../double_traction.svg" data-desc-position="bottom"><img alt="alt text" src="../double_traction.svg"></a></p>
+<ul>
+<li><span class="arithmatex">\(w_r\)</span>：后轴轮距</li>
+</ul>
+<h4 id="_14">逆运动学<a class="headerlink" href="#_14" title="Permanent link">¶</a></h4>
+<p>转弯半径：<span class="arithmatex">\(R_b = \frac{l}{\tan(\phi)}\)</span></p>
+<p>为避免滑移，后轮速度需满足：
+[
+v_{\text{rear,left}} = v_{b,x}\frac{R_b - w_r/2}{R_b}, \quad
+v_{\text{rear,right}} = v_{b,x}\frac{R_b + w_r/2}{R_b}
+]</p>
+<h4 id="_15">里程计<a class="headerlink" href="#_15" title="Permanent link">¶</a></h4>
+<p>由两个编码器测得的 <span class="arithmatex">\(v_{b,x}\)</span> 是超定的。取平均以提高鲁棒性：
+[
+v_{b,x} = \frac{1}{2} \left(v_{\text{rear,left}} \frac{R_b}{R_b - w_r/2} + v_{\text{rear,right}} \frac{R_b}{R_b + w_r/2}\right)
+]</p>
+<hr>
+<h3 id="ackermann-steering">阿克曼转向（Ackermann Steering）<a class="headerlink" href="#ackermann-steering" title="Permanent link">¶</a></h3>
+<p>四轮机器人，前轴有两个<strong>独立转向轮</strong>：</p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../ackermann_steering.svg" data-desc-position="bottom"><img alt="alt text" src="../ackermann_steering.svg"></a></p>
+<ul>
+<li><span class="arithmatex">\(w_f\)</span>：前轴轮距（两主销间距离）</li>
+</ul>
+<blockquote>
+<p><strong>注意</strong>：阿克曼转向也可通过<strong>机械连杆</strong>实现（仅一个转向输入），此时运动学与类车模型相同。</p>
+</blockquote>
+<h4 id="_16">逆运动学<a class="headerlink" href="#_16" title="Permanent link">¶</a></h4>
+<p>转弯半径：<span class="arithmatex">\(R_b = \frac{l}{\tan(\phi)}\)</span></p>
+<p>为避免滑移，前轮转向角需满足：
+[
+\phi_{\text{left}} = \arctan\left(\frac{l}{R_b - w_f/2}\right), \quad
+\phi_{\text{right}} = \arctan\left(\frac{l}{R_b + w_f/2}\right)
+]</p>
+<h4 id="_17">里程计<a class="headerlink" href="#_17" title="Permanent link">¶</a></h4>
+<p>由两个转向角测得的 <span class="arithmatex">\(\phi\)</span> 是超定的，取平均：
+[
+\phi = \frac{1}{2} \left( 
+\arctan\left(\frac{l\tan(\phi_{\text{left}})}{l + \frac{w_f}{2} \tan(\phi_{\text{left}})}\right) +
+\arctan\left(\frac{l\tan(\phi_{\text{right}})}{l - \frac{w_f}{2} \tan(\phi_{\text{right}})}\right)
+\right)
+]</p>
+<hr>
+<h3 id="ackermann-steering-with-traction">带驱动的阿克曼转向（Ackermann Steering with Traction）<a class="headerlink" href="#ackermann-steering-with-traction" title="Permanent link">¶</a></h3>
+<p>前轮既可转向又可独立驱动的四轮类车机器人：</p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../ackermann_steering_traction.svg" data-desc-position="bottom"><img alt="alt text" src="../ackermann_steering_traction.svg"></a></p>
+<ul>
+<li><span class="arithmatex">\(d_{kp}\)</span>：主销到前轮接地接触点的距离</li>
+</ul>
+<h4 id="_18">逆运动学<a class="headerlink" href="#_18" title="Permanent link">¶</a></h4>
+<p>为避免滑移，前轮速度需满足：
+[
+\frac{v_{\text{front,left}}}{R_{\text{left}}} = \frac{v_{\text{front,right}}}{R_{\text{right}}} = \frac{v_{b,x}}{R_b}
+]
+其中：
+[
+R_b = \frac{l}{\tan(\phi)},\quad
+R_{\text{left}} = \frac{l - d_{kp}\sin(\phi_{\text{left}})}{\sin(\phi_{\text{left}})},\quad
+R_{\text{right}} = \frac{l + d_{kp}\sin(\phi_{\text{right}})}{\sin(\phi_{\text{right}})}
+]</p>
+<p>解得：
+[
+v_{\text{front,left}} = \frac{v_{b,x}(l - d_{kp}\sin(\phi_{\text{left}}))}{R_b \sin(\phi_{\text{left}})},\quad
+v_{\text{front,right}} = \frac{v_{b,x}(l + d_{kp}\sin(\phi_{\text{right}}))}{R_b \sin(\phi_{\text{right}})}
+]</p>
+<h4 id="_19">里程计<a class="headerlink" href="#_19" title="Permanent link">¶</a></h4>
+<p>同样取平均提高鲁棒性：
+[
+v_{b,x} = \frac{1}{2} \left( 
+v_{\text{front,left}} \frac{R_b \sin(\phi_{\text{left}})}{l - d_{kp}\sin(\phi_{\text{left}})} +
+v_{\text{front,right}} \frac{R_b \sin(\phi_{\text{right}})}{l + d_{kp}\sin(\phi_{\text{right}})}
+\right)
+]</p>
 
 
 
@@ -2357,44 +3037,6 @@
       
         <footer class="md-footer">
   
-    
-      
-      <nav class="md-footer__inner md-grid" aria-label="页脚">
-        
-          
-          <a href="../basic/" class="md-footer__link md-footer__link--prev" aria-label="上一页: 1.1 &amp;nbsp; 概览">
-            <div class="md-footer__button md-icon">
-              
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
-            </div>
-            <div class="md-footer__title">
-              <span class="md-footer__direction">
-                上一页
-              </span>
-              <div class="md-ellipsis">
-                1.1 &nbsp; 概览
-              </div>
-            </div>
-          </a>
-        
-        
-          
-          <a href="../Discovery/" class="md-footer__link md-footer__link--next" aria-label="下一页: 1.1 &amp;nbsp; 发现">
-            <div class="md-footer__title">
-              <span class="md-footer__direction">
-                下一页
-              </span>
-              <div class="md-ellipsis">
-                1.1 &nbsp; 发现
-              </div>
-            </div>
-            <div class="md-footer__button md-icon">
-              
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"></path></svg>
-            </div>
-          </a>
-        
-      </nav>
     
   
   <div class="md-footer-meta md-typeset">

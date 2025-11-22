@@ -9,31 +9,27 @@
         <meta name="author" content="qiuyv">
       
       
-        <link rel="canonical" href="https://qiuyv.site/ros2/Concepts/basic/Nodes/">
+        <link rel="canonical" href="https://qiuyv.site/ros2_control/Guidelines%20the%20Controller%20Manager%20and%20Plugins/GDB%20CLI%20Tutorial/">
       
       
-        <link rel="prev" href="../basic/">
-      
-      
-        <link rel="next" href="../Discovery/">
       
       
         
       
       
-      <link rel="icon" href="../../../../assets/images/favicon.png">
+      <link rel="icon" href="../../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.0">
     
     
       
-        <title>1.1 &nbsp; 节点 - ROS 2 中文指南</title>
+        <title>GDB 快速参考手册（GDB Quick Reference） - ROS 2 中文指南</title>
       
     
     
-      <link rel="stylesheet" href="../../../../assets/stylesheets/main.618322db.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.618322db.min.css">
       
         
-        <link rel="stylesheet" href="../../../../assets/stylesheets/palette.ab4e12ef.min.css">
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
       
       
 
@@ -52,13 +48,13 @@
       
     
     
-    <script>__md_scope=new URL("../../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
     
     
-  <link href="../../../../assets/stylesheets/glightbox.min.css" rel="stylesheet"><script src="../../../../assets/javascripts/glightbox.min.js"></script><style id="glightbox-style">
+  <link href="../../../assets/stylesheets/glightbox.min.css" rel="stylesheet"><script src="../../../assets/javascripts/glightbox.min.js"></script><style id="glightbox-style">
             html.glightbox-open { overflow: initial; height: 100%; }
             .gslide-title { margin-top: 0px; user-select: text; }
             .gslide-desc { color: #666; user-select: text; }
@@ -87,7 +83,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#nodes" class="md-skip">
+        <a href="#gdb-gdb-quick-reference" class="md-skip">
           跳转至
         </a>
       
@@ -103,7 +99,7 @@
 
 <header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="页眉">
-    <a href="../../../.." title="ROS 2 中文指南" class="md-header__button md-logo" aria-label="ROS 2 中文指南" data-md-component="logo">
+    <a href="../../.." title="ROS 2 中文指南" class="md-header__button md-logo" aria-label="ROS 2 中文指南" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2a2 2 0 0 1 2 2c0 .74-.4 1.39-1 1.73V7h1a7 7 0 0 1 7 7h1a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1h-1v1a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-1H2a1 1 0 0 1-1-1v-3a1 1 0 0 1 1-1h1a7 7 0 0 1 7-7h1V5.73c-.6-.34-1-.99-1-1.73a2 2 0 0 1 2-2M7.5 13A2.5 2.5 0 0 0 5 15.5 2.5 2.5 0 0 0 7.5 18a2.5 2.5 0 0 0 2.5-2.5A2.5 2.5 0 0 0 7.5 13m9 0a2.5 2.5 0 0 0-2.5 2.5 2.5 2.5 0 0 0 2.5 2.5 2.5 2.5 0 0 0 2.5-2.5 2.5 2.5 0 0 0-2.5-2.5"></path></svg>
@@ -123,7 +119,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              1.1 &nbsp; 节点
+              GDB 快速参考手册（GDB Quick Reference）
             
           </span>
         </div>
@@ -230,7 +226,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../../.." class="md-tabs__link">
+      <a href="../../.." class="md-tabs__link">
         
   
   
@@ -249,8 +245,6 @@
   
   
   
-    
-  
   
     
     
@@ -258,13 +252,11 @@
   
   
   
-    
-  
   
     
     
-      <li class="md-tabs__item md-tabs__item--active">
-        <a href="../../../intro/" class="md-tabs__link">
+      <li class="md-tabs__item">
+        <a href="../../../ros2/intro/" class="md-tabs__link">
           
   
   
@@ -289,7 +281,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../../../ros2_control/intro/" class="md-tabs__link">
+        <a href="../../intro/" class="md-tabs__link">
           
   
   
@@ -331,7 +323,7 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="导航栏" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../../../.." title="ROS 2 中文指南" class="md-nav__button md-logo" aria-label="ROS 2 中文指南" data-md-component="logo">
+    <a href="../../.." title="ROS 2 中文指南" class="md-nav__button md-logo" aria-label="ROS 2 中文指南" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2a2 2 0 0 1 2 2c0 .74-.4 1.39-1 1.73V7h1a7 7 0 0 1 7 7h1a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1h-1v1a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-1H2a1 1 0 0 1-1-1v-3a1 1 0 0 1 1-1h1a7 7 0 0 1 7-7h1V5.73c-.6-.34-1-.99-1-1.73a2 2 0 0 1 2-2M7.5 13A2.5 2.5 0 0 0 5 15.5 2.5 2.5 0 0 0 7.5 18a2.5 2.5 0 0 0 2.5-2.5A2.5 2.5 0 0 0 7.5 13m9 0a2.5 2.5 0 0 0-2.5 2.5 2.5 2.5 0 0 0 2.5 2.5 2.5 2.5 0 0 0 2.5-2.5 2.5 2.5 0 0 0-2.5-2.5"></path></svg>
@@ -361,7 +353,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../.." class="md-nav__link">
+      <a href="../../.." class="md-nav__link">
         
   
   
@@ -387,10 +379,8 @@
       
   
   
-    
   
   
-  
     
     
       
@@ -402,22 +392,19 @@
     
     
       
-        
-        
-      
       
         
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2">
         
           
-          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
             
   
   
@@ -435,7 +422,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_2">
             <span class="md-nav__icon md-icon"></span>
             
@@ -450,10 +437,8 @@
                 
   
   
-    
   
   
-  
     
     
       
@@ -467,20 +452,17 @@
       
       
         
-          
-          
-        
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1">
         
           
-          <label class="md-nav__link" for="__nav_2_1" id="__nav_2_1_label" tabindex="">
+          <label class="md-nav__link" for="__nav_2_1" id="__nav_2_1_label" tabindex="0">
             
   
   
@@ -498,7 +480,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_1_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_1_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_2_1">
             <span class="md-nav__icon md-icon"></span>
             
@@ -516,7 +498,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../intro/" class="md-nav__link">
+      <a href="../../../ros2/intro/" class="md-nav__link">
         
   
   
@@ -541,10 +523,8 @@
                 
   
   
-    
   
   
-  
     
     
       
@@ -563,11 +543,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1_2" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1_2">
         
           
           <label class="md-nav__link" for="__nav_2_1_2" id="__nav_2_1_2_label" tabindex="0">
@@ -588,7 +568,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_1_2_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_1_2_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_2_1_2">
             <span class="md-nav__icon md-icon"></span>
             
@@ -603,10 +583,8 @@
                 
   
   
-    
   
   
-  
     
     
       
@@ -639,11 +617,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1_2_1" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1_2_1">
         
           
           <label class="md-nav__link" for="__nav_2_1_2_1" id="__nav_2_1_2_1_label" tabindex="0">
@@ -664,7 +642,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_2_1_2_1_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_2_1_2_1_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_2_1_2_1">
             <span class="md-nav__icon md-icon"></span>
             
@@ -682,7 +660,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../basic/" class="md-nav__link">
+      <a href="../../../ros2/Concepts/basic/basic/" class="md-nav__link">
         
   
   
@@ -707,19 +685,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../../ros2/Concepts/basic/Nodes/" class="md-nav__link">
         
   
   
@@ -735,7 +704,6 @@
   
 
       </a>
-      
     </li>
   
 
@@ -748,7 +716,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Discovery/" class="md-nav__link">
+      <a href="../../../ros2/Concepts/basic/Discovery/" class="md-nav__link">
         
   
   
@@ -776,7 +744,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Interfaces/" class="md-nav__link">
+      <a href="../../../ros2/Concepts/basic/Interfaces/" class="md-nav__link">
         
   
   
@@ -804,7 +772,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Topics/" class="md-nav__link">
+      <a href="../../../ros2/Concepts/basic/Topics/" class="md-nav__link">
         
   
   
@@ -832,7 +800,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Services/" class="md-nav__link">
+      <a href="../../../ros2/Concepts/basic/Services/" class="md-nav__link">
         
   
   
@@ -860,7 +828,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Actions/" class="md-nav__link">
+      <a href="../../../ros2/Concepts/basic/Actions/" class="md-nav__link">
         
   
   
@@ -888,7 +856,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Parameters/" class="md-nav__link">
+      <a href="../../../ros2/Concepts/basic/Parameters/" class="md-nav__link">
         
   
   
@@ -916,7 +884,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Introspection%20with%20command%20line%20tools/" class="md-nav__link">
+      <a href="../../../ros2/Concepts/basic/Introspection%20with%20command%20line%20tools/" class="md-nav__link">
         
   
   
@@ -944,7 +912,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Launch/" class="md-nav__link">
+      <a href="../../../ros2/Concepts/basic/Launch/" class="md-nav__link">
         
   
   
@@ -980,7 +948,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../intermediate.md" class="md-nav__link">
+      <a href="../../../ros2/Concepts/intermediate.md" class="md-nav__link">
         
   
   
@@ -1008,7 +976,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../advanced.md" class="md-nav__link">
+      <a href="../../../ros2/Concepts/advanced.md" class="md-nav__link">
         
   
   
@@ -1070,20 +1038,17 @@
       
       
         
-          
-          
-        
       
     
     
-    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
         <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2">
         
           
-          <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="">
+          <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
             
   
   
@@ -1119,7 +1084,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Rviz/index.md" class="md-nav__link">
+      <a href="../../../ros2/Rviz/index.md" class="md-nav__link">
         
   
   
@@ -1147,7 +1112,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Rviz/user_guide.md" class="md-nav__link">
+      <a href="../../../ros2/Rviz/user_guide.md" class="md-nav__link">
         
   
   
@@ -1175,7 +1140,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Rviz/custom_display.md" class="md-nav__link">
+      <a href="../../../ros2/Rviz/custom_display.md" class="md-nav__link">
         
   
   
@@ -1203,7 +1168,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Rviz/custom_panel.md" class="md-nav__link">
+      <a href="../../../ros2/Rviz/custom_panel.md" class="md-nav__link">
         
   
   
@@ -1231,7 +1196,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Rviz/markers.md" class="md-nav__link">
+      <a href="../../../ros2/Rviz/markers.md" class="md-nav__link">
         
   
   
@@ -1336,7 +1301,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../ros2_control/intro/" class="md-nav__link">
+      <a href="../../intro/" class="md-nav__link">
         
   
   
@@ -1430,7 +1395,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../ros2_control/Concepts/index.md" class="md-nav__link">
+      <a href="../../Concepts/index.md" class="md-nav__link">
         
   
   
@@ -1458,7 +1423,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../ros2_control/Concepts/%E6%8E%A7%E5%88%B6%E5%99%A8%E7%AE%A1%E7%90%86%E5%99%A8/" class="md-nav__link">
+      <a href="../../Concepts/%E6%8E%A7%E5%88%B6%E5%99%A8%E7%AE%A1%E7%90%86%E5%99%A8/" class="md-nav__link">
         
   
   
@@ -1486,7 +1451,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../ros2_control/Concepts/%E6%8E%A7%E5%88%B6%E5%99%A8%E9%93%BE%E6%8E%A5%28%E7%BA%A7%E8%81%94%E6%8E%A7%E5%88%B6%29/" class="md-nav__link">
+      <a href="../../Concepts/%E6%8E%A7%E5%88%B6%E5%99%A8%E9%93%BE%E6%8E%A5%28%E7%BA%A7%E8%81%94%E6%8E%A7%E5%88%B6%29/" class="md-nav__link">
         
   
   
@@ -1514,7 +1479,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../ros2_control/Concepts/%E5%85%B3%E8%8A%82%E8%BF%90%E5%8A%A8%E5%AD%A6/" class="md-nav__link">
+      <a href="../../Concepts/%E5%85%B3%E8%8A%82%E8%BF%90%E5%8A%A8%E5%AD%A6/" class="md-nav__link">
         
   
   
@@ -1542,7 +1507,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../ros2_control/Concepts/%E7%A1%AC%E4%BB%B6%E7%BB%84%E4%BB%B6/" class="md-nav__link">
+      <a href="../../Concepts/%E7%A1%AC%E4%BB%B6%E7%BB%84%E4%BB%B6/" class="md-nav__link">
         
   
   
@@ -1570,7 +1535,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../ros2_control/Concepts/%E6%A8%A1%E6%8B%9F%E7%BB%84%E4%BB%B6/" class="md-nav__link">
+      <a href="../../Concepts/%E6%A8%A1%E6%8B%9F%E7%BB%84%E4%BB%B6/" class="md-nav__link">
         
   
   
@@ -1724,7 +1689,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../ros2_control/Guidelines the Controller Manager and Plugins/Debugging the Controller Manager and Plugins.md" class="md-nav__link">
+      <a href="../../Guidelines the Controller Manager and Plugins/Debugging the Controller Manager and Plugins.md" class="md-nav__link">
         
   
   
@@ -1752,7 +1717,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../ros2_control/Guidelines the Controller Manager and Plugins/ROS2 and GDB.md" class="md-nav__link">
+      <a href="../../Guidelines the Controller Manager and Plugins/ROS2 and GDB.md" class="md-nav__link">
         
   
   
@@ -1780,7 +1745,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../ros2_control/Guidelines the Controller Manager and Plugins/Using GDB to debug a plugin.md" class="md-nav__link">
+      <a href="../../Guidelines the Controller Manager and Plugins/Using GDB to debug a plugin.md" class="md-nav__link">
         
   
   
@@ -1808,7 +1773,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../ros2_control/Guidelines the Controller Manager and Plugins/GDB CLI Tutorial.md" class="md-nav__link">
+      <a href="../../Guidelines the Controller Manager and Plugins/GDB CLI Tutorial.md" class="md-nav__link">
         
   
   
@@ -1972,7 +1937,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../ros2_control/use_ros2_controllers/Guidelines and Best Practices/Wheeled Mobile Robot Kinematics.md" class="md-nav__link">
+      <a href="../../use_ros2_controllers/Guidelines and Best Practices/Wheeled Mobile Robot Kinematics.md" class="md-nav__link">
         
   
   
@@ -2000,7 +1965,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../ros2_control/use_ros2_controllers/Guidelines and Best Practices/Writing a new controller.md" class="md-nav__link">
+      <a href="../../use_ros2_controllers/Guidelines and Best Practices/Writing a new controller.md" class="md-nav__link">
         
   
   
@@ -2098,7 +2063,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../ros2_control/use_ros2_controllers/Controllers for Wheeled Mobile Robots/Differential Drive Controller.md" class="md-nav__link">
+      <a href="../../use_ros2_controllers/Controllers for Wheeled Mobile Robots/Differential Drive Controller.md" class="md-nav__link">
         
   
   
@@ -2126,7 +2091,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../ros2_control/use_ros2_controllers/Controllers for Wheeled Mobile Robots/Mecanum Drive Controllers.md" class="md-nav__link">
+      <a href="../../use_ros2_controllers/Controllers for Wheeled Mobile Robots/Mecanum Drive Controllers.md" class="md-nav__link">
         
   
   
@@ -2154,7 +2119,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../ros2_control/use_ros2_controllers/Controllers for Wheeled Mobile Robots/Steering Controllers Library.md" class="md-nav__link">
+      <a href="../../use_ros2_controllers/Controllers for Wheeled Mobile Robots/Steering Controllers Library.md" class="md-nav__link">
         
   
   
@@ -2182,7 +2147,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../ros2_control/use_ros2_controllers/Controllers for Wheeled Mobile Robots/Tricycle Controller.md" class="md-nav__link">
+      <a href="../../use_ros2_controllers/Controllers for Wheeled Mobile Robots/Tricycle Controller.md" class="md-nav__link">
         
   
   
@@ -2218,7 +2183,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../0.md" class="md-nav__link">
+      <a href="../../../0.md" class="md-nav__link">
         
   
   
@@ -2246,7 +2211,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../0.md" class="md-nav__link">
+      <a href="../../../0.md" class="md-nav__link">
         
   
   
@@ -2302,6 +2267,251 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#gdb" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        启动 GDB
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        基本操作
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        获取帮助
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        执行程序
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#shell" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Shell 命令
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#breakpoints-watchpoints" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        断点与观察点（Breakpoints &amp; Watchpoints）
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#program-stack" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        程序调用栈（Program Stack）
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#execution-control" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        执行控制（Execution Control）
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#display" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        显示与查看（Display）
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#expressions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        表达式（Expressions）
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#symbol-table" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        符号表（Symbol Table）
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gdb-gdb-scripts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GDB 脚本（GDB Scripts）
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#signals" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        信号处理（Signals）
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#debugging-targets" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        调试目标（Debugging Targets）
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gdb-controlling-gdb" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        控制 GDB 自身（Controlling GDB）
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="控制 GDB 自身（Controlling GDB）">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        常用参数：
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        历史与打印选项：
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#working-files" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        工作文件（Working Files）
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#source-files" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        源文件（Source Files）
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gnu-emacs-gdb" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        在 GNU Emacs 中使用 GDB
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        许可与担保
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -2320,11 +2530,795 @@
   
 
 
-<h1 id="nodes">节点（Nodes）<a class="headerlink" href="#nodes" title="Permanent link">¶</a></h1>
-<p>节点是 ROS 2 计算图中的参与者，它使用客户端库与其他节点通信。节点可以与同一进程内、不同进程或不同机器上的其他节点进行通信。节点通常是 ROS 计算图中的计算单元；每个节点应完成一项逻辑任务。</p>
-<p>节点可以向命名话题发布数据以传递给其他节点，也可以订阅命名话题以从其他节点获取数据。它们还可以作为服务客户端，请求其他节点代为执行计算，或作为服务服务器，向其他节点提供功能。对于长时间运行的计算，节点可以作为动作客户端，请求其他节点执行该计算，或作为动作服务器，向其他节点提供此类功能。节点可在运行时提供可配置的参数以改变其行为。</p>
-<p>节点通常同时是发布者、订阅者、服务服务器、服务客户端、动作服务器和动作客户端的复杂组合。</p>
-<p>节点之间的连接通过分布式发现过程建立。</p>
+<h1 id="gdb-gdb-quick-reference">GDB 快速参考手册（GDB Quick Reference）<a class="headerlink" href="#gdb-gdb-quick-reference" title="Permanent link">¶</a></h1>
+<p><strong>GDB 版本 4</strong></p>
+<blockquote>
+<p>© 1991, 1992, 1993, 1998 自由软件基金会（Free Software Foundation, Inc.）<br>
+本卡可依据 GNU 通用公共许可证（GPL）自由分发。<br>
+作者不对本卡中的任何错误负责。</p>
+</blockquote>
+<hr>
+<h2 id="gdb">启动 GDB<a class="headerlink" href="#gdb" title="Permanent link">¶</a></h2>
+<table>
+<thead>
+<tr>
+<th>命令</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>gdb</code></td>
+<td>启动 GDB，不加载调试文件</td>
+</tr>
+<tr>
+<td><code>gdb program</code></td>
+<td>开始调试 <code>program</code></td>
+</tr>
+<tr>
+<td><code>gdb program core</code></td>
+<td>使用 <code>core</code> 转储文件调试由 <code>program</code> 产生的崩溃</td>
+</tr>
+<tr>
+<td><code>gdb --help</code></td>
+<td>显示命令行选项说明</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="_1">基本操作<a class="headerlink" href="#_1" title="Permanent link">¶</a></h2>
+<table>
+<thead>
+<tr>
+<th>命令</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>quit</code>（或 <code>q</code>、<code>Ctrl-D</code>）</td>
+<td>退出 GDB</td>
+</tr>
+<tr>
+<td><code>Ctrl-C</code></td>
+<td>中断当前命令，或向运行中的进程发送中断信号</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="_2">获取帮助<a class="headerlink" href="#_2" title="Permanent link">¶</a></h2>
+<table>
+<thead>
+<tr>
+<th>命令</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>help</code></td>
+<td>列出命令类别</td>
+</tr>
+<tr>
+<td><code>help class</code></td>
+<td>显示某类别下所有命令的简要描述</td>
+</tr>
+<tr>
+<td><code>help command</code></td>
+<td>显示具体命令的详细说明</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="_3">执行程序<a class="headerlink" href="#_3" title="Permanent link">¶</a></h2>
+<table>
+<thead>
+<tr>
+<th>命令</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>run arglist</code></td>
+<td>用 <code>arglist</code> 启动程序</td>
+</tr>
+<tr>
+<td><code>run</code></td>
+<td>用当前参数列表启动程序</td>
+</tr>
+<tr>
+<td><code>run &lt; in &gt; out</code></td>
+<td>启动程序并重定向输入/输出</td>
+</tr>
+<tr>
+<td><code>kill</code></td>
+<td>终止正在运行的程序</td>
+</tr>
+<tr>
+<td><code>tty dev</code></td>
+<td>下次运行时使用 <code>dev</code> 作为标准输入/输出设备</td>
+</tr>
+<tr>
+<td><code>set args arglist</code></td>
+<td>为下次运行设置参数列表</td>
+</tr>
+<tr>
+<td><code>set args</code></td>
+<td>清空参数列表</td>
+</tr>
+<tr>
+<td><code>show args</code></td>
+<td>显示当前参数列表</td>
+</tr>
+<tr>
+<td><code>show env</code></td>
+<td>显示所有环境变量</td>
+</tr>
+<tr>
+<td><code>show env var</code></td>
+<td>显示环境变量 <code>var</code> 的值</td>
+</tr>
+<tr>
+<td><code>set env var string</code></td>
+<td>设置环境变量 <code>var</code> 为 <code>string</code></td>
+</tr>
+<tr>
+<td><code>unset env var</code></td>
+<td>从环境中移除变量 <code>var</code></td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="shell">Shell 命令<a class="headerlink" href="#shell" title="Permanent link">¶</a></h2>
+<table>
+<thead>
+<tr>
+<th>命令</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>cd dir</code></td>
+<td>切换工作目录</td>
+</tr>
+<tr>
+<td><code>pwd</code></td>
+<td>显示当前工作目录</td>
+</tr>
+<tr>
+<td><code>make ...</code></td>
+<td>调用 <code>make</code> 命令</td>
+</tr>
+<tr>
+<td><code>shell cmd</code></td>
+<td>执行任意 shell 命令</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong>说明</strong>：<code>[ ]</code> 表示可选参数，<code>...</code> 表示一个或多个参数。</p>
+</blockquote>
+<hr>
+<h2 id="breakpoints-watchpoints">断点与观察点（Breakpoints &amp; Watchpoints）<a class="headerlink" href="#breakpoints-watchpoints" title="Permanent link">¶</a></h2>
+<table>
+<thead>
+<tr>
+<th>命令</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>break [file:]line</code><br><code>b [file:]line</code></td>
+<td>在文件的某行设置断点（如 <code>break main.c:37</code>）</td>
+</tr>
+<tr>
+<td><code>break [file:]function</code><br><code>b [file:]function</code></td>
+<td>在函数入口设置断点</td>
+</tr>
+<tr>
+<td><code>break +offset</code> / <code>break -offset</code></td>
+<td>在当前位置偏移若干行处设断点</td>
+</tr>
+<tr>
+<td><code>break *addr</code></td>
+<td>在地址 <code>addr</code> 处设断点</td>
+</tr>
+<tr>
+<td><code>break</code></td>
+<td>在下一条指令处设断点</td>
+</tr>
+<tr>
+<td><code>break ... if expr</code></td>
+<td>当表达式 <code>expr</code> 非零时才触发断点</td>
+</tr>
+<tr>
+<td><code>cond n [expr]</code></td>
+<td>为断点 <code>n</code> 设置新条件（无 <code>expr</code> 则取消条件）</td>
+</tr>
+<tr>
+<td><code>tbreak ...</code></td>
+<td>设置<strong>临时断点</strong>（命中后自动删除）</td>
+</tr>
+<tr>
+<td><code>rbreak regex</code></td>
+<td>为所有匹配正则表达式的函数设置断点</td>
+</tr>
+<tr>
+<td><code>watch expr</code></td>
+<td>为表达式 <code>expr</code> 设置<strong>观察点</strong>（值变化时中断）</td>
+</tr>
+<tr>
+<td><code>catch event</code></td>
+<td>在特定事件中断（如 <code>throw</code>, <code>fork</code>, <code>load</code> 等）</td>
+</tr>
+<tr>
+<td><code>info break</code></td>
+<td>显示所有已定义断点</td>
+</tr>
+<tr>
+<td><code>info watch</code></td>
+<td>显示所有观察点</td>
+</tr>
+<tr>
+<td><code>clear</code></td>
+<td>删除下一条指令处的断点</td>
+</tr>
+<tr>
+<td><code>clear [file:]func</code></td>
+<td>删除函数入口处的断点</td>
+</tr>
+<tr>
+<td><code>clear [file:]line</code></td>
+<td>删除某行上的断点</td>
+</tr>
+<tr>
+<td><code>delete [n]</code></td>
+<td>删除断点（或编号为 <code>n</code> 的断点）</td>
+</tr>
+<tr>
+<td><code>disable [n]</code></td>
+<td>禁用断点</td>
+</tr>
+<tr>
+<td><code>enable [n]</code></td>
+<td>启用断点</td>
+</tr>
+<tr>
+<td><code>enable once [n]</code></td>
+<td>启用断点，命中后自动禁用</td>
+</tr>
+<tr>
+<td><code>enable del [n]</code></td>
+<td>启用断点，命中后自动删除</td>
+</tr>
+<tr>
+<td><code>ignore n count</code></td>
+<td>忽略断点 <code>n</code> 共 <code>count</code> 次</td>
+</tr>
+<tr>
+<td><code>commands n</code><br><code>[silent]</code><br><code>command-list</code><br><code>end</code></td>
+<td>每次命中断点 <code>n</code> 时执行指定命令列表（<code>silent</code> 抑制默认输出）</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="program-stack">程序调用栈（Program Stack）<a class="headerlink" href="#program-stack" title="Permanent link">¶</a></h2>
+<table>
+<thead>
+<tr>
+<th>命令</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>backtrace [n]</code><br><code>bt [n]</code></td>
+<td>打印调用栈（<code>n&gt;0</code>：显示最内层 <code>n</code> 帧；<code>n&lt;0</code>：显示最外层 <code>|n|</code> 帧）</td>
+</tr>
+<tr>
+<td><code>frame [n]</code></td>
+<td>切换到第 <code>n</code> 帧（或地址 <code>n</code> 处的帧）；无参数则显示当前帧</td>
+</tr>
+<tr>
+<td><code>up n</code></td>
+<td>向上调 <code>n</code> 帧</td>
+</tr>
+<tr>
+<td><code>down n</code></td>
+<td>向下调 <code>n</code> 帧</td>
+</tr>
+<tr>
+<td><code>info frame [addr]</code></td>
+<td>显示当前帧（或地址 <code>addr</code> 处帧）的详细信息</td>
+</tr>
+<tr>
+<td><code>info args</code></td>
+<td>显示当前帧的函数参数</td>
+</tr>
+<tr>
+<td><code>info locals</code></td>
+<td>显示当前帧的局部变量</td>
+</tr>
+<tr>
+<td><code>info reg [rn]</code><br><code>info all-reg [rn]</code></td>
+<td>显示寄存器值（<code>all-reg</code> 包含浮点寄存器）</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="execution-control">执行控制（Execution Control）<a class="headerlink" href="#execution-control" title="Permanent link">¶</a></h2>
+<table>
+<thead>
+<tr>
+<th>命令</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>continue [count]</code><br><code>c [count]</code></td>
+<td>继续运行（若指定 <code>count</code>，则忽略当前断点 <code>count</code> 次）</td>
+</tr>
+<tr>
+<td><code>step [count]</code><br><code>s [count]</code></td>
+<td>单步执行（进入函数），可重复 <code>count</code> 次</td>
+</tr>
+<tr>
+<td><code>stepi [count]</code><br><code>si [count]</code></td>
+<td>按机器指令单步（进入函数）</td>
+</tr>
+<tr>
+<td><code>next [count]</code><br><code>n [count]</code></td>
+<td>单步执行（<strong>不进入</strong>函数）</td>
+</tr>
+<tr>
+<td><code>nexti [count]</code><br><code>ni [count]</code></td>
+<td>按机器指令单步（不进入函数）</td>
+</tr>
+<tr>
+<td><code>until [location]</code></td>
+<td>运行至下一行（或指定位置）</td>
+</tr>
+<tr>
+<td><code>finish</code></td>
+<td>运行至当前函数返回</td>
+</tr>
+<tr>
+<td><code>return [expr]</code></td>
+<td>弹出当前栈帧，不执行剩余代码（可指定返回值）</td>
+</tr>
+<tr>
+<td><code>signal num</code></td>
+<td>以信号 <code>num</code> 恢复执行（<code>0</code> 表示无信号）</td>
+</tr>
+<tr>
+<td><code>jump line</code><br><code>jump *address</code></td>
+<td>跳转到指定行或地址继续执行</td>
+</tr>
+<tr>
+<td><code>set var=expr</code></td>
+<td>计算表达式并赋值给变量（用于修改程序变量）</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="display">显示与查看（Display）<a class="headerlink" href="#display" title="Permanent link">¶</a></h2>
+<table>
+<thead>
+<tr>
+<th>命令</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>print [/f] expr</code><br><code>p [/f] expr</code></td>
+<td>按格式 <code>f</code> 显示表达式值：<br><code>x</code>：十六进制<br><code>d</code>：有符号十进制<br><code>u</code>：无符号十进制<br><code>o</code>：八进制<br><code>t</code>：二进制<br><code>a</code>：地址<br><code>c</code>：字符<br><code>f</code>：浮点数</td>
+</tr>
+<tr>
+<td><code>call [/f] expr</code></td>
+<td>调用函数（类似 <code>print</code>，但不显示 <code>void</code> 返回值）</td>
+</tr>
+<tr>
+<td><code>x [/Nuf] addr</code></td>
+<td>查看内存内容：<br><code>N</code>：显示单元数量<br><code>u</code>：单元大小（<code>b</code>=字节，<code>h</code>=半字，<code>w</code>=字，<code>g</code>=巨字）<br><code>f</code>：显示格式（同 <code>print</code>，或 <code>s</code>=字符串，<code>i</code>=指令）</td>
+</tr>
+<tr>
+<td><code>disassem [addr]</code></td>
+<td>将内存反汇编为机器指令</td>
+</tr>
+<tr>
+<td><code>display [/f] expr</code></td>
+<td>每次程序暂停时自动显示表达式值</td>
+</tr>
+<tr>
+<td><code>display</code></td>
+<td>显示所有自动显示项</td>
+</tr>
+<tr>
+<td><code>undisplay n</code></td>
+<td>从自动显示列表中移除编号 <code>n</code> 的项</td>
+</tr>
+<tr>
+<td><code>disable disp n</code></td>
+<td>禁用自动显示项 <code>n</code></td>
+</tr>
+<tr>
+<td><code>enable disp n</code></td>
+<td>启用自动显示项 <code>n</code></td>
+</tr>
+<tr>
+<td><code>info display</code></td>
+<td>列出所有自动显示项及其编号</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="expressions">表达式（Expressions）<a class="headerlink" href="#expressions" title="Permanent link">¶</a></h2>
+<ul>
+<li>支持 C、C++、Modula-2 语法（包括函数调用）</li>
+<li><code>addr @ len</code>：从地址 <code>addr</code> 开始的 <code>len</code> 个元素数组</li>
+<li><code>file::nm</code>：文件 <code>file</code> 中定义的变量或函数 <code>nm</code></li>
+<li><code>{type}addr</code>：将地址 <code>addr</code> 按指定类型 <code>type</code> 解释</li>
+<li><code>$</code>：最近一次显示的值</li>
+<li><code>$n</code>：第 <code>n</code> 次显示的值</li>
+<li><code>$$</code>：<code>$</code> 的前一个值</li>
+<li><code>$n</code>（在 <code>x</code> 命令后）：最后检查的地址</li>
+<li><code>$value</code>：地址 <code>$</code> 处的值</li>
+<li><code>$var</code>：便利变量（可赋任意值）</li>
+<li><code>show values [n]</code>：显示最近 10 个值（或围绕 <code>$n</code> 的值）</li>
+<li><code>show conv</code>：显示所有便利变量</li>
+</ul>
+<hr>
+<h2 id="symbol-table">符号表（Symbol Table）<a class="headerlink" href="#symbol-table" title="Permanent link">¶</a></h2>
+<table>
+<thead>
+<tr>
+<th>命令</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>info address s</code></td>
+<td>显示符号 <code>s</code> 的存储位置</td>
+</tr>
+<tr>
+<td><code>info func [regex]</code></td>
+<td>显示所有函数（或匹配正则的函数）名称与类型</td>
+</tr>
+<tr>
+<td><code>info var [regex]</code></td>
+<td>显示所有全局变量（或匹配正则的变量）名称与类型</td>
+</tr>
+<tr>
+<td><code>whatis [expr]</code></td>
+<td>显示表达式的数据类型（不求值）</td>
+</tr>
+<tr>
+<td><code>ptype [expr]</code></td>
+<td>显示表达式的详细类型信息（比 <code>whatis</code> 更详细）</td>
+</tr>
+<tr>
+<td><code>ptype type</code></td>
+<td>描述结构体、联合、枚举等类型的定义</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="gdb-gdb-scripts">GDB 脚本（GDB Scripts）<a class="headerlink" href="#gdb-gdb-scripts" title="Permanent link">¶</a></h2>
+<table>
+<thead>
+<tr>
+<th>命令</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>source script</code></td>
+<td>从文件读取并执行 GDB 命令</td>
+</tr>
+<tr>
+<td><code>define cmd</code><br><code>command-list</code><br><code>end</code></td>
+<td>定义新 GDB 命令 <code>cmd</code></td>
+</tr>
+<tr>
+<td><code>document cmd</code><br><code>help-text</code><br><code>end</code></td>
+<td>为新命令 <code>cmd</code> 编写帮助文档</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="signals">信号处理（Signals）<a class="headerlink" href="#signals" title="Permanent link">¶</a></h2>
+<table>
+<thead>
+<tr>
+<th>命令</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>handle signal act</code></td>
+<td>设置对信号的处理方式：<br><code>print</code>/<code>noprint</code>：是否报告<br><code>stop</code>/<code>nostop</code>：是否中断<br><code>pass</code>/<code>nopass</code>：是否传递给程序</td>
+</tr>
+<tr>
+<td><code>info signals</code></td>
+<td>显示所有信号及其 GDB 处理方式</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="debugging-targets">调试目标（Debugging Targets）<a class="headerlink" href="#debugging-targets" title="Permanent link">¶</a></h2>
+<table>
+<thead>
+<tr>
+<th>命令</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>target type param</code></td>
+<td>连接到目标机器、进程或文件</td>
+</tr>
+<tr>
+<td><code>help target</code></td>
+<td>显示可用目标类型</td>
+</tr>
+<tr>
+<td><code>attach param</code></td>
+<td>附加到另一个进程</td>
+</tr>
+<tr>
+<td><code>detach</code></td>
+<td>从目标进程分离</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="gdb-controlling-gdb">控制 GDB 自身（Controlling GDB）<a class="headerlink" href="#gdb-controlling-gdb" title="Permanent link">¶</a></h2>
+<table>
+<thead>
+<tr>
+<th>命令</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>set param value</code></td>
+<td>设置 GDB 内部参数</td>
+</tr>
+<tr>
+<td><code>show param</code></td>
+<td>显示参数当前值</td>
+</tr>
+</tbody>
+</table>
+<h3 id="_4">常用参数：<a class="headerlink" href="#_4" title="Permanent link">¶</a></h3>
+<ul>
+<li><code>complaints</code>：限制非常规符号的警告数量</li>
+<li><code>confirm</code>：启用/禁用确认提示</li>
+<li><code>editing</code>：启用/禁用命令行编辑</li>
+<li><code>height</code>：设置显示暂停的行数</li>
+<li><code>language</code>：设置表达式语言（<code>auto</code>, <code>c</code>, <code>modula-2</code>）</li>
+<li><code>listsize</code>：<code>list</code> 命令显示的行数</li>
+<li><code>prompt</code>：设置 GDB 提示符</li>
+<li><code>radix</code>：数字显示进制（8/10/16）</li>
+<li><code>verbose</code>：加载符号时是否显示详细信息</li>
+<li><code>width</code>：行折叠的字符数</li>
+<li><code>write</code>：是否允许修改二进制或 core 文件</li>
+</ul>
+<h3 id="_5">历史与打印选项：<a class="headerlink" href="#_5" title="Permanent link">¶</a></h3>
+<ul>
+<li><code>history ...</code>：控制命令历史（文件、大小、保存等）</li>
+<li><code>print ...</code>：控制输出格式（地址、数组、C++ 符号、联合体等）</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>其他命令</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>show commands</code></td>
+<td>显示最近 10 条命令</td>
+</tr>
+<tr>
+<td><code>show commands n</code></td>
+<td>显示围绕第 <code>n</code> 条的 10 条命令</td>
+</tr>
+<tr>
+<td><code>show commands +</code></td>
+<td>显示下 10 条命令</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="working-files">工作文件（Working Files）<a class="headerlink" href="#working-files" title="Permanent link">¶</a></h2>
+<table>
+<thead>
+<tr>
+<th>命令</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>file [file]</code></td>
+<td>设置可执行文件和符号表（无参数则清空）</td>
+</tr>
+<tr>
+<td><code>core [file]</code></td>
+<td>加载 core 转储文件</td>
+</tr>
+<tr>
+<td><code>exec [file]</code></td>
+<td>仅设置可执行文件</td>
+</tr>
+<tr>
+<td><code>symbol [file]</code></td>
+<td>仅设置符号表</td>
+</tr>
+<tr>
+<td><code>load file</code></td>
+<td>动态链接文件并添加其符号</td>
+</tr>
+<tr>
+<td><code>add-sym file addr</code></td>
+<td>从动态加载到 <code>addr</code> 的文件中加载额外符号</td>
+</tr>
+<tr>
+<td><code>info files</code></td>
+<td>显示当前使用的工作文件和目标</td>
+</tr>
+<tr>
+<td><code>path dirs</code></td>
+<td>将 <code>dirs</code> 添加到可执行文件和符号文件搜索路径开头</td>
+</tr>
+<tr>
+<td><code>show path</code></td>
+<td>显示当前搜索路径</td>
+</tr>
+<tr>
+<td><code>info share</code></td>
+<td>列出当前加载的共享库</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="source-files">源文件（Source Files）<a class="headerlink" href="#source-files" title="Permanent link">¶</a></h2>
+<table>
+<thead>
+<tr>
+<th>命令</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>dir names</code></td>
+<td>将目录 <code>names</code> 添加到源码搜索路径开头</td>
+</tr>
+<tr>
+<td><code>dir clear</code></td>
+<td>清空源码路径</td>
+</tr>
+<tr>
+<td><code>show dir</code></td>
+<td>显示当前源码路径</td>
+</tr>
+<tr>
+<td><code>list</code></td>
+<td>显示接下来 10 行源码</td>
+</tr>
+<tr>
+<td><code>list -</code></td>
+<td>显示前 10 行</td>
+</tr>
+<tr>
+<td><code>list lines</code></td>
+<td>显示指定位置周围的源码：<br><code>[file:]num</code>：行号<br><code>[file:]function</code>：函数起始<br><code>+off</code> / <code>-off</code>：相对偏移<br><code>*address</code>：包含该地址的行</td>
+</tr>
+<tr>
+<td><code>list f,l</code></td>
+<td>显示从行 <code>f</code> 到行 <code>l</code> 的源码</td>
+</tr>
+<tr>
+<td><code>info line num</code></td>
+<td>显示源码行 <code>num</code> 对应的编译后地址范围</td>
+</tr>
+<tr>
+<td><code>info source</code></td>
+<td>显示当前源文件名</td>
+</tr>
+<tr>
+<td><code>info sources</code></td>
+<td>列出所有已使用的源文件</td>
+</tr>
+<tr>
+<td><code>forw regex</code></td>
+<td>向后搜索匹配正则的源码行</td>
+</tr>
+<tr>
+<td><code>rev regex</code></td>
+<td>向前搜索匹配正则的源码行</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="gnu-emacs-gdb">在 GNU Emacs 中使用 GDB<a class="headerlink" href="#gnu-emacs-gdb" title="Permanent link">¶</a></h2>
+<table>
+<thead>
+<tr>
+<th>命令</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>M-x gdb</code></td>
+<td>在 Emacs 中启动 GDB</td>
+</tr>
+<tr>
+<td><code>C-h m</code></td>
+<td>显示 GDB 模式帮助</td>
+</tr>
+<tr>
+<td><code>M-s</code></td>
+<td>单步（<code>step</code>）</td>
+</tr>
+<tr>
+<td><code>M-n</code></td>
+<td>下一行（<code>next</code>）</td>
+</tr>
+<tr>
+<td><code>M-i</code></td>
+<td>单条指令（<code>stepi</code>）</td>
+</tr>
+<tr>
+<td><code>C-c C-f</code></td>
+<td>完成当前栈帧（<code>finish</code>）</td>
+</tr>
+<tr>
+<td><code>M-c</code></td>
+<td>继续（<code>continue</code>）</td>
+</tr>
+<tr>
+<td><code>M-u</code></td>
+<td>向上 <code>arg</code> 帧（<code>up</code>）</td>
+</tr>
+<tr>
+<td><code>M-d</code></td>
+<td>向下 <code>arg</code> 帧（<code>down</code>）</td>
+</tr>
+<tr>
+<td><code>C-x &amp;</code></td>
+<td>复制光标处数字并插入到命令末尾</td>
+</tr>
+<tr>
+<td><code>C-x SPC</code></td>
+<td>在源码文件光标处设置断点</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="_6">许可与担保<a class="headerlink" href="#_6" title="Permanent link">¶</a></h2>
+<ul>
+<li><code>show copying</code>：显示 GNU GPL 许可证全文  </li>
+<li><code>show warranty</code>：显示“<strong>GDB 不提供任何担保</strong>”声明</li>
+</ul>
+<blockquote>
+<p>GDB 是自由软件，欢迎在 GNU GPL 条款下分发。<br>
+对 GDB 有任何改进建议，请发送至：<code>bug-gdb@gnu.org</code></p>
+</blockquote>
 
 
 
@@ -2358,44 +3352,6 @@
         <footer class="md-footer">
   
     
-      
-      <nav class="md-footer__inner md-grid" aria-label="页脚">
-        
-          
-          <a href="../basic/" class="md-footer__link md-footer__link--prev" aria-label="上一页: 1.1 &amp;nbsp; 概览">
-            <div class="md-footer__button md-icon">
-              
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
-            </div>
-            <div class="md-footer__title">
-              <span class="md-footer__direction">
-                上一页
-              </span>
-              <div class="md-ellipsis">
-                1.1 &nbsp; 概览
-              </div>
-            </div>
-          </a>
-        
-        
-          
-          <a href="../Discovery/" class="md-footer__link md-footer__link--next" aria-label="下一页: 1.1 &amp;nbsp; 发现">
-            <div class="md-footer__title">
-              <span class="md-footer__direction">
-                下一页
-              </span>
-              <div class="md-ellipsis">
-                1.1 &nbsp; 发现
-              </div>
-            </div>
-            <div class="md-footer__button md-icon">
-              
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"></path></svg>
-            </div>
-          </a>
-        
-      </nav>
-    
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
@@ -2426,12 +3382,12 @@
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "../../../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.indexes", "navigation.top", "navigation.tracking", "navigation.footer", "navigation.indexes", "navigation.sections", "content.code.copy", "content.code.annotate", "content.tabs.link", "search.highlight", "search.suggest", "toc.follow"], "search": "../../../../assets/javascripts/workers/search.7a47a382.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.indexes", "navigation.top", "navigation.tracking", "navigation.footer", "navigation.indexes", "navigation.sections", "content.code.copy", "content.code.annotate", "content.tabs.link", "search.highlight", "search.suggest", "toc.follow"], "search": "../../../assets/javascripts/workers/search.7a47a382.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "version": null}</script>
     
     
-      <script src="../../../../assets/javascripts/bundle.e71a0d61.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.e71a0d61.min.js"></script>
       
-        <script src="../../../../javascripts/mathjax.js"></script>
+        <script src="../../../javascripts/mathjax.js"></script>
       
         <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
       

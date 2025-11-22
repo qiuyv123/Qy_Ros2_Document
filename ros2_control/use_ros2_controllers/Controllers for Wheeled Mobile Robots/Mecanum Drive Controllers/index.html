@@ -9,13 +9,9 @@
         <meta name="author" content="qiuyv">
       
       
-        <link rel="canonical" href="https://qiuyv.site/ros2/Concepts/basic/Nodes/">
+        <link rel="canonical" href="https://qiuyv.site/ros2_control/use_ros2_controllers/Controllers%20for%20Wheeled%20Mobile%20Robots/Mecanum%20Drive%20Controllers/">
       
       
-        <link rel="prev" href="../basic/">
-      
-      
-        <link rel="next" href="../Discovery/">
       
       
         
@@ -26,7 +22,7 @@
     
     
       
-        <title>1.1 &nbsp; 节点 - ROS 2 中文指南</title>
+        <title>Mecanum Drive Controller（麦克纳姆轮驱动控制器） - ROS 2 中文指南</title>
       
     
     
@@ -87,7 +83,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#nodes" class="md-skip">
+        <a href="#mecanum-drive-controller" class="md-skip">
           跳转至
         </a>
       
@@ -123,7 +119,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              1.1 &nbsp; 节点
+              Mecanum Drive Controller（麦克纳姆轮驱动控制器）
             
           </span>
         </div>
@@ -249,8 +245,6 @@
   
   
   
-    
-  
   
     
     
@@ -258,13 +252,11 @@
   
   
   
-    
-  
   
     
     
-      <li class="md-tabs__item md-tabs__item--active">
-        <a href="../../../intro/" class="md-tabs__link">
+      <li class="md-tabs__item">
+        <a href="../../../../ros2/intro/" class="md-tabs__link">
           
   
   
@@ -289,7 +281,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../../../ros2_control/intro/" class="md-tabs__link">
+        <a href="../../../intro/" class="md-tabs__link">
           
   
   
@@ -387,10 +379,8 @@
       
   
   
-    
   
   
-  
     
     
       
@@ -402,22 +392,19 @@
     
     
       
-        
-        
-      
       
         
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2">
         
           
-          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
             
   
   
@@ -435,7 +422,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_2">
             <span class="md-nav__icon md-icon"></span>
             
@@ -450,10 +437,8 @@
                 
   
   
-    
   
   
-  
     
     
       
@@ -467,20 +452,17 @@
       
       
         
-          
-          
-        
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1">
         
           
-          <label class="md-nav__link" for="__nav_2_1" id="__nav_2_1_label" tabindex="">
+          <label class="md-nav__link" for="__nav_2_1" id="__nav_2_1_label" tabindex="0">
             
   
   
@@ -498,7 +480,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_1_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_1_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_2_1">
             <span class="md-nav__icon md-icon"></span>
             
@@ -516,7 +498,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../intro/" class="md-nav__link">
+      <a href="../../../../ros2/intro/" class="md-nav__link">
         
   
   
@@ -541,10 +523,8 @@
                 
   
   
-    
   
   
-  
     
     
       
@@ -563,11 +543,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1_2" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1_2">
         
           
           <label class="md-nav__link" for="__nav_2_1_2" id="__nav_2_1_2_label" tabindex="0">
@@ -588,7 +568,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_1_2_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_1_2_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_2_1_2">
             <span class="md-nav__icon md-icon"></span>
             
@@ -603,10 +583,8 @@
                 
   
   
-    
   
   
-  
     
     
       
@@ -639,11 +617,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1_2_1" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1_2_1">
         
           
           <label class="md-nav__link" for="__nav_2_1_2_1" id="__nav_2_1_2_1_label" tabindex="0">
@@ -664,7 +642,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_2_1_2_1_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_2_1_2_1_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_2_1_2_1">
             <span class="md-nav__icon md-icon"></span>
             
@@ -682,7 +660,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../basic/" class="md-nav__link">
+      <a href="../../../../ros2/Concepts/basic/basic/" class="md-nav__link">
         
   
   
@@ -707,19 +685,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../../../ros2/Concepts/basic/Nodes/" class="md-nav__link">
         
   
   
@@ -735,7 +704,6 @@
   
 
       </a>
-      
     </li>
   
 
@@ -748,7 +716,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Discovery/" class="md-nav__link">
+      <a href="../../../../ros2/Concepts/basic/Discovery/" class="md-nav__link">
         
   
   
@@ -776,7 +744,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Interfaces/" class="md-nav__link">
+      <a href="../../../../ros2/Concepts/basic/Interfaces/" class="md-nav__link">
         
   
   
@@ -804,7 +772,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Topics/" class="md-nav__link">
+      <a href="../../../../ros2/Concepts/basic/Topics/" class="md-nav__link">
         
   
   
@@ -832,7 +800,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Services/" class="md-nav__link">
+      <a href="../../../../ros2/Concepts/basic/Services/" class="md-nav__link">
         
   
   
@@ -860,7 +828,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Actions/" class="md-nav__link">
+      <a href="../../../../ros2/Concepts/basic/Actions/" class="md-nav__link">
         
   
   
@@ -888,7 +856,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Parameters/" class="md-nav__link">
+      <a href="../../../../ros2/Concepts/basic/Parameters/" class="md-nav__link">
         
   
   
@@ -916,7 +884,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Introspection%20with%20command%20line%20tools/" class="md-nav__link">
+      <a href="../../../../ros2/Concepts/basic/Introspection%20with%20command%20line%20tools/" class="md-nav__link">
         
   
   
@@ -944,7 +912,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Launch/" class="md-nav__link">
+      <a href="../../../../ros2/Concepts/basic/Launch/" class="md-nav__link">
         
   
   
@@ -980,7 +948,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../intermediate.md" class="md-nav__link">
+      <a href="../../../../ros2/Concepts/intermediate.md" class="md-nav__link">
         
   
   
@@ -1008,7 +976,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../advanced.md" class="md-nav__link">
+      <a href="../../../../ros2/Concepts/advanced.md" class="md-nav__link">
         
   
   
@@ -1070,20 +1038,17 @@
       
       
         
-          
-          
-        
       
     
     
-    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
         <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2">
         
           
-          <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="">
+          <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
             
   
   
@@ -1119,7 +1084,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Rviz/index.md" class="md-nav__link">
+      <a href="../../../../ros2/Rviz/index.md" class="md-nav__link">
         
   
   
@@ -1147,7 +1112,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Rviz/user_guide.md" class="md-nav__link">
+      <a href="../../../../ros2/Rviz/user_guide.md" class="md-nav__link">
         
   
   
@@ -1175,7 +1140,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Rviz/custom_display.md" class="md-nav__link">
+      <a href="../../../../ros2/Rviz/custom_display.md" class="md-nav__link">
         
   
   
@@ -1203,7 +1168,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Rviz/custom_panel.md" class="md-nav__link">
+      <a href="../../../../ros2/Rviz/custom_panel.md" class="md-nav__link">
         
   
   
@@ -1231,7 +1196,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Rviz/markers.md" class="md-nav__link">
+      <a href="../../../../ros2/Rviz/markers.md" class="md-nav__link">
         
   
   
@@ -1336,7 +1301,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../ros2_control/intro/" class="md-nav__link">
+      <a href="../../../intro/" class="md-nav__link">
         
   
   
@@ -1430,7 +1395,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../ros2_control/Concepts/index.md" class="md-nav__link">
+      <a href="../../../Concepts/index.md" class="md-nav__link">
         
   
   
@@ -1458,7 +1423,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../ros2_control/Concepts/%E6%8E%A7%E5%88%B6%E5%99%A8%E7%AE%A1%E7%90%86%E5%99%A8/" class="md-nav__link">
+      <a href="../../../Concepts/%E6%8E%A7%E5%88%B6%E5%99%A8%E7%AE%A1%E7%90%86%E5%99%A8/" class="md-nav__link">
         
   
   
@@ -1486,7 +1451,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../ros2_control/Concepts/%E6%8E%A7%E5%88%B6%E5%99%A8%E9%93%BE%E6%8E%A5%28%E7%BA%A7%E8%81%94%E6%8E%A7%E5%88%B6%29/" class="md-nav__link">
+      <a href="../../../Concepts/%E6%8E%A7%E5%88%B6%E5%99%A8%E9%93%BE%E6%8E%A5%28%E7%BA%A7%E8%81%94%E6%8E%A7%E5%88%B6%29/" class="md-nav__link">
         
   
   
@@ -1514,7 +1479,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../ros2_control/Concepts/%E5%85%B3%E8%8A%82%E8%BF%90%E5%8A%A8%E5%AD%A6/" class="md-nav__link">
+      <a href="../../../Concepts/%E5%85%B3%E8%8A%82%E8%BF%90%E5%8A%A8%E5%AD%A6/" class="md-nav__link">
         
   
   
@@ -1542,7 +1507,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../ros2_control/Concepts/%E7%A1%AC%E4%BB%B6%E7%BB%84%E4%BB%B6/" class="md-nav__link">
+      <a href="../../../Concepts/%E7%A1%AC%E4%BB%B6%E7%BB%84%E4%BB%B6/" class="md-nav__link">
         
   
   
@@ -1570,7 +1535,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../ros2_control/Concepts/%E6%A8%A1%E6%8B%9F%E7%BB%84%E4%BB%B6/" class="md-nav__link">
+      <a href="../../../Concepts/%E6%A8%A1%E6%8B%9F%E7%BB%84%E4%BB%B6/" class="md-nav__link">
         
   
   
@@ -1724,7 +1689,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../ros2_control/Guidelines the Controller Manager and Plugins/Debugging the Controller Manager and Plugins.md" class="md-nav__link">
+      <a href="../../../Guidelines the Controller Manager and Plugins/Debugging the Controller Manager and Plugins.md" class="md-nav__link">
         
   
   
@@ -1752,7 +1717,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../ros2_control/Guidelines the Controller Manager and Plugins/ROS2 and GDB.md" class="md-nav__link">
+      <a href="../../../Guidelines the Controller Manager and Plugins/ROS2 and GDB.md" class="md-nav__link">
         
   
   
@@ -1780,7 +1745,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../ros2_control/Guidelines the Controller Manager and Plugins/Using GDB to debug a plugin.md" class="md-nav__link">
+      <a href="../../../Guidelines the Controller Manager and Plugins/Using GDB to debug a plugin.md" class="md-nav__link">
         
   
   
@@ -1808,7 +1773,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../ros2_control/Guidelines the Controller Manager and Plugins/GDB CLI Tutorial.md" class="md-nav__link">
+      <a href="../../../Guidelines the Controller Manager and Plugins/GDB CLI Tutorial.md" class="md-nav__link">
         
   
   
@@ -1972,7 +1937,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../ros2_control/use_ros2_controllers/Guidelines and Best Practices/Wheeled Mobile Robot Kinematics.md" class="md-nav__link">
+      <a href="../../Guidelines and Best Practices/Wheeled Mobile Robot Kinematics.md" class="md-nav__link">
         
   
   
@@ -2000,7 +1965,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../ros2_control/use_ros2_controllers/Guidelines and Best Practices/Writing a new controller.md" class="md-nav__link">
+      <a href="../../Guidelines and Best Practices/Writing a new controller.md" class="md-nav__link">
         
   
   
@@ -2098,7 +2063,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../ros2_control/use_ros2_controllers/Controllers for Wheeled Mobile Robots/Differential Drive Controller.md" class="md-nav__link">
+      <a href="../../Controllers for Wheeled Mobile Robots/Differential Drive Controller.md" class="md-nav__link">
         
   
   
@@ -2126,7 +2091,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../ros2_control/use_ros2_controllers/Controllers for Wheeled Mobile Robots/Mecanum Drive Controllers.md" class="md-nav__link">
+      <a href="../../Controllers for Wheeled Mobile Robots/Mecanum Drive Controllers.md" class="md-nav__link">
         
   
   
@@ -2154,7 +2119,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../ros2_control/use_ros2_controllers/Controllers for Wheeled Mobile Robots/Steering Controllers Library.md" class="md-nav__link">
+      <a href="../../Controllers for Wheeled Mobile Robots/Steering Controllers Library.md" class="md-nav__link">
         
   
   
@@ -2182,7 +2147,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../ros2_control/use_ros2_controllers/Controllers for Wheeled Mobile Robots/Tricycle Controller.md" class="md-nav__link">
+      <a href="../../Controllers for Wheeled Mobile Robots/Tricycle Controller.md" class="md-nav__link">
         
   
   
@@ -2302,6 +2267,214 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        控制器执行逻辑
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        控制器接口说明
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="控制器接口说明">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#references" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        参考接口（References，来自前置控制器）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#commands" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        命令接口（Commands）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#states" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        状态接口（States）
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ros-2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ROS 2 接口
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="ROS 2 接口">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#subscribers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        订阅者（Subscribers）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#publishers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        发布者（Publishers）
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#parameters" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        参数（Parameters）
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="参数（Parameters）">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        超时与关节命名
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        状态关节名（可选）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        运动学参数
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        其他参数
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        示例参数文件
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="示例参数文件">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        基础配置
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        带旋转偏移的配置
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -2320,11 +2493,306 @@
   
 
 
-<h1 id="nodes">节点（Nodes）<a class="headerlink" href="#nodes" title="Permanent link">¶</a></h1>
-<p>节点是 ROS 2 计算图中的参与者，它使用客户端库与其他节点通信。节点可以与同一进程内、不同进程或不同机器上的其他节点进行通信。节点通常是 ROS 计算图中的计算单元；每个节点应完成一项逻辑任务。</p>
-<p>节点可以向命名话题发布数据以传递给其他节点，也可以订阅命名话题以从其他节点获取数据。它们还可以作为服务客户端，请求其他节点代为执行计算，或作为服务服务器，向其他节点提供功能。对于长时间运行的计算，节点可以作为动作客户端，请求其他节点执行该计算，或作为动作服务器，向其他节点提供此类功能。节点可在运行时提供可配置的参数以改变其行为。</p>
-<p>节点通常同时是发布者、订阅者、服务服务器、服务客户端、动作服务器和动作客户端的复杂组合。</p>
-<p>节点之间的连接通过分布式发现过程建立。</p>
+<h1 id="mecanum-drive-controller">Mecanum Drive Controller（麦克纳姆轮驱动控制器）<a class="headerlink" href="#mecanum-drive-controller" title="Permanent link">¶</a></h1>
+<p><code>mecanum_drive_controller</code> 是一个面向<strong>四麦克纳姆轮移动机器人</strong>的控制器库。<br>
+它实现了<strong>通用的里程计计算</strong>与<strong>更新逻辑</strong>，并定义了主要的接口。</p>
+<hr>
+<h2 id="_1">控制器执行逻辑<a class="headerlink" href="#_1" title="Permanent link">¶</a></h2>
+<ul>
+<li><strong>输入</strong>：带时间戳的 <code>Twist</code> 消息（<code>geometry_msgs/msg/TwistStamped</code>）</li>
+<li>使用分量：线速度 <strong>x</strong>、<strong>y</strong>，角速度 <strong>z</strong></li>
+<li>其他分量被忽略</li>
+<li><strong>链式模式</strong>（chained mode）下，提供三个<strong>参考接口</strong>（reference interfaces）</li>
+<li><strong>其他特性</strong>：</li>
+<li>发布 <code>Odometry</code> 和 <code>TF</code> 消息</li>
+<li>基于参数的<strong>输入命令超时机制</strong></li>
+</ul>
+<blockquote>
+<p>💡 <strong>关于里程计计算的说明</strong>：<br>
+与 <code>DiffDriveController</code> 不同，本控制器<strong>不进行速度滤波</strong>，而是返回原始值，允许用户按需进行后处理。<br>
+<strong>原因</strong>：滤波会引入延迟，使得行为曲线难以解释和对比。</p>
+</blockquote>
+<hr>
+<h2 id="_2">控制器接口说明<a class="headerlink" href="#_2" title="Permanent link">¶</a></h2>
+<h3 id="references">参考接口（References，来自前置控制器）<a class="headerlink" href="#references" title="Permanent link">¶</a></h3>
+<p>当控制器处于 <strong>链式模式</strong>（<code>in_chained_mode == true</code>）时，向前置控制器暴露以下参考接口：</p>
+<table>
+<thead>
+<tr>
+<th>接口名称</th>
+<th>单位</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>&lt;controller_name&gt;/linear/x/velocity</code></td>
+<td>m/s</td>
+<td>X 方向线速度</td>
+</tr>
+<tr>
+<td><code>&lt;controller_name&gt;/linear/y/velocity</code></td>
+<td>m/s</td>
+<td>Y 方向线速度</td>
+</tr>
+<tr>
+<td><code>&lt;controller_name&gt;/angular/z/velocity</code></td>
+<td>rad/s</td>
+<td>Z 轴角速度</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h3 id="commands">命令接口（Commands）<a class="headerlink" href="#commands" title="Permanent link">¶</a></h3>
+<ul>
+<li><code>&lt;*_wheel_command_joint_name&gt;/velocity</code>（单位：rad/s）<br>
+  向四个麦克纳姆轮关节发送角速度指令。</li>
+</ul>
+<hr>
+<h3 id="states">状态接口（States）<a class="headerlink" href="#states" title="Permanent link">¶</a></h3>
+<ul>
+<li><code>&lt;joint_name&gt;/velocity</code>（单位：rad/s）<br>
+  读取轮子角速度。</li>
+</ul>
+<blockquote>
+<p><strong>注意</strong>：<br>
+<code>joint_name</code> 优先使用 <code>*_wheel_state_joint_name</code> 参数（若指定），否则使用 <code>*_wheel_command_joint_name</code>。</p>
+</blockquote>
+<hr>
+<h2 id="ros-2">ROS 2 接口<a class="headerlink" href="#ros-2" title="Permanent link">¶</a></h2>
+<h3 id="subscribers">订阅者（Subscribers）<a class="headerlink" href="#subscribers" title="Permanent link">¶</a></h3>
+<p><strong>仅在非链式模式下使用</strong>（<code>in_chained_mode == false</code>）：</p>
+<ul>
+<li><strong><code>&lt;controller_name&gt;/reference</code></strong>（<code>geometry_msgs/msg/TwistStamped</code>）<br>
+  当 <code>use_stamped_vel == true</code> 时使用。</li>
+<li><strong><code>&lt;controller_name&gt;/reference_unstamped</code></strong>（<code>geometry_msgs/msg/Twist</code>）<br>
+  当 <code>use_stamped_vel == false</code> 时使用。</li>
+</ul>
+<hr>
+<h3 id="publishers">发布者（Publishers）<a class="headerlink" href="#publishers" title="Permanent link">¶</a></h3>
+<ul>
+<li><strong><code>&lt;controller_name&gt;/odometry</code></strong>（<code>nav_msgs/msg/Odometry</code>）<br>
+  机器人位姿与速度估计。</li>
+<li><strong><code>&lt;controller_name&gt;/tf_odometry</code></strong>（<code>tf2_msgs/msg/TFMessage</code>）<br>
+  里程计 TF 变换。</li>
+<li><strong><code>&lt;controller_name&gt;/controller_state</code></strong>（<code>control_msgs/msg/MecanumDriveControllerState</code>）<br>
+  控制器内部状态（如轮速、本体速度等）。</li>
+</ul>
+<hr>
+<h2 id="parameters">参数（Parameters）<a class="headerlink" href="#parameters" title="Permanent link">¶</a></h2>
+<p>该控制器使用 <code>generate_parameter_library</code> 管理参数。完整定义见 <code>src/</code> 目录下的参数文件。</p>
+<h3 id="_3">超时与关节命名<a class="headerlink" href="#_3" title="Permanent link">¶</a></h3>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>类型</th>
+<th>默认值</th>
+<th>说明</th>
+<th>约束</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>reference_timeout</code></td>
+<td><code>double</code></td>
+<td><code>0.0</code></td>
+<td>参考命令超时时间（秒）。超时后重置参考值。设为 <code>0</code> 表示每次运行后重置。</td>
+<td>—</td>
+</tr>
+<tr>
+<td><code>front_left_wheel_command_joint_name</code></td>
+<td><code>string</code></td>
+<td><code>""</code></td>
+<td>前左轮命令关节名</td>
+<td><strong>非空，只读</strong></td>
+</tr>
+<tr>
+<td><code>front_right_wheel_command_joint_name</code></td>
+<td><code>string</code></td>
+<td><code>""</code></td>
+<td>前右轮命令关节名</td>
+<td><strong>非空，只读</strong></td>
+</tr>
+<tr>
+<td><code>rear_right_wheel_command_joint_name</code></td>
+<td><code>string</code></td>
+<td><code>""</code></td>
+<td>后右轮命令关节名</td>
+<td><strong>非空，只读</strong></td>
+</tr>
+<tr>
+<td><code>rear_left_wheel_command_joint_name</code></td>
+<td><code>string</code></td>
+<td><code>""</code></td>
+<td>后左轮命令关节名</td>
+<td><strong>非空，只读</strong></td>
+</tr>
+</tbody>
+</table>
+<h3 id="_4">状态关节名（可选）<a class="headerlink" href="#_4" title="Permanent link">¶</a></h3>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>默认值</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>front_left_wheel_state_joint_name</code></td>
+<td><code>""</code></td>
+<td>前左轮状态关节名（当状态与命令关节不同时使用）</td>
+</tr>
+<tr>
+<td><code>front_right_wheel_state_joint_name</code></td>
+<td><code>""</code></td>
+<td>前右轮状态关节名</td>
+</tr>
+<tr>
+<td><code>rear_right_wheel_state_joint_name</code></td>
+<td><code>""</code></td>
+<td>后右轮状态关节名</td>
+</tr>
+<tr>
+<td><code>rear_left_wheel_state_joint_name</code></td>
+<td><code>""</code></td>
+<td>后左轮状态关节名</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>✅ <strong>只读参数</strong></p>
+</blockquote>
+<hr>
+<h3 id="_5">运动学参数<a class="headerlink" href="#_5" title="Permanent link">¶</a></h3>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>默认值</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>kinematics.base_frame_offset.x</code></td>
+<td><code>0.0</code></td>
+<td>机器人基座在 <code>base_link</code> 坐标系中的 X 偏移</td>
+</tr>
+<tr>
+<td><code>kinematics.base_frame_offset.y</code></td>
+<td><code>0.0</code></td>
+<td>Y 偏移</td>
+</tr>
+<tr>
+<td><code>kinematics.base_frame_offset.theta</code></td>
+<td><code>0.0</code></td>
+<td>旋转偏移（弧度）</td>
+</tr>
+<tr>
+<td><code>kinematics.wheels_radius</code></td>
+<td><code>0.0</code></td>
+<td>轮子半径（米）</td>
+</tr>
+<tr>
+<td><code>kinematics.sum_of_robot_center_projection_on_X_Y_axis</code></td>
+<td><code>0.0</code></td>
+<td>麦克纳姆轮逆运动学几何参数：<br><code>lx + ly</code>（机器人中心到轮子在 X/Y 轴投影距离之和）</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h3 id="_6">其他参数<a class="headerlink" href="#_6" title="Permanent link">¶</a></h3>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>默认值</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>use_stamped_vel</code></td>
+<td><code>true</code></td>
+<td>是否使用带时间戳的速度消息计算命令时效性</td>
+</tr>
+<tr>
+<td><code>base_frame_id</code></td>
+<td><code>"base_link"</code></td>
+<td>机器人基座坐标系名称</td>
+</tr>
+<tr>
+<td><code>odom_frame_id</code></td>
+<td><code>"odom"</code></td>
+<td>里程计坐标系名称</td>
+</tr>
+<tr>
+<td><code>enable_odom_tf</code></td>
+<td><code>true</code></td>
+<td>是否发布里程计 TF</td>
+</tr>
+<tr>
+<td><code>twist_covariance_diagonal</code></td>
+<td><code>{0.1, 0.1, 0.1, 0.1, 0.1, 0.1}</code></td>
+<td>速度协方差对角线（6维）</td>
+</tr>
+<tr>
+<td><code>pose_covariance_diagonal</code></td>
+<td><code>{0.1, 0.1, 0.1, 0.1, 0.1, 0.1}</code></td>
+<td>位姿协方差对角线（6维）</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="_7">示例参数文件<a class="headerlink" href="#_7" title="Permanent link">¶</a></h2>
+<h3 id="_8">基础配置<a class="headerlink" href="#_8" title="Permanent link">¶</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nt">test_mecanum_drive_controller</span><span class="p">:</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">  </span><span class="nt">ros__parameters</span><span class="p">:</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">    </span><span class="nt">reference_timeout</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.9</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="w">    </span><span class="nt">front_left_wheel_command_joint_name</span><span class="p">:</span><span class="w"> </span><span class="s">"front_left_wheel_joint"</span>
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="w">    </span><span class="nt">front_right_wheel_command_joint_name</span><span class="p">:</span><span class="w"> </span><span class="s">"front_right_wheel_joint"</span>
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="w">    </span><span class="nt">rear_right_wheel_command_joint_name</span><span class="p">:</span><span class="w"> </span><span class="s">"back_right_wheel_joint"</span>
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="w">    </span><span class="nt">rear_left_wheel_command_joint_name</span><span class="p">:</span><span class="w"> </span><span class="s">"back_left_wheel_joint"</span>
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="w">    </span><span class="nt">kinematics</span><span class="p">:</span>
+<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="w">      </span><span class="nt">base_frame_offset</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">{</span><span class="nt"> x</span><span class="p">:</span><span class="w"> </span><span class="nv">0.0</span><span class="p p-Indicator">,</span><span class="nt"> y</span><span class="p">:</span><span class="w"> </span><span class="nv">0.0</span><span class="p p-Indicator">,</span><span class="nt"> theta</span><span class="p">:</span><span class="w"> </span><span class="nv">0.0</span><span class="w"> </span><span class="p p-Indicator">}</span>
+<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="w">      </span><span class="nt">wheels_radius</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.5</span>
+<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a><span class="w">      </span><span class="nt">sum_of_robot_center_projection_on_X_Y_axis</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1.0</span>
+<a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a>
+<a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a><span class="w">    </span><span class="nt">base_frame_id</span><span class="p">:</span><span class="w"> </span><span class="s">"base_link"</span>
+<a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a><span class="w">    </span><span class="nt">odom_frame_id</span><span class="p">:</span><span class="w"> </span><span class="s">"odom"</span>
+<a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a><span class="w">    </span><span class="nt">enable_odom_tf</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a><span class="w">    </span><span class="nt">twist_covariance_diagonal</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">0.0</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">7.0</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">14.0</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">21.0</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">28.0</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">35.0</span><span class="p p-Indicator">]</span>
+<a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a><span class="w">    </span><span class="nt">pose_covariance_diagonal</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">0.0</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">6.0</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">12.0</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">18.0</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">24.0</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">30.0</span><span class="p p-Indicator">]</span>
+</code></pre></div>
+<h3 id="_9">带旋转偏移的配置<a class="headerlink" href="#_9" title="Permanent link">¶</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="nt">test_mecanum_drive_controller_with_rotation</span><span class="p">:</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="w">  </span><span class="nt">ros__parameters</span><span class="p">:</span>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w">    </span><span class="nt">reference_timeout</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">5.0</span>
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="w">    </span><span class="nt">front_left_wheel_command_joint_name</span><span class="p">:</span><span class="w"> </span><span class="s">"front_left_wheel_joint"</span>
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="w">    </span><span class="nt">front_right_wheel_command_joint_name</span><span class="p">:</span><span class="w"> </span><span class="s">"front_right_wheel_joint"</span>
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="w">    </span><span class="nt">rear_right_wheel_command_joint_name</span><span class="p">:</span><span class="w"> </span><span class="s">"rear_right_wheel_joint"</span>
+<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="w">    </span><span class="nt">rear_left_wheel_command_joint_name</span><span class="p">:</span><span class="w"> </span><span class="s">"rear_left_wheel_joint"</span>
+<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>
+<a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a><span class="w">    </span><span class="nt">kinematics</span><span class="p">:</span>
+<a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a><span class="w">      </span><span class="nt">base_frame_offset</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">{</span><span class="nt"> x</span><span class="p">:</span><span class="w"> </span><span class="nv">1.0</span><span class="p p-Indicator">,</span><span class="nt"> y</span><span class="p">:</span><span class="w"> </span><span class="nv">2.0</span><span class="p p-Indicator">,</span><span class="nt"> theta</span><span class="p">:</span><span class="w"> </span><span class="nv">3.0</span><span class="w"> </span><span class="p p-Indicator">}</span>
+<a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a><span class="w">      </span><span class="nt">wheels_radius</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.05</span>
+<a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a><span class="w">      </span><span class="nt">sum_of_robot_center_projection_on_X_Y_axis</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.2925</span>
+<a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a>
+<a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a><span class="w">    </span><span class="nt">base_frame_id</span><span class="p">:</span><span class="w"> </span><span class="s">"base_link"</span>
+<a id="__codelineno-1-16" name="__codelineno-1-16" href="#__codelineno-1-16"></a><span class="w">    </span><span class="nt">odom_frame_id</span><span class="p">:</span><span class="w"> </span><span class="s">"odom"</span>
+<a id="__codelineno-1-17" name="__codelineno-1-17" href="#__codelineno-1-17"></a><span class="w">    </span><span class="nt">enable_odom_tf</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<a id="__codelineno-1-18" name="__codelineno-1-18" href="#__codelineno-1-18"></a><span class="w">    </span><span class="nt">pose_covariance_diagonal</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">0.001</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">0.001</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">0.001</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">0.001</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">0.001</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">0.001</span><span class="p p-Indicator">]</span>
+<a id="__codelineno-1-19" name="__codelineno-1-19" href="#__codelineno-1-19"></a><span class="w">    </span><span class="nt">twist_covariance_diagonal</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">0.001</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">0.001</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">0.001</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">0.001</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">0.001</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">0.001</span><span class="p p-Indicator">]</span>
+</code></pre></div>
+<blockquote>
+<p>📁 示例文件位于 <code>test/</code> 目录下。</p>
+</blockquote>
 
 
 
@@ -2357,44 +2825,6 @@
       
         <footer class="md-footer">
   
-    
-      
-      <nav class="md-footer__inner md-grid" aria-label="页脚">
-        
-          
-          <a href="../basic/" class="md-footer__link md-footer__link--prev" aria-label="上一页: 1.1 &amp;nbsp; 概览">
-            <div class="md-footer__button md-icon">
-              
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
-            </div>
-            <div class="md-footer__title">
-              <span class="md-footer__direction">
-                上一页
-              </span>
-              <div class="md-ellipsis">
-                1.1 &nbsp; 概览
-              </div>
-            </div>
-          </a>
-        
-        
-          
-          <a href="../Discovery/" class="md-footer__link md-footer__link--next" aria-label="下一页: 1.1 &amp;nbsp; 发现">
-            <div class="md-footer__title">
-              <span class="md-footer__direction">
-                下一页
-              </span>
-              <div class="md-ellipsis">
-                1.1 &nbsp; 发现
-              </div>
-            </div>
-            <div class="md-footer__button md-icon">
-              
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"></path></svg>
-            </div>
-          </a>
-        
-      </nav>
     
   
   <div class="md-footer-meta md-typeset">

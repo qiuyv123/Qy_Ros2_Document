@@ -140,10 +140,30 @@ nav:
   - ROS2 Control文档:
     - 概览: ros2_control/intro.md
     - 概念:
-      - 0 &nbsp; 框架概览: ros2_control/Concepts/index.md
-      - 0  &nbsp; 控制器管理器: ros2_control/Concepts/控制器管理器.md
-      - 0  &nbsp; 级联控制: ros2_control/Concepts/控制器链接(级联控制).md
-      - 3.3 &nbsp; 关节运动学: ros2_control/Concepts/关节运动学.md
-      - 3.4 &nbsp; 硬件组件: ros2_control/Concepts/硬件组件.md
-      - 3.5 &nbsp; 模拟组件: ros2_control/Concepts/模拟组件.md
+      - 框架概览: ros2_control/Concepts/index.md
+      - 控制器管理器: ros2_control/Concepts/控制器管理器.md
+      - 级联控制: ros2_control/Concepts/控制器链接(级联控制).md
+      - 关节运动学: ros2_control/Concepts/关节运动学.md
+      - 硬件组件: ros2_control/Concepts/硬件组件.md
+      - 模拟组件: ros2_control/Concepts/模拟组件.md
 
+    - 准则和最佳做法:
+      - 调试控制器管理器和插件:
+        - 概述: ros2_control\Guidelines the Controller Manager and Plugins\Debugging the Controller Manager and Plugins.md
+        - ROS2和GDB: ros2_control\Guidelines the Controller Manager and Plugins\ROS2 and GDB.md
+        - 使用GDB调试插件: ros2_control\Guidelines the Controller Manager and Plugins\Using GDB to debug a plugin.md
+        - GDB命令速查: ros2_control\Guidelines the Controller Manager and Plugins\GDB CLI Tutorial.md
+
+    - 关于ros2_controllers包:
+      - 准则和最佳做法:
+        - 轮式机器人运动学: ros2_control\use_ros2_controllers\Guidelines and Best Practices\Wheeled Mobile Robot Kinematics.md
+        - 编写一个新的控制器: ros2_control\use_ros2_controllers\Guidelines and Best Practices\Writing a new controller.md
+      - 轮式机器人控制器:
+        - 差速驱动控制器: ros2_control\use_ros2_controllers\Controllers for Wheeled Mobile Robots\Differential Drive Controller.md
+        - 麦克纳姆驱动控制器: ros2_control\use_ros2_controllers\Controllers for Wheeled Mobile Robots\Mecanum Drive Controllers.md
+        - 转向控制器库: ros2_control\use_ros2_controllers\Controllers for Wheeled Mobile Robots\Steering Controllers Library.md
+        - 三轮车控制器: ros2_control\use_ros2_controllers\Controllers for Wheeled Mobile Robots\Tricycle Controller.md
+      - 机械手与其他类型机器人控制器: 0.md
+      - 广播器: 0.md
+
+        

@@ -13,6 +13,7 @@ edit_uri: edit/main/docs/
 theme:
   name: material
   language: zh
+  custom_dir: overrides
   icon:
     logo: material/robot  # 使用机器人图标
     repo: fontawesome/brands/github
@@ -90,10 +91,10 @@ markdown_extensions:
   # 选项卡 (C++/Python 切换必备)
   - pymdownx.tabbed:
       alternate_style: true
-  
+
   # 细节折叠
   - pymdownx.details
-  
+
   # 键盘按键样式
   - pymdownx.keys
   
@@ -111,31 +112,44 @@ extra_javascript:
 # 注意：必须确保对应的 .md 文件真实存在！
 
 nav:
-  - 首页: index.md
+  - 首页 : index.md 
   - Ros2文档:
-    - 1 &nbsp; 概念概览: 
+    - 概念概览: 
       - 概览: ros2/intro.md
       - 概念:
-        - 1.1 &nbsp; 基础概念: 
-          - 1.1 &nbsp; 概览: ros2/Concepts/basic/basic.md
-          - 1.1 &nbsp; 节点: ros2/Concepts/basic/Nodes.md
-          - 1.1 &nbsp; 发现: ros2/Concepts/basic/Discovery.md
-          - 1.1 &nbsp; 接口: ros2/Concepts/basic/Interfaces.md
-          - 1.1 &nbsp; 话题: ros2/Concepts/basic/Topics.md
-          - 1.1 &nbsp; 服务: ros2/Concepts/basic/Services.md
-          - 1.1 &nbsp; 动作: ros2/Concepts/basic/Actions.md
-          - 1.1 &nbsp; 参数: ros2/Concepts/basic/Parameters.md
-          - 1.1 &nbsp; 用命令行工具进行自省: ros2/Concepts/basic/Introspection with command line tools.md
-          - 1.1 &nbsp; 启动: ros2/Concepts/basic/Launch.md
-        - 1.2 &nbsp; 进阶概念: ros2/Concepts/intermediate.md
+        - 基础概念: 
+          - 概览: ros2/Concepts/basic/basic.md
+          - 节点: ros2/Concepts/basic/Nodes.md
+          - 发现: ros2/Concepts/basic/Discovery.md
+          - 接口: ros2/Concepts/basic/Interfaces.md
+          - 话题: ros2/Concepts/basic/Topics.md
+          - 服务: ros2/Concepts/basic/Services.md
+          - 动作: ros2/Concepts/basic/Actions.md
+          - 参数: ros2/Concepts/basic/Parameters.md
+          - 用命令行工具进行自省: ros2/Concepts/basic/Introspection with command line tools.md
+          - 启动: ros2/Concepts/basic/Launch.md
+        - 1.2 &nbsp; 进阶概念: 
+          - 概述: ros2/Concepts/intermediate.md
+          - ROS_DOMAIN ID: ros2/Concepts/intermediate/The_ROS_DOMAIN_ID.md
+          - 不同的ROS2中间件: ros2/Concepts/intermediate/Different_ROS2_middlewar_vendors.md
+          - 日志和记录配置: ros2/Concepts/intermediate/Logging_and_logger_configuration.md
+          - 服务质量设置: ros2/Concepts/intermediate/Quality_of_Service_settings.md
+          - 执行器: ros2/Concepts/intermediate/Executors.md
+          - 话题统计: ros2/Concepts/intermediate/Topic_statistics.md
+          - RQt概述和使用: ros2/Concepts/intermediate/Overview_and_usage_of_RQt.md
+          - 组件: ros2/Concepts/intermediate/Composition.md
+          - 交叉编译: ros2/Concepts/intermediate/Cross-compilation.md
+          - ROS2安全: ros2/Concepts/intermediate/ROS2_Security.md
+          - Tf2: ros2/Concepts/intermediate/Tf2.md    
         - 1.3 &nbsp; 高级概念: ros2/Concepts/advanced.md
 
-    - Rviz 可视化:
-      - 2.0 &nbsp; Rviz 介绍: ros2/Rviz/index.md
-      - 2.1 &nbsp; 用户指南: ros2/Rviz/user_guide.md
-      - 2.2 &nbsp; 自定义显示: ros2/Rviz/custom_display.md
-      - 2.3 &nbsp; 自定义面板: ros2/Rviz/custom_panel.md
-      - 2.4 &nbsp; 标记与类型: ros2/Rviz/markers.md
+    - Rviz可视化:
+      - Rviz 介绍: ros2/Rviz/index.md
+      - Rviz使用:
+        - 用户指南: ros2/Rviz/user_guide.md
+        - 自定义显示: ros2/Rviz/custom_display.md
+        - 自定义面板: ros2/Rviz/custom_panel.md
+        - 标记与类型: ros2/Rviz/markers.md
 
   - ROS2 Control文档:
     - 概览: ros2_control/intro.md
@@ -149,21 +163,37 @@ nav:
 
     - 准则和最佳做法:
       - 调试控制器管理器和插件:
-        - 概述: ros2_control\Guidelines the Controller Manager and Plugins\Debugging the Controller Manager and Plugins.md
-        - ROS2和GDB: ros2_control\Guidelines the Controller Manager and Plugins\ROS2 and GDB.md
-        - 使用GDB调试插件: ros2_control\Guidelines the Controller Manager and Plugins\Using GDB to debug a plugin.md
-        - GDB命令速查: ros2_control\Guidelines the Controller Manager and Plugins\GDB CLI Tutorial.md
+        - 概述: ros2_control/Guidelines_the_Controller_Manager_and Plugins/Debugging the Controller Manager and Plugins.md
+        - ROS2和GDB: ros2_control/Guidelines_the_Controller Manager_and_Plugins/ROS2_and_GDB.md
+        - 使用GDB调试插件: ros2_control/Guidelines_the_Controller Manager_and_Plugins/Using_GDB_to_debug_a_plugin.md
+        - GDB命令速查: ros2_control/Guidelines_the_Controller Manager_and_Plugins/GDB_CLI_Tutorial.md
 
     - 关于ros2_controllers包:
       - 准则和最佳做法:
-        - 轮式机器人运动学: ros2_control\use_ros2_controllers\Guidelines and Best Practices\Wheeled Mobile Robot Kinematics.md
-        - 编写一个新的控制器: ros2_control\use_ros2_controllers\Guidelines and Best Practices\Writing a new controller.md
+        - 轮式机器人运动学: ros2_control/use_ros2_controllers/Guidelines_and_Best Practices/Wheeled_Mobile_Robot_Kinematics.md
+        - 编写一个新的控制器: ros2_control/use_ros2_controllers/Guidelines_and_Best Practices/Writing_a_new_controller.md
       - 轮式机器人控制器:
-        - 差速驱动控制器: ros2_control\use_ros2_controllers\Controllers for Wheeled Mobile Robots\Differential Drive Controller.md
-        - 麦克纳姆驱动控制器: ros2_control\use_ros2_controllers\Controllers for Wheeled Mobile Robots\Mecanum Drive Controllers.md
-        - 转向控制器库: ros2_control\use_ros2_controllers\Controllers for Wheeled Mobile Robots\Steering Controllers Library.md
-        - 三轮车控制器: ros2_control\use_ros2_controllers\Controllers for Wheeled Mobile Robots\Tricycle Controller.md
-      - 机械手与其他类型机器人控制器: 0.md
-      - 广播器: 0.md
+        - 差速驱动控制器: ros2_control/use_ros2_controllers/Controllers_for_Wheeled Mobile_Robots/Differential_Drive_Controller.md
+        - 麦克纳姆驱动控制器: ros2_control/use_ros2_controllers/Controllers_for_Wheeled Mobile_Robots/Mecanum_Drive_Controllers.md
+        - 转向控制器库: ros2_control/use_ros2_controllers/Controllers_for_Wheeled Mobile_Robots/Steering_Controllers_Library.md
+        - 三轮车控制器: ros2_control/use_ros2_controllers/Controllers_for_Wheeled Mobile_Robots/Tricycle_Controller.md
+      
+      - 机械手与其他类型机器人控制器: 
+        - 概述: ros2_control/use_ros2_controllers/Controllers_for_Manipulators_and_Other_Robots/intro.md
+        - 导纳控制器: ros2_control/use_ros2_controllers/Controllers_for_Manipulators_and_Other_Robots/Admittance.md
+        - 力控制器: ros2_control/use_ros2_controllers/Controllers_for_Manipulators_and_Other_Robots/Effort.md
+        - 前馈命令控制器: ros2_control/use_ros2_controllers/Controllers_for_Manipulators_and_Other_Robots/Forward_Command.md
+        - 夹爪控制器: ros2_control/use_ros2_controllers/Controllers_for_Manipulators_and_Other_Robots/Gripper.md
+        - 关节轨迹控制: ros2_control/use_ros2_controllers/Controllers_for_Manipulators_and_Other_Robots/Joint_Trajectory.md
+        - PID控制: ros2_control/use_ros2_controllers/Controllers_for_Manipulators_and_Other_Robots/PID.md
+        - 位置控制: ros2_control/use_ros2_controllers/Controllers_for_Manipulators_and_Other_Robots/Position.md
+        - 速度控制: ros2_control/use_ros2_controllers/Controllers_for_Manipulators_and_Other_Robots/Velocity.md
+        - GPIO命令控制: ros2_control/use_ros2_controllers/Controllers_for_Manipulators_and_Other_Robots/Gpio_Command.md
 
+      - 广播器: 
+        - 力矩传感器广播器: ros2_control/use_ros2_controllers/Broadcasters/Force_Torque_Sensor_Broadcaster.md
+        - 惯性测量单元(IMU)传感器广播器: ros2_control/use_ros2_controllers/Broadcasters/IMU_Broadcasters.md
+        - 关节状态广播器: ros2_control/use_ros2_controllers/Broadcasters/Joint_Broadcasters.md
+        - 距离传感器广播器: ros2_control/use_ros2_controllers/Broadcasters/Range_Broadcasters.md
+        - 姿态广播器: ros2_control/use_ros2_controllers/Broadcasters/Pose_Broadcaster.md
         

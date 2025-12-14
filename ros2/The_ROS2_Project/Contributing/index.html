@@ -1,0 +1,7014 @@
+<!DOCTYPE html><html lang="zh" class="no-js"><head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="你的 ROS 2 学习笔记与开发手册">
+      
+      
+        <meta name="author" content="qiuyv">
+      
+      
+        <link rel="canonical" href="https://qiuyv.site/ros2/The_ROS2_Project/Contributing/">
+      
+      
+        <link rel="prev" href="../../How-to_Guides/intro/">
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.0">
+    
+    
+      
+        <title>贡献指南 - ROS 2 中文指南</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.618322db.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto+Sans+SC:300,300i,400,400i,700,700i%7CFira+Code:400,400i,700,700i&amp;display=fallback">
+        <style>:root{--md-text-font:"Noto Sans SC";--md-code-font:"Fira Code"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  <link href="../../../assets/stylesheets/glightbox.min.css" rel="stylesheet"><script src="../../../assets/javascripts/glightbox.min.js"></script><style id="glightbox-style">
+            html.glightbox-open { overflow: initial; height: 100%; }
+            .gslide-title { margin-top: 0px; user-select: text; }
+            .gslide-desc { color: #666; user-select: text; }
+            .gslide-image img { background: white; }
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color); }
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color); }
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color); }
+        </style></head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="green">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#ros-2" class="md-skip">
+          跳转至
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="页眉">
+    <a href="../../.." title="ROS 2 中文指南" class="md-header__button md-logo" aria-label="ROS 2 中文指南" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2a2 2 0 0 1 2 2c0 .74-.4 1.39-1 1.73V7h1a7 7 0 0 1 7 7h1a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1h-1v1a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-1H2a1 1 0 0 1-1-1v-3a1 1 0 0 1 1-1h1a7 7 0 0 1 7-7h1V5.73c-.6-.34-1-.99-1-1.73a2 2 0 0 1 2-2M7.5 13A2.5 2.5 0 0 0 5 15.5 2.5 2.5 0 0 0 7.5 18a2.5 2.5 0 0 0 2.5-2.5A2.5 2.5 0 0 0 7.5 13m9 0a2.5 2.5 0 0 0-2.5 2.5 2.5 2.5 0 0 0 2.5 2.5 2.5 2.5 0 0 0 2.5-2.5 2.5 2.5 0 0 0-2.5-2.5"></path></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"></path></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            ROS 2 中文指南
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              贡献指南
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="green" aria-label="切换至深色模式" type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="切换至深色模式" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"></path></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="green" aria-label="切换至浅色模式" type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="切换至浅色模式" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"></path></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
+      </label>
+      <nav class="md-search__options" aria-label="查找">
+        
+        <button type="reset" class="md-search__icon md-icon" title="清空当前内容" aria-label="清空当前内容" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜索引擎
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/qiuyv/ros2_doc" title="前往仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"></path></svg>
+  </div>
+  <div class="md-source__repository">
+    qiuyv/ros2_doc
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="标签" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../.." class="md-tabs__link">
+        
+  
+  
+    
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"></path></svg>
+    
+  
+  首页
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      
+  
+  
+  
+    
+  
+  
+    
+    
+      
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../../Concepts/basic/basic/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Ros2文档
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="导航栏" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="ROS 2 中文指南" class="md-nav__button md-logo" aria-label="ROS 2 中文指南" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2a2 2 0 0 1 2 2c0 .74-.4 1.39-1 1.73V7h1a7 7 0 0 1 7 7h1a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1h-1v1a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-1H2a1 1 0 0 1-1-1v-3a1 1 0 0 1 1-1h1a7 7 0 0 1 7-7h1V5.73c-.6-.34-1-.99-1-1.73a2 2 0 0 1 2-2M7.5 13A2.5 2.5 0 0 0 5 15.5 2.5 2.5 0 0 0 7.5 18a2.5 2.5 0 0 0 2.5-2.5A2.5 2.5 0 0 0 7.5 13m9 0a2.5 2.5 0 0 0-2.5 2.5 2.5 2.5 0 0 0 2.5 2.5 2.5 2.5 0 0 0 2.5-2.5 2.5 2.5 0 0 0-2.5-2.5"></path></svg>
+
+    </a>
+    ROS 2 中文指南
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/qiuyv/ros2_doc" title="前往仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"></path></svg>
+  </div>
+  <div class="md-source__repository">
+    qiuyv/ros2_doc
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"></path></svg>
+  
+  <span class="md-ellipsis">
+    
+  
+    首页
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ros2文档
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Ros2文档
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1">
+        
+          
+          <label class="md-nav__link" for="__nav_2_1" id="__nav_2_1_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    概念
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    概念
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1_1">
+        
+          
+          <label class="md-nav__link" for="__nav_2_1_1" id="__nav_2_1_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    基础概念
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_1_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_1_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    基础概念
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Concepts/basic/basic/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    概览
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Concepts/basic/Nodes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    节点 (Nodes)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Concepts/basic/Discovery/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    发现 (Discovery)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Concepts/basic/Interfaces/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    接口 (Interfaces)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Concepts/basic/Topics/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    话题 (Topics)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Concepts/basic/Services/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    服务 (Services)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Concepts/basic/Actions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    动作 (Actions)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Concepts/basic/Parameters/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    参数 (Parameters)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Concepts/basic/Introspection%20with%20command%20line%20tools/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    命令行工具自省
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Concepts/basic/Launch/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    启动 (Launch)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Concepts/basic/Client%20libraries/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    客户端库
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1_2">
+        
+          
+          <label class="md-nav__link" for="__nav_2_1_2" id="__nav_2_1_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    进阶概念
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_1_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_1_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    进阶概念
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Concepts/intermediate.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    概述
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Concepts/intermediate/The_ROS_DOMAIN_ID/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ROS_DOMAIN_ID
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Concepts/intermediate/Different_ROS2_middlewar_vendors/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    中间件厂商
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Concepts/intermediate/Logging_and_logger_configuration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    日志配置
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Concepts/intermediate/Quality_of_Service_settings/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    服务质量 (QoS)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Concepts/intermediate/Executors/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    执行器 (Executors)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Concepts/intermediate/Topic_statistics/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    话题统计
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Concepts/intermediate/Overview_and_usage_of_RQt/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    RQt 概览
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Concepts/intermediate/Composition/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    组件 (Composition)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Concepts/intermediate/Cross-compilation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    交叉编译
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Concepts/intermediate/ROS2_Security/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    安全 (Security)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Concepts/intermediate/Tf2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tf2 坐标变换
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1_3">
+        
+          
+          <label class="md-nav__link" for="__nav_2_1_3" id="__nav_2_1_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    高级概念
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_1_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_1_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    高级概念
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Concepts/advanced/Internal_ROS2_interfaces/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    内部接口
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Concepts/advanced/ROS2_middleware_implementations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    中间件实现
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Concepts/advanced/The_build_system/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    构建系统
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2">
+        
+          
+          <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    教程 (Tutorials)
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    教程 (Tutorials)
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2_1">
+        
+          
+          <label class="md-nav__link" for="__nav_2_2_1" id="__nav_2_2_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    命令行界面 (CLI)
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_2_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    命令行界面 (CLI)
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Tutorials/CLI/Configure_env/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    配置环境
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Tutorials/CLI/Launching_nodes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    运行节点
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Tutorials/CLI/Understanding_nodes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    理解节点
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Tutorials/CLI/Understanding_topics/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    理解话题
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Tutorials/CLI/Understanding_services/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    理解服务
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Tutorials/CLI/Understanding_parameters/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    理解参数
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Tutorials/CLI/Understanding_actions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    理解动作
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Tutorials/CLI/Using_rqt_console_to_view_logs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    使用 rqt_console
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Tutorials/CLI/Recording_and_playing_back_data/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    录制与回放数据
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Tutorials/CLI/Using_turtlesim_ros2_rqt/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    使用 Turtlesim
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2_2">
+        
+          
+          <label class="md-nav__link" for="__nav_2_2_2" id="__nav_2_2_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    客户端库 (Client Libraries)
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_2_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    客户端库 (Client Libraries)
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Tutorials/Client_libraries/Creating_a_workspace/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    创建工作空间
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Tutorials/Client_libraries/Creating_a_package/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    创建包
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Tutorials/Client_libraries/Using_colcon_to_build_packages/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    使用 Colcon 构建
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Tutorials/Client_libraries/Creating_custom_msg_and_srv_files/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    创建自定义消息/服务
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Tutorials/Client_libraries/Implementing_custom_interfaces/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    实现自定义接口
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Tutorials/Client_libraries/Writing_a_simple_publisher_and_subscriber_%28C%2B%2B%29/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    编写发布者/订阅者 (C++)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Tutorials/Client_libraries/Writing_a_simple_publisher_and_subscriber_%28Python%29/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    编写发布者/订阅者 (Python)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Tutorials/Client_libraries/Writing_a_simple_service_and_client_%28C%2B%2B%29/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    编写服务/客户端 (C++)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Tutorials/Client_libraries/Writing_a_simple_service_and_client_%28Python%29/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    编写服务/客户端 (Python)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Tutorials/Client_libraries/Using_parameters_in_a_class_%28C%2B%2B%29/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    类中使用参数 (C++)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Tutorials/Client_libraries/Using_parameters_in_a_class_%28Python%29/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    类中使用参数 (Python)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Tutorials/Client_libraries/Creating_and_using_plugins_%28C%2B%2B%29/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    创建和使用插件 (C++)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Tutorials/Client_libraries/Using_ros2doctor_to_identify_issues/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    使用 ros2doctor
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2_3">
+        
+          
+          <label class="md-nav__link" for="__nav_2_2_3" id="__nav_2_2_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    中级教程 (Intermediate)
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_2_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    中级教程 (Intermediate)
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Tutorials/Intermediate/Composing_multiple_nodes_in_a_single_process/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    进程内组件组合
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Tutorials/Intermediate/Writing_a_Composable_Node_%28C%2B%2B%29/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    编写组件节点 (C++)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Tutorials/Intermediate/Managing_Dependencies_with_rosdep/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    管理依赖 (rosdep)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Tutorials/Intermediate/Creating_an_action/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    创建动作 (Action)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Tutorials/Intermediate/Writing_an_action_server_and_client_%28C%2B%2B%29/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    编写动作服务器/客户端 (C++)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Tutorials/Intermediate/Writing_an_action_server_and_client_%28Python%29/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    编写动作服务器/客户端 (Python)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Tutorials/Intermediate/Monitoring_for_parameter_changes_%28C%2B%2B%29/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    监控参数变化 (C++)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Tutorials/Intermediate/Using_the_Node_Interfaces_Template_Class_%28C%2B%2B%29/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    使用节点接口模板 (C++)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2_3_9">
+        
+          
+          <label class="md-nav__link" for="__nav_2_2_3_9" id="__nav_2_2_3_9_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    启动 (Launch)
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_2_2_3_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2_3_9">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    启动 (Launch)
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Tutorials/Intermediate/Launch/Creating_a_launch_file/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    创建启动文件
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Tutorials/Intermediate/Launch/Launching_and_monitoring_multiple_nodes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    启动和监控多个节点
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Tutorials/Intermediate/Launch/Using_event_handlers/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    使用事件处理程序
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Tutorials/Intermediate/Launch/Using_substitutions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    使用替换 (Substitutions)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Tutorials/Intermediate/Launch/Managing_large_projects/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    管理大型项目
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2_3_10">
+        
+          
+          <label class="md-nav__link" for="__nav_2_2_3_10" id="__nav_2_2_3_10_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    坐标变换 (Tf2)
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_2_2_3_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2_3_10">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    坐标变换 (Tf2)
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Tutorials/Intermediate/tf2/Introducing_tf2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tf2 介绍
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Tutorials/Intermediate/tf2/Writing_a_static_broadcaster_%28C%2B%2B%29/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    编写静态广播器 (C++)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Tutorials/Intermediate/tf2/Writing_a_static_broadcaster%28Python%29/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    编写静态广播器 (Python)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Tutorials/Intermediate/tf2/Writing_a_broadcaster%28C%2B%2B%29/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    编写广播器 (C++)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Tutorials/Intermediate/tf2/Writing_a_broadcaster%28Python%29/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    编写广播器 (Python)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Tutorials/Intermediate/tf2/Writing_a_listener_%28C%2B%2B%29/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    编写监听器 (C++)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Tutorials/Intermediate/tf2/Writing_a_listener%28Python%29/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    编写监听器 (Python)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Tutorials/Intermediate/tf2/Adding_a_frame_%28C%2B%2B%29/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    添加坐标系 (C++)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Tutorials/Intermediate/tf2/Adding_a_frame%28Python%29/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    添加坐标系 (Python)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Tutorials/Intermediate/tf2/Using_time_%28C%2B%2B%29/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    使用时间 (C++)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Tutorials/Intermediate/tf2/Traveling_in_time%28C%2B%2B%29/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    时间旅行 (C++)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Tutorials/Intermediate/tf2/Quaternion_fundamentals/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    四元数基础
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Tutorials/Intermediate/tf2/Debugging/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    调试 Tf2
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Tutorials/Intermediate/tf2/Using_stamped_datatypes_with_tf2_ros_MessageFilter/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    使用带时间戳的数据类型
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2_3_11">
+        
+          
+          <label class="md-nav__link" for="__nav_2_2_3_11" id="__nav_2_2_3_11_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    测试 (Testing)
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_2_2_3_11_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2_3_11">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    测试 (Testing)
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Tutorials/Intermediate/Testing/Running_Tests_in_ROS_2_from_the_Command_Line/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    命令行运行测试
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Tutorials/Intermediate/Testing/Writing_Basic_Tests_with_Python/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Python 基础测试
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Tutorials/Intermediate/Testing/Writing_Basic_Tests_with_C%2B%2B_with_GTest/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    C++ GTest 基础测试
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Tutorials/Intermediate/Testing/Writing_Basic_Integration_Tests_with_launch_testing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Launch 集成测试
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2_3_12">
+        
+          
+          <label class="md-nav__link" for="__nav_2_2_3_12" id="__nav_2_2_3_12_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    机器人模型 (URDF)
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_2_2_3_12_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2_3_12">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    机器人模型 (URDF)
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Tutorials/Intermediate/URDF/Building_a_visual_robot_model_from_scratch/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    从零构建视觉模型
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Tutorials/Intermediate/URDF/Building_a_movable_robot_model/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    构建可移动模型
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Tutorials/Intermediate/URDF/Adding_physical_and_collision_properties/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    添加物理和碰撞属性
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Tutorials/Intermediate/URDF/Using_Xacro_to_clean_up_your_code/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    使用 Xacro 简化代码
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Tutorials/Intermediate/URDF/Using_a_URDF_in_Gazebo/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    在 Gazebo 中使用 URDF
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Tutorials/Intermediate/URDF/Generating_an_URDF_File/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    生成 URDF 文件
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Tutorials/Intermediate/URDF/Using_URDF_with_robot_state_publisher%28C%2B%2B%29/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Robot State Publisher (C++)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Tutorials/Intermediate/URDF/Using_URDF_with_robot_state_publisher%28Python%29/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Robot State Publisher (Python)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2_3_13">
+        
+          
+          <label class="md-nav__link" for="__nav_2_2_3_13" id="__nav_2_2_3_13_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Rviz (教程)
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_2_2_3_13_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2_3_13">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Rviz (教程)
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Tutorials/Intermediate/Rviz/RViz_User_Guide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Rviz 用户指南
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Tutorials/Intermediate/Rviz/Building_a_Custom_RViz_Display/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    构建自定义显示
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Tutorials/Intermediate/Rviz/Building_a_Custom_RViz_Panel/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    构建自定义面板
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Tutorials/Intermediate/Rviz/Marker_Display_types/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    标记显示类型
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2_4">
+        
+          
+          <label class="md-nav__link" for="__nav_2_2_4" id="__nav_2_2_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    演示 (Demos)
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_2_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    演示 (Demos)
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2_4_1">
+        
+          
+          <label class="md-nav__link" for="__nav_2_2_4_1" id="__nav_2_2_4_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Turtlebot3
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_2_2_4_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2_4_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Turtlebot3
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Tutorials/Demos/Turtlebot3/Getting_started.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    入门
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Tutorials/Demos/Turtlebot3/Simulating.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    仿真
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Tutorials/Demos/Turtlebot3/Navigating_in_simulation.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    仿真导航
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Tutorials/Demos/Turtlebot3/Learning_SLAM_in_simulation.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    仿真 SLAM
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Tutorials/Demos/Turtlebot3/Motion_planning_for_a_MoveIt_2_arm.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MoveIt2 运动规划
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Tutorials/Demos/Turtlebot3/Bridging_communication_between_ROS_1_and_ROS_2.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ROS1 桥接
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2_4_2">
+        
+          
+          <label class="md-nav__link" for="__nav_2_2_4_2" id="__nav_2_2_4_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    其他演示
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_2_2_4_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2_4_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    其他演示
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Tutorials/Demos/External/Logging/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    日志记录
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Tutorials/Demos/External/Managing_nodes_with_managed_lifecycles/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    生命周期节点管理
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Tutorials/Demos/External/Setting_up_efficient_intra-process_communication/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    进程内通信设置
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Tutorials/Demos/External/Understanding_real-time_programming/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    实时编程理解
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Tutorials/Demos/External/Using_quality-of-service_settings_for_lossy_networks/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    弱网环境 QoS
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Tutorials/Demos/External/Experimenting_with_a_dummy_robot/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    虚拟机器人实验
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Tutorials/Demos/External/Creating_a_content_filtering_subscription/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    内容过滤订阅
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Tutorials/Demos/External/Wait_for_acknowledgment/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    等待确认
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Tutorials/Demos/External/Recording_and_playing_back_data_with_rosbag_using_the_ROS_1_bridge/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ROS1 桥接录制回放
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3">
+        
+          
+          <label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    操作指南 (How-to Guides)
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    操作指南 (How-to Guides)
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../How-to_Guides/intro/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    介绍
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2_4" id="__nav_2_4_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ROS2 项目
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    ROS2 项目
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    贡献指南
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    贡献指南
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        通用原则
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        质量实践
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="质量实践">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        版本控制
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="版本控制">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        注意事项
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#api" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        公共 API 声明
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        弃用策略
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        变更控制流程
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="变更控制流程">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#backporting-pr" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        向后移植 (Backporting) PR 的指南
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        文档
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="文档">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        许可证和版权声明
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        包描述
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ros-api" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ROS 包的 API 文档
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        测试
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="测试">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        代码覆盖率
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        性能
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#linters" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Linters 和静态分析
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        通用实践
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="通用实践">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#issues" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        问题 (Issues)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_14" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        分支
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pull-requests" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        合并请求 (Pull requests)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_15" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        库版本控制
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_16" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        开发流程
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rmw-api" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        RMW API 的变更
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_17" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        任务追踪
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_18" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        包命名约定
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="包命名约定">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_19" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        度量单位和坐标系约定
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_20" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        编程约定
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="编程约定">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#c" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        C++ 特定
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_21" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        文件系统布局
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="文件系统布局">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_22" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        包布局
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_23" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        仓库布局
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_24" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        上游包
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="上游包">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#debian-ubuntu" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Debian 和 Ubuntu 上游中的包
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dont-mix-the-streams" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        不要混合使用源 (Don’t mix the streams)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_25" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        已知差异
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_26" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        开发者工作流
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="开发者工作流">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#gitconfig" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Gitconfig 优化
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_27" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        架构开发实践
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="架构开发实践">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_28" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        软件开发生命周期
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="软件开发生命周期">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_29" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        任务创建
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_30" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        编写设计文档
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_31" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        设计文档评审
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_32" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        实现
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_33" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        代码审查
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#build-farm" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        构建农场 (Build Farm) 介绍
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="构建农场 (Build Farm) 介绍">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_34" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        关于覆盖率运行的说明
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_35" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        如何从构建农场报告中读取覆盖率
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_36" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        如何从构建农场报告中计算覆盖率
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lcov-ubuntu" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        如何在本地使用 lcov 测量覆盖率 (Ubuntu)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_5">
+        
+          
+          <label class="md-nav__link" for="__nav_2_5" id="__nav_2_5_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Rviz可视化
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Rviz可视化
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Rviz/index.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Rviz 介绍
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        通用原则
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        质量实践
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="质量实践">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        版本控制
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="版本控制">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        注意事项
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#api" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        公共 API 声明
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        弃用策略
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        变更控制流程
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="变更控制流程">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#backporting-pr" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        向后移植 (Backporting) PR 的指南
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        文档
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="文档">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        许可证和版权声明
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        包描述
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ros-api" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ROS 包的 API 文档
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        测试
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="测试">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        代码覆盖率
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        性能
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#linters" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Linters 和静态分析
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        通用实践
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="通用实践">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#issues" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        问题 (Issues)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_14" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        分支
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pull-requests" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        合并请求 (Pull requests)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_15" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        库版本控制
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_16" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        开发流程
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rmw-api" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        RMW API 的变更
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_17" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        任务追踪
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_18" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        包命名约定
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="包命名约定">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_19" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        度量单位和坐标系约定
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_20" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        编程约定
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="编程约定">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#c" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        C++ 特定
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_21" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        文件系统布局
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="文件系统布局">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_22" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        包布局
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_23" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        仓库布局
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_24" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        上游包
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="上游包">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#debian-ubuntu" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Debian 和 Ubuntu 上游中的包
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dont-mix-the-streams" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        不要混合使用源 (Don’t mix the streams)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_25" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        已知差异
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_26" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        开发者工作流
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="开发者工作流">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#gitconfig" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Gitconfig 优化
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_27" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        架构开发实践
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="架构开发实践">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_28" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        软件开发生命周期
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="软件开发生命周期">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_29" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        任务创建
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_30" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        编写设计文档
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_31" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        设计文档评审
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_32" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        实现
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_33" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        代码审查
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#build-farm" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        构建农场 (Build Farm) 介绍
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="构建农场 (Build Farm) 介绍">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_34" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        关于覆盖率运行的说明
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_35" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        如何从构建农场报告中读取覆盖率
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_36" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        如何从构建农场报告中计算覆盖率
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lcov-ubuntu" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        如何在本地使用 lcov 测量覆盖率 (Ubuntu)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="ros-2">ROS 2 开发者指南<a class="headerlink" href="#ros-2" title="Permanent link">¶</a></h1>
+<p><strong>目录</strong></p>
+<ul>
+<li>通用原则</li>
+<li>质量实践</li>
+<li>版本控制</li>
+<li>变更控制流程</li>
+<li>文档</li>
+<li>测试</li>
+<li>通用实践</li>
+<li>问题 (Issues)</li>
+<li>分支</li>
+<li>合并请求 (Pull requests)</li>
+<li>库版本控制</li>
+<li>开发流程</li>
+<li>RMW API 的变更</li>
+<li>任务追踪</li>
+<li>包命名约定</li>
+<li>度量单位和坐标系约定</li>
+<li>编程约定</li>
+<li>文件系统布局</li>
+<li>上游包</li>
+<li>开发者工作流</li>
+<li>Gitconfig 优化</li>
+<li>架构开发实践</li>
+<li>软件开发生命周期</li>
+<li>构建农场 (Build Farm) 介绍</li>
+<li>关于覆盖率运行的说明</li>
+<li>如何从构建农场报告中读取覆盖率</li>
+<li>如何从构建农场报告中计算覆盖率</li>
+<li>如何在本地使用 lcov 测量覆盖率 (Ubuntu)</li>
+</ul>
+<p>本页定义了我们在开发 ROS 2 时采用的实践和策略。</p>
+<hr>
+<h2 id="_1">通用原则<a class="headerlink" href="#_1" title="Permanent link">¶</a></h2>
+<p>所有 ROS 2 开发都有一些共同的原则：</p>
+<ul>
+<li><strong>共享所有权 (Shared ownership)</strong>：每一位致力于 ROS 2 的人都应该感觉到对系统所有部分的所有权。代码块的原始作者没有任何特殊的许可或义务来控制或维护该代码块。每个人都可以自由地提议任何地方的变更，处理任何类型的工单，并审查任何合并请求。</li>
+<li><strong>乐于从事任何工作</strong>：作为共享所有权的推论，每个人都应该愿意承担任何可用的任务，并为系统的任何方面做出贡献。</li>
+<li><strong>寻求帮助</strong>：如果你在某件事上遇到困难，请通过工单、评论或电子邮件（视情况而定）向你的开发伙伴寻求帮助。</li>
+</ul>
+<hr>
+<h2 id="_2">质量实践<a class="headerlink" href="#_2" title="Permanent link">¶</a></h2>
+<p>根据 <a href="https://github.com/ros-infrastructure/rep/blob/master/rep-2004.rst">REP 2004: Package Quality Categories</a> 中的指导原则，基于包所遵循的开发实践，包可以被归类为不同的质量等级。这些类别通过其在版本控制、测试、文档等方面的策略来区分。</p>
+<p>以下部分是我们为确保核心包具有最高质量（“1 级”）而遵循的具体开发规则。我们建议所有 ROS 开发人员努力遵守以下策略，以确整个 ROS 生态系统的质量。</p>
+<p>有关更具体的代码建议，请参阅<a href="https://docs.ros.org/en/rolling/The-ROS2-Project/Contributing/Quality-Guide.html">质量指南</a>。</p>
+<h3 id="_3">版本控制<a class="headerlink" href="#_3" title="Permanent link">¶</a></h3>
+<p>我们将使用 <strong>语义化版本控制 (Semantic Versioning/semver)</strong> 指导原则进行版本控制。</p>
+<p>我们还将遵守在 semver 完整含义之上建立的一些 ROS 特定规则：</p>
+<ul>
+<li>主要版本增量（即破坏性变更）不应在已发布的 ROS 发行版中进行。</li>
+<li>补丁（保持接口不变）和次要（非破坏性）版本增量不会破坏兼容性，因此这类变更<strong>允许</strong>在发行版中进行。</li>
+<li>主要的 ROS 发布版本是发布破坏性变更的最佳时机。如果核心包需要多个破坏性变更，它们应该合并到其集成分支（例如 <code>rolling</code>）中，以便在 CI 中快速发现问题，但要一起发布以减少 ROS 用户主要版本的发布数量。</li>
+<li>虽然主要增量需要新的发行版，但新的发行版并不一定需要主要版本号的提升（如果开发和发布可以在不破坏 API 的情况下进行）。</li>
+<li>对于编译代码，ABI 被视为公共接口的一部分。任何需要重新编译依赖代码的变更都被视为主要（破坏性）变更。</li>
+<li>ABI 破坏性变更<strong>可以</strong>在发行版发布<strong>之前</strong>的次要版本提升中进行（添加到滚动发布中）。</li>
+<li>我们在 Dashing 和 Eloquent 中强制执行核心包的 API 稳定性，即使它们的主要版本部分为 <code>0</code>，这与 SemVer 关于初始开发的规范不同。</li>
+<li>随后，包应努力达到成熟状态并升级到 <code>1.0.0</code> 版本，以符合 semver 的规范。</li>
+</ul>
+<h4 id="_4">注意事项<a class="headerlink" href="#_4" title="Permanent link">¶</a></h4>
+<p>这些规则是<strong>尽力而为</strong>的。在极少数极端情况下，可能需要在主要版本/发行版内破坏 API。意外的破坏是否会导致主要或次要版本的增加将视具体情况而定。</p>
+<p>例如，考虑一种情况，涉及已发布的 X-turtle（对应于主要版本 <code>1.0.0</code>）和已发布的 Y-turtle（对应于主要版本 <code>2.0.0</code>）。</p>
+<ul>
+<li>如果在 X-turtle 中发现绝对必要的 API 破坏性修复，显然不能选择升级到 <code>2.0.0</code>，因为 <code>2.0.0</code> 已经存在。</li>
+<li>在这种情况下处理 X-turtle 版本的方法（都不是理想的）有：<ol>
+<li>提升 X-turtle 的次要版本：不理想，因为它违反了 SemVer 的原则，即破坏性变更必须提升主要版本。</li>
+<li>将 X-turtle 的主要版本提升到超过 Y-turtle（至 <code>3.0.0</code>）：不理想，因为旧发行版的版本将高于新发行版中已可用的版本，这将使特定于版本的条件代码失效/崩溃。</li>
+</ol>
+</li>
+</ul>
+<p>开发人员必须决定使用哪种解决方案，或者更重要的是，他们愿意打破哪条原则。我们不能建议哪一种，但在任何一种情况下，我们都要求采取明确措施，手动向用户传达这种中断及其解释（不仅仅是通过版本增量）。</p>
+<p>如果没有 Y-turtle，即使修复在技术上只是一个补丁，X-turtle 也必须升级到 <code>2.0.0</code>。这种情况符合 SemVer，但违反了我们自己的规则，即不应在已发布的发行版中引入主要增量。</p>
+<p>这就是我们将版本控制规则视为<strong>尽力而为</strong>的原因。尽管上述示例不太可能发生，但准确定义我们的版本控制系统非常重要。</p>
+<h4 id="api">公共 API 声明<a class="headerlink" href="#api" title="Permanent link">¶</a></h4>
+<p>根据 semver，每个包必须清楚地声明公共 API。我们将使用包质量声明中的“公共 API 声明”部分来声明哪些符号属于公共 API。</p>
+<p>对于大多数 C 和 C++ 包，声明就是它安装的任何头文件。但是，定义一组被视为私有的符号是可以接受的。避免在头文件中使用私有符号有助于 ABI 稳定性，但并非必须。</p>
+<p>对于 Python 等其他语言，必须明确定义公共 API，以便清楚在版本控制准则方面可以依赖哪些符号。公共 API 还可以扩展到构建产物，如配置变量、CMake 配置文件等，以及可执行文件、命令行选项和输出。公共 API 的任何元素都应在包的文档中明确说明。如果您使用的内容未在包文档中明确列为公共 API 的一部分，那么您不能依赖它在次要版本或补丁版本之间保持不变。</p>
+<h4 id="_5">弃用策略<a class="headerlink" href="#_5" title="Permanent link">¶</a></h4>
+<p>在可能的情况下，我们还将对主要版本增量使用 <strong>Tick-Tock</strong> 弃用和迁移策略。新的弃用将出现在新的发行版发布中，并伴随编译器警告，表示该功能已被弃用。在下一个版本中，该功能将被完全移除（无警告）。</p>
+<p>函数 <code>foo</code> 被弃用并由函数 <code>bar</code> 替换的示例：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">版本</th>
+<th style="text-align: left;">API</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">X-turtle</td>
+<td style="text-align: left;"><code>void foo();</code></td>
+</tr>
+<tr>
+<td style="text-align: left;">Y-turtle</td>
+<td style="text-align: left;"><code>[[deprecated(“use bar()”)]] void foo();</code> <br> <code>void bar();</code></td>
+</tr>
+<tr>
+<td style="text-align: left;">Z-turtle</td>
+<td style="text-align: left;"><code>void bar();</code></td>
+</tr>
+</tbody>
+</table>
+<p>我们不得在发行版发布后添加弃用。不过，弃用并不一定需要主要版本提升。如果在发行版发布之前进行版本提升，则可以在次要版本提升中引入弃用（类似于 ABI 破坏性变更）。</p>
+<p>例如，如果 X-turtle 作为 <code>2.0.0</code> 开始开发，则可以在 X-turtle 发布之前在 <code>2.1.0</code> 中添加弃用。</p>
+<p>我们将尝试尽可能保持跨发行版的兼容性。然而，就像与 SemVer 相关的注意事项一样，在某些情况下可能无法完全遵守 Tick-Tock 甚至一般的弃用策略。</p>
+<h3 id="_6">变更控制流程<a class="headerlink" href="#_6" title="Permanent link">¶</a></h3>
+<ul>
+<li>所有变更都必须通过合并请求 (Pull Request) 进行。</li>
+<li>我们将在 ROSCore 仓库的合并请求中强制执行 <strong>开发者原产地证书 (DCO)</strong>。<ul>
+<li>它要求所有提交消息包含 <code>Signed-off-by</code> 行，其中的电子邮件地址需与提交作者匹配。</li>
+<li>您可以向 <code>git commit</code> 调用传递 <code>-s</code> / <code>--signoff</code>，或手动编写预期的消息（例如 <code>Signed-off-by: Your Name Developer &lt;your.name@example.com&gt;</code>）。</li>
+<li>对于仅涉及空白移除、拼写错误更正和其他<strong>微不足道的变更</strong>的合并请求，<strong>不</strong>要求 DCO。</li>
+</ul>
+</li>
+<li>始终为每个合并请求运行所有<strong>一级平台</strong>的 CI 任务，并在合并请求中包含任务链接。（如果您没有访问 Jenkins 任务的权限，会有人为您触发任务。）</li>
+<li>至少需要 1 位非合并请求作者的开发伙伴批准，才能视为已批准。合并前必须获得批准。<ul>
+<li>包可以选择增加此数量。</li>
+</ul>
+</li>
+<li>任何所需的文档变更（API 文档、功能文档、发行说明等）必须在合并相关变更之前提出。</li>
+</ul>
+<h4 id="backporting-pr">向后移植 (Backporting) PR 的指南<a class="headerlink" href="#backporting-pr" title="Permanent link">¶</a></h4>
+<p>更改较旧版本的 ROS 时：</p>
+<ol>
+<li>在打开 PR 以将更改向后移植到旧版本之前，请确保功能或修复已被接受并合并到 <code>rolling</code> 分支中。</li>
+<li>向后移植到旧版本时，也要考虑向后移植到任何其他<strong>仍受支持的版本</strong>，即使是非 LTS 版本。</li>
+<li>如果您要完整地向后移植单个 PR，请将向后移植 PR 命名为 <code>[Distro] &lt;原 PR 名称&gt;</code>。</li>
+<li>在向后移植 PR 的描述中链接到您从中移植更改的所有 PR。</li>
+<li>包维护者通常使用 <strong>Mergify.io</strong> 在需要时自动将 PR 向后移植到下游发行版，但在必要时，开发人员仍然可以按照上述说明执行手动向后移植操作。</li>
+</ol>
+<h3 id="_7">文档<a class="headerlink" href="#_7" title="Permanent link">¶</a></h3>
+<p>所有包均应在其 README 中包含这些文档元素或从其 README 链接到这些元素：</p>
+<ul>
+<li>描述和目的</li>
+<li>公共 API 的定义和描述</li>
+<li>示例</li>
+<li>如何构建和安装（应引用外部工具/工作流）</li>
+<li>如何构建和运行测试</li>
+<li>如何构建文档</li>
+<li>如何开发（用于描述诸如 <code>python setup.py develop</code> 之类的内容）</li>
+</ul>
+<h4 id="_8">许可证和版权声明<a class="headerlink" href="#_8" title="Permanent link">¶</a></h4>
+<ul>
+<li>每个源文件必须有许可证和版权声明，并使用自动 linter 进行检查。</li>
+<li>每个包必须有一个 <code>LICENSE</code> 文件，通常是 Apache 2.0 许可证，除非该包已有宽松的许可证（例如 rviz 使用三条款 BSD）。</li>
+</ul>
+<h4 id="_9">包描述<a class="headerlink" href="#_9" title="Permanent link">¶</a></h4>
+<ul>
+<li>每个包都应该描述自身及其目的，尽可能假设读者是在没有 ROS 或其他相关项目先验知识的情况下偶然发现它的。</li>
+<li>每个包都应该定义和描述其公共 API，以便用户对语义化版本控制策略涵盖的内容有合理的预期。即使在 C 和 C++ 中（可以通过 API 和 ABI 检查强制执行公共 API），描述代码布局和代码各部分的功能也是一个好机会。</li>
+<li>应该能够轻松获取任何包，并从该包的文档中了解如何构建、运行、构建和运行测试以及构建文档。显然，对于常见的工作流（如在工作区中构建包），我们应该避免重复，但基本工作流应该被描述或引用。</li>
+<li>最后，它应该包括针对开发人员的任何文档。这可能包括使用类似 <code>python setup.py develop</code> 测试代码的工作流，或者可能意味着描述如何利用您的包提供的扩展点。</li>
+</ul>
+<p><strong>示例：</strong></p>
+<ul>
+<li><strong>capabilities</strong>: 这个包给出了描述公共 API 的文档示例。</li>
+<li><strong>catkin_tools</strong>: 这是一个描述包扩展点的示例。</li>
+</ul>
+<h4 id="ros-api">ROS 包的 API 文档<a class="headerlink" href="#ros-api" title="Permanent link">¶</a></h4>
+<p>所有已发布 ROS 包的 API 文档可以在 <a href="https://docs.ros.org/">这里</a> 找到。我们建议使用 <a href="https://index.ros.org/">index.ros.org</a> 搜索可用的 ROS 包以查找其文档。</p>
+<p>如果您是 ROS 包开发人员，正在寻找有关记录包的指导，请参阅我们关于<a href="https://www.google.com/search?q=https://docs.ros.org/en/rolling/The-ROS2-Project/Contributing/Quality-Guide.html%23documentation">包级别文档</a>的“操作方法”指南。所有已发布的 ROS 2 包的文档都会自动托管在 <a href="https://docs.ros.org/">docs.ros.org</a> 上。</p>
+<h3 id="_10">测试<a class="headerlink" href="#_10" title="Permanent link">¶</a></h3>
+<p>所有包都应该具有一定程度的<strong>系统</strong>、<strong>集成</strong>和/或<strong>单元测试</strong>。</p>
+<ul>
+<li><strong>单元测试</strong>应始终位于被测试的包中，并应利用 Mock 等工具尝试在构建的场景中测试代码库的狭窄部分。单元测试不应引入非测试工具的测试依赖项，例如 gtest、nosetest、pytest、mock 等...</li>
+<li><strong>集成测试</strong>可以测试代码各部分之间或代码各部分与系统之间的交互。它们通常以我们期望用户使用软件接口的方式来测试这些接口。与单元测试一样，集成测试应位于被测试的包中，除非绝对必要，否则不应引入非工具测试依赖项，即所有非工具依赖项仅在极端审查下才被允许，因此应尽可能避免。</li>
+<li><strong>系统测试</strong>旨在测试包之间的端到端情况，并应位于其自己的包中，以避免膨胀或耦合包，并避免循环依赖。<ul>
+<li>通常，应尽量减少外部或跨包测试依赖项，以防止循环依赖和紧密耦合的测试包。</li>
+</ul>
+</li>
+</ul>
+<p>所有包都应该有一些单元测试，可能还有集成测试，但拥有的程度取决于包的质量类别。以下小节适用于“1 级”包：</p>
+<h4 id="_11">代码覆盖率<a class="headerlink" href="#_11" title="Permanent link">¶</a></h4>
+<p>我们将提供行覆盖率，并达到 95% 以上的行覆盖率。如果较低的百分比目标是合理的，则必须显着地记录下来。我们可以提供分支覆盖率，或从覆盖率中排除代码（测试代码、调试代码等）。我们要求在合并更改之前覆盖率增加或保持不变，但进行降低代码覆盖率的更改（例如删除以前覆盖的代码可能导致百分比下降）且有适当理由是可以接受的。</p>
+<h4 id="_12">性能<a class="headerlink" href="#_12" title="Permanent link">¶</a></h4>
+<p>我们强烈建议进行性能测试，但也承认这对某些包没有意义。如果有性能测试，我们将选择在每次更改时检查，或在每次发布前检查，或两者兼而有之。如果合并更改或进行发布会降低性能，我们也需要理由。</p>
+<h4 id="linters">Linters 和静态分析<a class="headerlink" href="#linters" title="Permanent link">¶</a></h4>
+<p>我们将使用 <a href="https://docs.ros.org/en/rolling/The-ROS2-Project/Contributing/Code-Style-Language-Versions.html">ROS 代码风格</a> 并使用来自 <code>ament_lint_common</code> 的 linter 强制执行。必须使用 <code>ament_lint_common</code> 中包含的所有 linter/静态分析。</p>
+<p><code>ament_lint_auto</code> 文档提供了有关运行 <code>ament_lint_common</code> 的信息。</p>
+<hr>
+<h2 id="_13">通用实践<a class="headerlink" href="#_13" title="Permanent link">¶</a></h2>
+<p>有些实践是所有 ROS 2 开发共有的。
+这些实践不影响 <a href="https://github.com/ros-infrastructure/rep/blob/master/rep-2004.rst">REP 2004</a> 中描述的包质量级别，但仍强烈建议在开发过程中使用。</p>
+<h3 id="issues">问题 (Issues)<a class="headerlink" href="#issues" title="Permanent link">¶</a></h3>
+<p>提交问题时，请务必：</p>
+<ul>
+<li>包含足够的信息让其他人理解问题。在 ROS 2 中，缩小问题原因需要以下几点。在每个类别中测试尽可能多的替代方案将特别有帮助。<ul>
+<li><strong>操作系统和版本</strong>。理由：ROS 2 支持多个平台，有些错误是特定于操作系统/编译器版本的。</li>
+<li><strong>安装方法</strong>。理由：有些问题仅在从二进制归档或 deb 安装 ROS 2 时才会出现。这有助于我们要确定问题是否出在打包过程中。</li>
+<li><strong>ROS 2 的具体版本</strong>。理由：有些错误可能存在于特定的 ROS 2 版本中，随后已修复。了解您的安装是否包含这些修复非常重要。</li>
+<li><strong>正在使用的 DDS/RMW 实现</strong>（请参阅<a href="https://docs.ros.org/en/rolling/How-To-Guides/Working-with-multiple-RMW-implementations.html">此页面</a>了解如何确定）。理由：通信问题可能特定于所使用的底层 ROS 中间件。</li>
+<li><strong>正在使用的 ROS 2 客户端库</strong>。理由：这有助于我们缩小问题可能所在的堆栈层级。</li>
+</ul>
+</li>
+<li>包含复现问题的步骤列表。</li>
+<li>如果是 bug，请考虑提供一个<strong>简短、自包含、正确（可编译）的示例</strong>。如果其他人可以轻松复现，问题更有可能得到解决。</li>
+<li>提及已经尝试过的故障排除步骤，包括：<ul>
+<li>升级到最新版本的代码，其中可能包含尚未发布的错误修复。请参阅<a href="https://www.google.com/search?q=%23branches">此部分</a>并按照说明获取“rolling”分支。</li>
+<li>尝试使用不同的 RMW 实现。请参阅<a href="https://docs.ros.org/en/rolling/How-To-Guides/Working-with-multiple-RMW-implementations.html">此页面</a>了解如何操作。</li>
+</ul>
+</li>
+</ul>
+<h3 id="_14">分支<a class="headerlink" href="#_14" title="Permanent link">¶</a></h3>
+<blockquote>
+<p><strong>注意</strong>
+这些只是指导原则。包维护者可以根据自己的工作流程选择分支名称。</p>
+</blockquote>
+<p>最好的做法是在包的源代码仓库中为它针对的每个 ROS 发行版建立<strong>独立的分支</strong>。这些分支通常以它们针对的发行版命名。例如，<code>humble</code> 分支专门用于针对 Humble 发行版的开发。</p>
+<p>发布也是从这些分支进行的，针对相应的发行版。针对特定 ROS 发行版的开发可以在相应的分支上进行。例如：针对 <code>foxy</code> 的开发提交到 <code>foxy</code> 分支，<code>foxy</code> 的包发布也从该分支进行。</p>
+<blockquote>
+<p><strong>注意</strong>
+这要求包维护者根据需要执行向后移植或向前移植，以使所有分支的功能保持最新。维护者还必须对仍进行包发布的所有分支执行一般维护（错误修复等）。</p>
+</blockquote>
+<p>例如，如果一个功能被合并到滚动特定分支（例如 <code>rolling</code> 或 <code>main</code>），并且该功能也适用于 Humble 发行版（不破坏 API 等），那么将该功能向后移植到 Humble 特定分支是一个好习惯。</p>
+<p>如果有新功能或错误修复可用，维护者可以为那些较旧的发行版进行发布。</p>
+<p><strong>关于 <code>main</code> 和 <code>rolling</code> 呢？</strong>
+<code>main</code> 通常针对 <strong>Rolling</strong>（即下一个未发布的 ROS 发行版），尽管维护者可能决定改为从 <code>rolling</code> 分支进行开发和发布。</p>
+<h3 id="pull-requests">合并请求 (Pull requests)<a class="headerlink" href="#pull-requests" title="Permanent link">¶</a></h3>
+<ul>
+<li>一个合并请求应仅关注一个变更。单独的变更应放入单独的合并请求中。请参阅 <a href="https://github.blog/2015-01-21-how-to-write-the-perfect-pull-request/">GitHub 关于编写完美合并请求的指南</a>。</li>
+<li>补丁的大小应最小化，并避免任何类型的不必要变更。</li>
+<li>合并请求必须包含最少数量的有意义的提交。<ul>
+<li>您可以在合并请求审核期间创建新的提交。</li>
+<li>在合并合并请求之前，应将所有变更压缩（squash）为少量的语义提交，以保持历史记录清晰。</li>
+<li>但在合并请求审核期间<strong>避免</strong>压缩提交。您的审阅者可能不会注意到您进行了更改，从而导致潜在的混淆。另外，无论如何您都要在合并之前进行压缩；尽早这样做没有任何好处。</li>
+</ul>
+</li>
+<li>欢迎任何开发人员审查和批准合并请求（请参阅<a href="https://www.google.com/search?q=%23general-principles">通用原则</a>）。</li>
+<li>当您正在处理尚未准备好审查或合并的变更时，请使用<strong>草稿合并请求</strong>。当该变更准备好审查时，将合并请求移出草稿状态。请注意，如果您希望特定人员对草稿合并请求提供早期反馈，您可以在合并请求的描述或评论中 @ 提及他们。</li>
+<li>如果您的合并请求依赖于其他合并请求，请通过在合并请求描述的顶部添加 <code>- Depends on &lt;link&gt;</code> 来链接每个依赖的合并请求。这样做有助于审阅者了解合并请求的上下文。</li>
+<li>当您开始审查合并请求时，请在合并请求上发表评论，以便其他开发人员知道您正在审查它。</li>
+<li>合并请求审查不是只读的，即审阅者发表评论然后等待作者解决。作为审阅者，请随意就地进行小的改进（拼写错误、样式问题等）。作为合并请求的发起人，如果您在分叉（fork）中工作，勾选“允许上游贡献者编辑”框将有助于上述操作。作为审阅者，也可以随意进行更实质性的改进，但请考虑将它们放在单独的分支中（在评论中提及新分支，或从新分支向原始分支打开另一个合并请求）。</li>
+<li>只有维护者和提交者才能将批准的合并请求合并到主线。请参阅<a href="https://docs.ros.org/en/rolling/The-ROS2-Project/Governance.html">当前的 ROS PMC 成员和提交者</a>，以获取具有合并权限的人员列表。</li>
+</ul>
+<h3 id="_15">库版本控制<a class="headerlink" href="#_15" title="Permanent link">¶</a></h3>
+<p>我们将一起对包内的所有库进行版本控制。这意味着库从包继承其版本。这可以防止库和包的版本发生偏离，并与“共享仓库的包一起发布”这一策略理由相同。如果您需要库具有不同的版本，请考虑将它们拆分为不同的包。</p>
+<h3 id="_16">开发流程<a class="headerlink" href="#_16" title="Permanent link">¶</a></h3>
+<ul>
+<li>默认分支（大多数情况下是 rolling 分支）必须始终能够构建、通过所有测试且编译无警告。如果在任何时候出现回退，首要任务是至少恢复到之前的状态。</li>
+<li>始终在启用测试的情况下进行构建。</li>
+<li>始终在变更后和提议合并请求之前在本地运行测试。除了使用自动化测试外，还要手动运行修改后的代码路径，以确保补丁按预期工作。</li>
+<li>始终为每个合并请求运行所有平台的 CI 任务，并在合并请求中包含任务链接。</li>
+<li>有关推荐的软件开发工作流的更多详细信息，请参阅<a href="https://www.google.com/search?q=%23software-development-lifecycle">软件开发生命周期</a>部分。</li>
+</ul>
+<h3 id="rmw-api">RMW API 的变更<a class="headerlink" href="#rmw-api" title="Permanent link">¶</a></h3>
+<p>更新 <strong>RMW API</strong> 时，要求一级中间件库的 RMW 实现也必须更新。例如，RMW API 中引入的新函数 <code>rmw_foo()</code> 必须在以下包中实现（截至 ROS Galactic）：</p>
+<ul>
+<li>rmw_connextdds</li>
+<li>rmw_cyclonedds</li>
+<li>rmw_fastrtps</li>
+</ul>
+<p>如果可行（例如取决于变更的大小），也应考虑更新非一级中间件库。有关中间件库及其层级的列表，请参阅 <a href="https://github.com/ros-infrastructure/rep/blob/master/rep-2000.rst">REP-2000</a>。</p>
+<h3 id="_17">任务追踪<a class="headerlink" href="#_17" title="Permanent link">¶</a></h3>
+<p>为了帮助组织 ROS 2 上的工作，ROS 2 核心开发团队使用看板风格的 <a href="https://github.com/orgs/ros2/projects">GitHub 项目板</a>。</p>
+<p>但是，并非所有问题和合并请求都在项目板上进行跟踪。通常，一个板代表即将发布的版本或特定项目。可以通过浏览 <a href="https://github.com/ros2">ROS 2 仓库</a>的单独 issue 页面，按仓库浏览工单。</p>
+<p>任何给定 ROS 2 项目板中列的名称和用途各不相同，但通常遵循相同的一般结构：</p>
+<ul>
+<li><strong>To do</strong>：与项目相关的问题，准备分配</li>
+<li><strong>In progress</strong>：目前正在进行工作的活跃合并请求</li>
+<li><strong>In review</strong>：工作已完成并准备好审查的合并请求，以及当前正在积极审查的合并请求</li>
+<li><strong>Done</strong>：合并请求和相关问题已合并/关闭（用于信息目的）</li>
+</ul>
+<p>要请求进行更改的权限，只需要在您感兴趣的工单上发表评论。根据复杂程度，描述您计划如何解决它可能会很有用。我们将更新状态（如果您没有权限），您可以开始处理合并请求。如果您定期贡献，我们可能会直接授予您自行管理标签等的权限。</p>
+<hr>
+<h2 id="_18">包命名约定<a class="headerlink" href="#_18" title="Permanent link">¶</a></h2>
+<p>名称在 ROS 中起着重要作用，遵循命名约定可以简化学习和理解大型系统的过程。</p>
+<ul>
+<li>ROS 包占据一个扁平的命名空间，因此应仔细且一致地进行命名。在 <a href="https://github.com/ros-infrastructure/rep/blob/master/rep-0144.rst">REP-144</a> 中有一个包命名标准。</li>
+<li>包名称应遵循通用的 C 变量命名约定：小写，以字母开头，使用下划线分隔符，例如 <code>laser_viewer</code>。</li>
+<li>包名称应足够具体，以识别包的功能。例如，运动规划器不叫 <code>planner</code>。如果它实现了波前传播算法，它可能被称为 <code>wavefront_planner</code>。显然，在使名称具体化和避免使其过于冗长之间存在张力。</li>
+<li>应避免使用诸如 <code>utils</code> 之类的笼统名称，因为它们没有界定什么进入包或什么应该在包之外。</li>
+<li>要检查名称是否被占用，请查阅 <a href="https://index.ros.org/packages/">https://index.ros.org/packages/</a>。如果您希望将您的仓库包含在该列表中，请参阅 <a href="https://www.google.com/search?q=https://github.com/ros/rosdistro/blob/master/CONTRIBUTING.md">rosdistro 贡献指南</a>。</li>
+<li>我们的目标是开发一套规范的工具，让机器人做有趣的事情。包名应该告诉你包是做什么的，而不是它来自哪里。作为社区，我们应该能够做到这一点。Ubuntu 发行版提供了大约 33,000 个包，而没有在名称中插入来源或作者身份。</li>
+<li>仅当包不打算被更广泛地使用时，才建议给包名加前缀（例如，特定于 PR2 机器人的包使用 <code>pr2_</code> 前缀）。在分叉现有包时，您可能会给包名加前缀，但同样，前缀希望能传达发生了什么变化，而不是谁改变了它。</li>
+<li>对于 ROS 包，以 <code>ros</code> 为前缀是多余的。除非是非常核心的包，否则不建议这样做。</li>
+</ul>
+<h3 id="_19">度量单位和坐标系约定<a class="headerlink" href="#_19" title="Permanent link">¶</a></h3>
+<p>ROS 中使用的标准单位和坐标约定已在 <a href="https://www.google.com/search?q=https://github.com/ros-infrastructure/rep/blob/master/rep-0103.rst">REP-0103</a> 中正式确定。除非有非常充分的理由并清楚地记录以避免混淆，否则所有消息都应遵循这些准则。</p>
+<p>ROS 中距离测量内的特殊条件（如“太近”或“太远”）的表示已在 <a href="https://github.com/ros-infrastructure/rep/blob/master/rep-0117.rst">REP-0117</a> 中正式确定。</p>
+<h3 id="_20">编程约定<a class="headerlink" href="#_20" title="Permanent link">¶</a></h3>
+<ul>
+<li><strong>防御性编程</strong>：确保假设尽可能早地被验证。例如，检查每个返回码，并确保至少抛出异常，直到情况得到更优雅的处理。</li>
+<li>所有错误消息必须定向到 <code>stderr</code>。</li>
+<li>在尽可能窄的范围内声明变量。</li>
+<li>保持项目组（依赖项、导入、包含等）按字母顺序排列。</li>
+</ul>
+<h4 id="c">C++ 特定<a class="headerlink" href="#c" title="Permanent link">¶</a></h4>
+<ul>
+<li>避免使用直接流 (<code>&lt;&lt;</code>) 到 <code>stdout</code> / <code>stderr</code>，以防止多个线程之间的交错。</li>
+<li>避免对 <code>std::shared_ptr</code> 使用引用，因为这会破坏引用计数。如果原始实例超出范围并且使用了引用，它将访问释放的内存。</li>
+</ul>
+<h3 id="_21">文件系统布局<a class="headerlink" href="#_21" title="Permanent link">¶</a></h3>
+<p>包和仓库的文件系统布局应遵循相同的约定，以便为浏览源代码的用户提供一致的体验。</p>
+<h4 id="_22">包布局<a class="headerlink" href="#_22" title="Permanent link">¶</a></h4>
+<ul>
+<li><code>src</code>: 包含所有 C 和 C++ 代码<ul>
+<li>也包含未安装的 C/C++ 头文件</li>
+</ul>
+</li>
+<li><code>include</code>: 包含所有已安装的 C 和 C++ 头文件<ul>
+<li><code>&lt;package_name&gt;</code>: 对于所有 C 和 C++ 已安装的头文件，它们应该由包名进行文件夹命名空间隔离</li>
+</ul>
+</li>
+<li><code>&lt;package_name&gt;</code>: 包含所有 Python 代码</li>
+<li><code>test</code>: 包含所有自动化测试和测试数据</li>
+<li><code>config</code>: 包含配置文件，例如 YAML 参数文件和 RViz 配置文件</li>
+<li><code>doc</code>: 包含所有文档</li>
+<li><code>launch</code>: 包含所有启动文件</li>
+<li><code>msg</code>: 包含所有 ROS 消息定义</li>
+<li><code>srv</code>: 包含所有 ROS 服务定义</li>
+<li><code>action</code>: 包含所有 ROS 动作定义</li>
+<li><code>package.xml</code>: 按照 <a href="https://github.com/ros-infrastructure/rep/blob/master/rep-0140.rst">REP-0140</a> 定义（可能会为了原型设计而更新）</li>
+<li><code>CMakeLists.txt</code>: 仅限使用 CMake 的 ROS 包</li>
+<li><code>setup.py</code>: 仅限只使用 Python 代码的 ROS 包</li>
+<li><code>README</code>: 可以在 GitHub 上渲染为项目的着陆页<ul>
+<li>这可以根据方便程度简短或详细，但它至少应该链接到项目文档</li>
+<li>考虑在这个 README 中放置 CI 或代码覆盖率标签</li>
+<li>也可以是 <code>.rst</code> 或 GitHub 支持的任何其他格式</li>
+</ul>
+</li>
+<li><code>CONTRIBUTING</code>: 描述贡献指南<ul>
+<li>这可能包括许可证含义，例如在使用 Apache 2 许可证时。</li>
+</ul>
+</li>
+<li><code>LICENSE</code>: 此包的一个或多个许可证的副本</li>
+<li><code>CHANGELOG.rst</code>: 符合 <a href="https://github.com/ros-infrastructure/rep/blob/master/rep-0132.rst">REP-0132</a> 的变更日志</li>
+</ul>
+<h4 id="_23">仓库布局<a class="headerlink" href="#_23" title="Permanent link">¶</a></h4>
+<ul>
+<li>每个包应该位于与其包名相同的子文件夹中。如果仓库仅包含单个包，则它可以选择位于仓库的根目录中。</li>
+</ul>
+<hr>
+<h2 id="_24">上游包<a class="headerlink" href="#_24" title="Permanent link">¶</a></h2>
+<h3 id="debian-ubuntu">Debian 和 Ubuntu 上游中的包<a class="headerlink" href="#debian-ubuntu" title="Permanent link">¶</a></h3>
+<p>由于 Jochen Sprickerhof 和 Leopold Palomo-Avellaneda 的辛勤努力，现在可以从 Debian 和 Ubuntu 主仓库中<a href="https://www.google.com/search?q=https://packages.debian.org/search%3Fkeywords%3Dros2">获取一些 ROS 2 包</a>。<a href="https://www.google.com/search?q=https://roscon.ros.org/2015/presentations/ROS_on_Debian.pdf">这是 Jochen 在 ROSCon 2015 上的过程简短概述</a>。原始 ROS 包已被修改以遵循 Debian 指南，其中包括将包拆分为多个部分、在某些情况下更改名称、根据 FHS 指南安装到 <code>/usr</code> 以及在共享库上使用 soversion。</p>
+<p>此外，一些引导依赖项，如命令行工具 <code>vcstool</code> 和 <code>colcon</code>，以及一些库如 <code>osrf-pycommon</code> 和 <code>ament</code> 也在上游打包。</p>
+<p>与来自 <a href="http://packages.ros.org">http://packages.ros.org</a> 的 OSRF 提供的 ROS 包不同，上游仓库中的包不依附于特定的 <strong>ROS 发行版</strong>。相反，它们代表了时间快照，将在 Debian unstable 中定期更新，然后锁定到下游 Debian 和 Ubuntu 发行版的各个点。</p>
+<h3 id="dont-mix-the-streams">不要混合使用源 (Don’t mix the streams)<a class="headerlink" href="#dont-mix-the-streams" title="Permanent link">¶</a></h3>
+<p>我们强烈建议不要在同一系统上混合使用来自上游 Debian/Ubuntu 的 ROS 包和来自 <a href="http://packages.ros.org">http://packages.ros.org</a> 的 ROS 包。在某些情况下，这种混合系统可以正常工作，但两组包之间可能会产生负面交互。我们正在与 Jochen 及其朋友合作，通过文档和包冲突规范来尽量减少出现问题的机会，但我们预计仍会存在一些风险，包括一些相当微妙的问题。</p>
+<p>因此，我们建议您选择从上游安装包<strong>或</strong>从 <a href="http://packages.ros.org">http://packages.ros.org</a> 安装，但<strong>不要</strong>两者都选。不仅不应同时安装两者的包，而且如果您打算使用上游包，甚至不应在您的 apt 源中（即 <code>/etc/apt/sources*</code> 中的任何文件）包含 <a href="http://packages.ros.org">http://packages.ros.org</a> 条目。同时启用它们可能会导致名称重叠的包在两个源之间混合，例如 <code>python3-rospkg</code>。</p>
+<h3 id="_25">已知差异<a class="headerlink" href="#_25" title="Permanent link">¶</a></h3>
+<p>与来自 packages.ros.org 的 ROS 包相比，上游 ROS 包存在一些人们应该注意的差异：</p>
+<ul>
+<li>包集不完整。</li>
+<li>包可能有不同的名称和不同的分区方式。</li>
+</ul>
+<hr>
+<h2 id="_26">开发者工作流<a class="headerlink" href="#_26" title="Permanent link">¶</a></h2>
+<p>我们使用 <a href="https://github.com/orgs/ros2/projects">GitHub 项目板</a>跟踪与即将发布的版本和较大型项目相关的未解决工单和活跃 PR。</p>
+<p>通常的工作流是：</p>
+<ol>
+<li>讨论设计（在相应仓库上的 GitHub工单，如果需要，向 <a href="https://github.com/ros2/design">https://github.com/ros2/design</a> 提交设计 PR）</li>
+<li>在分叉（fork）的功能分支上编写实现<ul>
+<li>请查看<a href="https://docs.ros.org/en/rolling/The-ROS2-Project/Contributing/Developer-Guide.html">开发者指南</a>以获取指南和最佳实践</li>
+</ul>
+</li>
+<li>编写测试</li>
+<li>启用并运行 linter</li>
+<li>使用 <code>colcon test</code> 在本地运行测试（请参阅 <a href="https://colcon.readthedocs.io/en/released/user/quick-start.html">colcon 教程</a>）</li>
+<li>一旦一切在本地构建无警告并且所有测试都通过，就在您的功能分支上运行 CI：<ol>
+<li>转到 <a href="https://ci.ros2.org/">ci.ros2.org</a></li>
+<li>登录（右上角）</li>
+<li>点击 <code>ci_launcher</code> 任务</li>
+<li>点击“Build with Parameters”（左栏）</li>
+<li>在第一个框“CI_BRANCH_TO_TEST”中输入您的功能分支名称</li>
+<li>点击 <strong>build</strong> 按钮</li>
+<li>（如果您不是 ROS 2 提交者，您无权访问 CI 农场。在这种情况下，请联系您的 PR 审阅者为您运行 CI）</li>
+<li>如果您的用例需要运行代码覆盖率：<ul>
+<li>转到 <a href="https://ci.ros2.org/">ci.ros2.org</a></li>
+<li>登录（右上角）</li>
+<li>点击 <code>ci_linux_coverage</code> 任务</li>
+<li>点击“Build with Parameters”（左栏）</li>
+<li>确保“CI_BUILD_ARGS”和“CI_TEST_ARGS”保留默认值</li>
+<li>点击 <strong>build</strong> 按钮</li>
+<li>文档末尾有关于如何<a href="https://www.google.com/search?q=%23how-to-read-the-coverage-rate-from-the-buildfarm-report">解释报告结果</a>和<a href="https://www.google.com/search?q=%23how-to-calculate-the-coverage-rate-from-the-buildfarm-report">计算覆盖率</a>的说明</li>
+</ul>
+</li>
+</ol>
+</li>
+<li>如果 CI 任务构建无警告、错误和测试失败，请将任务链接发布在您的 PR 或汇总所有 PR 的高级工单上（参见<a href="https://www.google.com/search?q=https://github.com/ros2/ros2/issues/1090">此处</a>示例）<ul>
+<li>注意，这些徽章的 markdown 位于 <code>ci_launcher</code> 任务的控制台输出中</li>
+</ul>
+</li>
+<li>当 PR 获得批准后：<ul>
+<li>提交 PR 的人使用“Squash and Merge”（压缩并合并）选项将其合并，以便我们保持清晰的历史记录</li>
+<li>如果提交值得保持分离：将所有 nitpick/linter/typo 提交压缩在一起，然后合并剩余的集</li>
+<li>注意：每个 PR 应针对特定功能，因此“Squash and Merge”在 99% 的时间里应该是合理的</li>
+<li>合并后删除分支</li>
+</ul>
+</li>
+</ol>
+<h3 id="gitconfig">Gitconfig 优化<a class="headerlink" href="#gitconfig" title="Permanent link">¶</a></h3>
+<p>为了能够推送到仓库，您需要在系统上设置 ssh 密钥。但是，我们仓库的默认 url 模式是使用 https，因为它是可匿名访问的。在您的系统上，您可以使用 <code>gitconfig</code> 选项 <code>insteadOf</code> 让 <code>git</code> 自动使用您的 ssh 密钥，即使远程声明为 https。</p>
+<p>将以下内容添加到您的 <code>~/.gitconfig</code>：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="k">[url "ssh://git@github.com/"]</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">  </span><span class="na">insteadOf</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">https://github.com/</span>
+</code></pre></div>
+<p>如果您在 GitLab 或 Bitbucket 上的仓库工作，您可以做同样的事情。</p>
+<hr>
+<h2 id="_27">架构开发实践<a class="headerlink" href="#_27" title="Permanent link">¶</a></h2>
+<p>本节描述了在对 ROS 2 进行大型架构更改时应采用的理想生命周期。</p>
+<h3 id="_28">软件开发生命周期<a class="headerlink" href="#_28" title="Permanent link">¶</a></h3>
+<p>本节逐步描述如何规划、设计和实现新功能：</p>
+<ol>
+<li>任务创建</li>
+<li>创建设计文档</li>
+<li>设计评审</li>
+<li>实现</li>
+<li>代码审查</li>
+</ol>
+<h4 id="_29">任务创建<a class="headerlink" href="#_29" title="Permanent link">¶</a></h4>
+<p>需要更改 ROS 2 关键部分的任务应在发布周期的早期阶段进行设计评审。如果在后期阶段进行设计评审，这些更改将成为未来发布的一部分。</p>
+<ul>
+<li>应在适当的 <a href="https://github.com/ros2">ros2 仓库</a>中创建一个 issue，清楚地描述正在处理的任务。</li>
+<li>它应该有明确的成功标准，并强调预期的具体改进。</li>
+<li>如果该功能针对某个 ROS 发行版，请确保在 ROS 发布工单中对其进行跟踪（<a href="https://www.google.com/search?q=https://github.com/ros2/ros2/issues/1090">示例</a>）。</li>
+</ul>
+<h4 id="_30">编写设计文档<a class="headerlink" href="#_30" title="Permanent link">¶</a></h4>
+<p>设计文档绝不能包含机密信息。您的更改是否需要设计文档取决于任务的大小。</p>
+<p><strong>您正在进行小的更改或修复错误：</strong>
+不需要设计文档，但应在适当的仓库中打开一个 issue 来跟踪工作并避免重复工作。</p>
+<p><strong>您正在实现新功能或希望为 OSRF 拥有的基础设施（如 Jenkins CI）做出贡献：</strong>
+需要设计文档，并应将其贡献给 <a href="https://github.com/ros2/design">ros2/design</a>，以便在 <a href="https://design.ros2.org/">https://design.ros2.org/</a> 上访问。</p>
+<ol>
+<li>您应该分叉 (fork) 仓库并提交详细说明设计的合并请求。</li>
+<li>在合并请求或提交消息中提及相关的 ros2 issue（例如，<code>Design doc for task ros2/ros2#&lt;issue id&gt;</code>）。详细说明在 <a href="https://docs.ros.org/en/rolling/The-ROS2-Project/Contributing.html">ROS 2 贡献</a>页面上。设计评论将直接在合并请求上进行。</li>
+<li>如果该任务计划与特定版本的 ROS 一起发布，则应在合并请求中包含此信息。</li>
+</ol>
+<h4 id="_31">设计文档评审<a class="headerlink" href="#_31" title="Permanent link">¶</a></h4>
+<p>设计准备好审核后，应打开合并请求并分配适当的审阅者。建议将项目所有者 - 所有受影响包的维护者（由 <code>package.xml</code> 维护者字段定义，参见 <a href="https://github.com/ros-infrastructure/rep/blob/master/rep-0140.rst">REP-140</a>） - 作为审阅者。</p>
+<p>如果设计文档很复杂或审阅者的时间表冲突，可以安排可选的设计评审会议。在这种情况下，</p>
+<p><strong>会议前</strong></p>
+<ul>
+<li>至少提前一周发送会议邀请</li>
+<li>建议会议时长一小时</li>
+<li>会议邀请应列出评审期间要做的所有决定（需要包维护者批准的决定）</li>
+<li>会议必须参加者：设计合并请求审阅者</li>
+<li>会议可选参加者：所有 OSRF 工程师（如果适用）</li>
+</ul>
+<p><strong>会议期间</strong></p>
+<ul>
+<li>任务所有者推动会议，陈述他们的想法并管理讨论，以确保按时达成协议</li>
+</ul>
+<p><strong>会议后</strong></p>
+<ul>
+<li>任务所有者应将会议记录发送给所有与会者</li>
+<li>如果对设计提出了小问题：<ul>
+<li>任务所有者应根据反馈更新设计文档合并请求</li>
+<li>不需要额外的审核</li>
+</ul>
+</li>
+<li>如果对设计提出了重大问题：<ul>
+<li>可以接受删除没有明确协议的部分</li>
+<li>设计中可争议的部分可以作为单独的任务在将来重新提交</li>
+<li>如果删除可争议部分不是选项，请直接与包所有者合作达成协议</li>
+</ul>
+</li>
+</ul>
+<p><strong>一旦达成共识：</strong></p>
+<ul>
+<li>确保 <code>ros2/design</code> 合并请求已合并（如果适用）</li>
+<li>更新并关闭与此设计任务关联的 GitHub issue</li>
+</ul>
+<h4 id="_32">实现<a class="headerlink" href="#_32" title="Permanent link">¶</a></h4>
+<p>开始之前，请浏览<a href="https://www.google.com/search?q=%23pull-requests">合并请求</a>部分以获取最佳实践。</p>
+<p>对于每个要修改的 repo：</p>
+<ol>
+<li>修改代码，如果完成则转到下一步，或者定期备份您的工作。</li>
+<li>使用 <code>git add -i</code> <strong>自我审查</strong>您的更改。</li>
+<li>使用 <code>git commit -s</code> 创建一个新的签名提交。</li>
+<li>一个合并请求应包含最少的语义上有意义的提交（例如，大量 1 行提交是不可接受的）。在迭代反馈时创建新的 fixup 提交，或者如果您不想每次都创建新提交，可以选择使用 <code>git commit --amend</code> 修改现有提交。</li>
+<li>每个提交必须有一个正确编写的、有意义的提交消息。更多说明<a href="https://cbea.ms/git-commit/">在此</a>。</li>
+<li>移动文件必须在单独的提交中完成，否则 git 可能无法准确跟踪文件历史记录。</li>
+<li>合并请求描述或提交消息必须包含对相关 ros2 issue 的引用，以便在合并合并请求时自动关闭它。有关更多详细信息，请参阅此<a href="https://docs.github.com/en/issues/tracking-your-work-with-issues/linking-a-pull-request-to-an-issue">文档</a>。</li>
+<li>推送新提交。</li>
+</ol>
+<h4 id="_33">代码审查<a class="headerlink" href="#_33" title="Permanent link">¶</a></h4>
+<p>一旦更改准备好进行代码审查：</p>
+<ol>
+<li>为每个修改的仓库打开一个合并请求。</li>
+<li>记得遵循<a href="https://www.google.com/search?q=%23pull-requests">合并请求</a>最佳实践。</li>
+<li><a href="https://cli.github.com/">GitHub</a> 可用于从命令行创建合并请求。</li>
+<li>如果任务计划与特定版本的 ROS 一起发布，则应在每个合并请求中包含此信息。</li>
+<li>应在合并请求中提及审查设计文档的包所有者。</li>
+<li><strong>代码审查 SLO</strong>：虽然审查合并请求是尽力而为，但审阅者在一周内对合并请求发表评论，代码作者在一周内回复评论是有帮助的，这样就不会丢失上下文。</li>
+<li>照常迭代反馈，根据需要修改和更新开发分支。</li>
+<li>一旦 PR 获得批准，包维护者将合并更改。</li>
+</ol>
+<hr>
+<h2 id="build-farm">构建农场 (Build Farm) 介绍<a class="headerlink" href="#build-farm" title="Permanent link">¶</a></h2>
+<p>构建农场位于 <a href="https://ci.ros2.org/">ci.ros2.org</a>。
+每天晚上，我们都会运行夜间任务，在各种平台上以各种场景构建并运行所有测试。此外，我们在合并之前针对这些平台测试所有合并请求。
+检查<a href="https://www.ros.org/reps/rep-2000.html">当前的目标平台和架构集</a>，尽管它会随着时间推移而演变。</p>
+<p>构建农场上有几种类型的任务：</p>
+<ul>
+<li><strong>manual jobs</strong> (由开发者手动触发):<ul>
+<li><code>ci_linux</code>: 在 Ubuntu 上构建 + 测试代码</li>
+<li><code>ci_linux-aarch64</code>: 在 ARM 64 位机器 (aarch64) 上的 Ubuntu 上构建 + 测试代码</li>
+<li><code>ci_linux_coverage</code>: 构建 + 测试 + 生成测试覆盖率</li>
+<li><code>ci_linux-rhel</code>: 在 Red Hat Enterprise Linux 上构建 + 测试代码</li>
+<li><code>ci_windows</code>: 在 Windows 上构建 + 测试代码</li>
+<li><code>ci_launcher</code>: 触发上面列出的所有任务</li>
+</ul>
+</li>
+<li><strong>nightly</strong> (每晚运行):<ul>
+<li>Debug: 使用 <code>CMAKE_BUILD_TYPE=Debug</code> 构建 + 测试代码<ul>
+<li><code>nightly_linux_debug</code></li>
+<li><code>nightly_linux-aarch64_debug</code></li>
+<li><code>nightly_linux-rhel_debug</code></li>
+<li><code>nightly_win_deb</code></li>
+</ul>
+</li>
+<li>Release: 使用 <code>CMAKE_BUILD_TYPE=Release</code> 构建 + 测试代码<ul>
+<li><code>nightly_linux_release</code></li>
+<li><code>nightly_linux-aarch64_release</code></li>
+<li><code>nightly_linux-rhel_release</code></li>
+<li><code>nightly_win_rel</code></li>
+</ul>
+</li>
+<li>Repeated: 构建然后运行每个测试最多 20 次或直到失败（也称为 flakiness hunter）<ul>
+<li><code>nightly_linux_repeated</code></li>
+<li><code>nightly_linux-aarch64_repeated</code></li>
+<li><code>nightly_linux-rhel_repeated</code></li>
+<li><code>nightly_win_rep</code></li>
+</ul>
+</li>
+<li>Coverage:<ul>
+<li><code>nightly_linux_coverage</code>: 构建 + 测试代码 + 分析 c/c++ 和 python 的覆盖率<ul>
+<li>结果导出为 cobertura 报告</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>packaging</strong> (每晚运行；结果打包成归档):<ul>
+<li><code>packaging_linux</code></li>
+<li><code>packaging_linux-rhel</code></li>
+<li><code>packaging_windows</code></li>
+</ul>
+</li>
+</ul>
+<p>另外两个构建农场通过提供源码包和二进制包的构建、持续集成、测试和分析来支持 ROS / ROS 2 生态系统。
+有关详细信息、常见问题解答和故障排除，请参阅<a href="https://docs.ros.org/en/rolling/The-ROS2-Project/Contributing/Build-Farms.html">构建农场</a>。</p>
+<h3 id="_34">关于覆盖率运行的说明<a class="headerlink" href="#_34" title="Permanent link">¶</a></h3>
+<p>ROS 2 包的组织方式使得给定包的测试代码不仅包含在包内，而且也可能存在于不同的包中。换句话说：包可以在测试阶段执行属于其他包的代码。
+为了达到 ROS 2 核心包中所有可用代码达到的覆盖率，建议使用一组固定的建议仓库运行构建。该集在 Jenkins 中覆盖率任务的默认参数中定义。</p>
+<h3 id="_35">如何从构建农场报告中读取覆盖率<a class="headerlink" href="#_35" title="Permanent link">¶</a></h3>
+<p>要查看给定包的覆盖率报告：</p>
+<ol>
+<li>当 <code>ci_linux_coverage</code> 构建完成后，点击 <strong>Coverage Report</strong></li>
+<li>向下滚动到 <strong>Coverage Breakdown by Package</strong> 表</li>
+<li>在表中，查看名为“Name”的第一列</li>
+</ol>
+<p>构建农场中的覆盖率报告包括 ROS 工作区中使用的所有包。覆盖率报告包括对应于同一包的不同路径：</p>
+<ul>
+<li>形式为 <code>src.*.&lt;repository_name&gt;.&lt;package_name&gt;.*</code> 的 Name 条目：这些对应于包中针对其自身源代码可用的单元测试运行。</li>
+<li>形式为 <code>build.&lt;repository_name&gt;.&lt;package_name&gt;.*</code> 的 Name 条目：这些对应于包中针对其在构建或配置时生成的文件可用的单元测试运行。</li>
+<li>形式为 <code>install.&lt;package_name&gt;.*</code> 的 Name 条目：这些对应于来自其他包测试运行的系统/集成测试。</li>
+</ul>
+<h3 id="_36">如何从构建农场报告中计算覆盖率<a class="headerlink" href="#_36" title="Permanent link">¶</a></h3>
+<p>使用自动脚本获取合并的单元覆盖率：</p>
+<ol>
+<li>从 <code>ci_linux_coverage</code> Jenkins 构建中复制构建的 URL</li>
+<li>下载 <a href="https://www.google.com/search?q=%5Bhttps://github.com/ros2/ros2/blob/rolling/scripts/get_coverage_ros2_pkg.py%5D\(https://github.com/ros2/ros2/blob/rolling/scripts/get_coverage_ros2_pkg.py\)"><code>get_coverage_ros2_pkg</code></a> 脚本</li>
+<li>执行脚本：<code>./get_coverage_ros2_pkg.py &lt;jenkins_build_url&gt; &lt;ros2_package_name&gt;</code> (<a href="https://www.google.com/search?q=https://github.com/ros2/ros2/blob/rolling/scripts/README.md">README</a>)</li>
+<li>从脚本输出的“Combined unit testing”最后一行获取结果</li>
+</ol>
+<p><strong>替代方案</strong>：从覆盖率报告中获取合并的单元覆盖率（需要手动计算）：</p>
+<ol>
+<li>当 <code>ci_linux_coverage</code> 构建完成后，点击 <strong>Cobertura Coverage Report</strong></li>
+<li>向下滚动到 <strong>Coverage Breakdown by Package</strong> 表</li>
+<li>在表中，在第一列“Name”下，寻找（其中 <code>&lt;package_name&gt;</code> 是您正在测试的包）：<ul>
+<li>模式 <code>src.*.&lt;repository_name&gt;.&lt;package_name&gt;.*</code> 下的所有目录，抓取“Lines”列中的两个绝对值。</li>
+<li>模式 <code>build/.&lt;repository_name&gt;.*</code> 下的所有目录，抓取“Lines”列中的两个绝对值。</li>
+</ul>
+</li>
+<li>对于之前的选择：对于每个单元格，第一个值是测试的行数，第二个是代码的总行数。汇总所有行以获得测试行总数和测试下代码行总数。相除以获得覆盖率。</li>
+</ol>
+<h3 id="lcov-ubuntu">如何在本地使用 lcov 测量覆盖率 (Ubuntu)<a class="headerlink" href="#lcov-ubuntu" title="Permanent link">¶</a></h3>
+<p>要在您自己的机器上测量覆盖率，请安装 <code>lcov</code>。</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>-y<span class="w"> </span>lcov
+</code></pre></div>
+<p>本节的其余部分假设您正在从 colcon 工作区工作。使用覆盖率标志在 debug 模式下编译。随意使用 colcon 标志来针对特定包。</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>colcon<span class="w"> </span>build<span class="w"> </span>--cmake-args<span class="w"> </span>-DCMAKE_BUILD_TYPE<span class="o">=</span>Debug<span class="w"> </span>-DCMAKE_CXX_FLAGS<span class="o">=</span><span class="s2">"</span><span class="si">${</span><span class="nv">CMAKE_CXX_FLAGS</span><span class="si">}</span><span class="s2"> --coverage"</span><span class="w"> </span>-DCMAKE_C_FLAGS<span class="o">=</span><span class="s2">"</span><span class="si">${</span><span class="nv">CMAKE_C_FLAGS</span><span class="si">}</span><span class="s2"> --coverage"</span>
+</code></pre></div>
+<p><code>lcov</code> 需要一个初始基线，您可以使用以下命令生成。根据您的需要更新输出文件位置。</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>lcov<span class="w"> </span>--no-external<span class="w"> </span>--capture<span class="w"> </span>--initial<span class="w"> </span>--directory<span class="w"> </span>.<span class="w"> </span>--output-file<span class="w"> </span>~/ros2_base.info
+</code></pre></div>
+<p>为您覆盖率测量所关注的包运行测试。例如，如果测量 <code>rclcpp</code> 以及 <code>test_rclcpp</code>：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>colcon<span class="w"> </span><span class="nb">test</span><span class="w"> </span>--packages-select<span class="w"> </span>rclcpp<span class="w"> </span>test_rclcpp
+</code></pre></div>
+<p>捕获 lcov 结果，这次使用类似的命令但去掉 <code>--initial</code> 标志。</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>lcov<span class="w"> </span>--no-external<span class="w"> </span>--capture<span class="w"> </span>--directory<span class="w"> </span>.<span class="w"> </span>--output-file<span class="w"> </span>~/ros2.info
+</code></pre></div>
+<p>合并追踪 <code>.info</code> 文件：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>lcov<span class="w"> </span>--add-tracefile<span class="w"> </span>~/ros2_base.info<span class="w"> </span>--add-tracefile<span class="w"> </span>~/ros2.info<span class="w"> </span>--output-file<span class="w"> </span>~/ros2_coverage.info
+</code></pre></div>
+<p>生成 html 以便轻松可视化和注释覆盖的行。</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>mkdir<span class="w"> </span>-p<span class="w"> </span>coverage
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>genhtml<span class="w"> </span>~/ros2_coverage.info<span class="w"> </span>--output-directory<span class="w"> </span>coverage
+</code></pre></div>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"></path></svg>
+  回到页面顶部
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="页脚">
+        
+          
+          <a href="../../How-to_Guides/intro/" class="md-footer__link md-footer__link--prev" aria-label="上一页: 介绍">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                上一页
+              </span>
+              <div class="md-ellipsis">
+                介绍
+              </div>
+            </div>
+          </a>
+        
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright © 2024 qiuyv
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.indexes", "navigation.top", "navigation.tracking", "navigation.footer", "navigation.indexes", "navigation.sections", "content.code.copy", "content.code.annotate", "content.tabs.link", "search.highlight", "search.suggest", "toc.follow"], "search": "../../../assets/javascripts/workers/search.7a47a382.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.e71a0d61.min.js"></script>
+      
+        <script src="../../../javascripts/mathjax.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  
+<script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
+document$.subscribe(()=>{ lightbox.reload(); });
+</script></body></html>
